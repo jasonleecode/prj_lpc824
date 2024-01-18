@@ -1,27 +1,27 @@
 import os
 
 # toolchains options
-ARCH = 'arm'
-CPU = 'cortex-m0'
-CROSS_TOOL = 'gcc'
+ARCH='arm'
+CPU='cortex-m0'
+CROSS_TOOL='gcc'
 
 if os.getenv('RTT_CC'):
-    CROSS_TOOL = os.getenv('RTT_CC')
+	CROSS_TOOL = os.getenv('RTT_CC')
 
 # cross_tool provides the cross compiler
 # EXEC_PATH is the compiler execute path, for example, CodeSourcery, Keil MDK, IAR
-if CROSS_TOOL == 'gcc':
-    PLATFORM = 'gcc'
-    EXEC_PATH = '/usr/bin'
+if  CROSS_TOOL == 'gcc':
+    PLATFORM 	= 'gcc'
+    EXEC_PATH 	= '/usr/bin'
 elif CROSS_TOOL == 'keil':
-    PLATFORM = 'armcc'
-    EXEC_PATH = 'C:/keil_v5'
+    PLATFORM 	= 'armcc'
+    EXEC_PATH 	= 'C:/keil_v5'
 elif CROSS_TOOL == 'iar':
-    PLATFORM = 'iccarm'
-    EXEC_PATH = r'C:/Program Files (x86)/IAR Systems/Embedded Workbench 8.3'
+    PLATFORM  = 'iccarm'
+    EXEC_PATH    = r'C:/Program Files (x86)/IAR Systems/Embedded Workbench 8.3'
 
 if os.getenv('RTT_EXEC_PATH'):
-    EXEC_PATH = os.getenv('RTT_EXEC_PATH')
+	EXEC_PATH = os.getenv('RTT_EXEC_PATH')
 
 #BUILD = 'debug'
 BUILD = 'release'

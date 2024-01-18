@@ -15,10 +15,10 @@
 #include "board_lpc.h"
 #include "usart.h"
 
-void _init(void)
-{
+// void _init(void)
+// {
 
-}
+// }
 
 /**
   * @brief  This function is executed in case of error occurrence.

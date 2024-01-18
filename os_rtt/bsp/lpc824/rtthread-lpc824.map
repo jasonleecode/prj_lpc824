@@ -90,16 +90,33 @@ Discarded input sections
  .text          0x0000000000000000        0x0 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/crti.o
  .data          0x0000000000000000        0x0 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/crti.o
  .bss           0x0000000000000000        0x0 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/crti.o
+ .text          0x0000000000000000       0x98 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/crtbegin.o
  .data          0x0000000000000000        0x4 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/crtbegin.o
+ .bss           0x0000000000000000       0x1c /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/crtbegin.o
+ .init_array    0x0000000000000000        0x4 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/crtbegin.o
  .fini_array    0x0000000000000000        0x4 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/crtbegin.o
+ .eh_frame      0x0000000000000000        0x0 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/crtbegin.o
+ .tm_clone_table
+                0x0000000000000000        0x0 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/crtbegin.o
+ .comment       0x0000000000000000       0x5a /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/crtbegin.o
+ .ARM.attributes
+                0x0000000000000000       0x2c /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/crtbegin.o
+ .text          0x0000000000000000       0x74 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/crt0.o
  .data          0x0000000000000000        0x0 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/crt0.o
  .bss           0x0000000000000000        0x0 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/crt0.o
  .ARM.extab     0x0000000000000000        0x0 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/crt0.o
+ .ARM.exidx     0x0000000000000000       0x10 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/crt0.o
+ .debug_line    0x0000000000000000       0x8c /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/crt0.o
+ .debug_info    0x0000000000000000       0x26 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/crt0.o
+ .debug_abbrev  0x0000000000000000       0x14 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/crt0.o
+ .debug_aranges
+                0x0000000000000000       0x20 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/crt0.o
+ .debug_str     0x0000000000000000       0x94 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/crt0.o
+ .ARM.attributes
+                0x0000000000000000       0x1b /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/crt0.o
  .text          0x0000000000000000        0x0 build/kernel/components/drivers/core/device.o
  .data          0x0000000000000000        0x0 build/kernel/components/drivers/core/device.o
  .bss           0x0000000000000000        0x0 build/kernel/components/drivers/core/device.o
- .text.rt_device_register
-                0x0000000000000000       0x34 build/kernel/components/drivers/core/device.o
  .text.rt_device_unregister
                 0x0000000000000000        0xc build/kernel/components/drivers/core/device.o
  .text.rt_device_create
@@ -108,12 +125,8 @@ Discarded input sections
                 0x0000000000000000       0x10 build/kernel/components/drivers/core/device.o
  .text.rt_device_init
                 0x0000000000000000       0x2c build/kernel/components/drivers/core/device.o
- .text.rt_device_read
-                0x0000000000000000       0x2c build/kernel/components/drivers/core/device.o
  .text.rt_device_control
                 0x0000000000000000       0x14 build/kernel/components/drivers/core/device.o
- .text.rt_device_set_rx_indicate
-                0x0000000000000000        0x8 build/kernel/components/drivers/core/device.o
  .text.rt_device_set_tx_complete
                 0x0000000000000000        0x8 build/kernel/components/drivers/core/device.o
  .text          0x0000000000000000        0x0 build/kernel/components/drivers/ipc/completion.o
@@ -209,14 +222,10 @@ Discarded input sections
  .text          0x0000000000000000        0x0 build/kernel/components/drivers/ipc/ringbuffer.o
  .data          0x0000000000000000        0x0 build/kernel/components/drivers/ipc/ringbuffer.o
  .bss           0x0000000000000000        0x0 build/kernel/components/drivers/ipc/ringbuffer.o
- .text.rt_ringbuffer_init
-                0x0000000000000000       0x10 build/kernel/components/drivers/ipc/ringbuffer.o
  .text.rt_ringbuffer_put
                 0x0000000000000000       0x94 build/kernel/components/drivers/ipc/ringbuffer.o
  .text.rt_ringbuffer_put_force
                 0x0000000000000000       0xdc build/kernel/components/drivers/ipc/ringbuffer.o
- .text.rt_ringbuffer_get
-                0x0000000000000000       0x7c build/kernel/components/drivers/ipc/ringbuffer.o
  .text.rt_ringbuffer_peek
                 0x0000000000000000       0x4c build/kernel/components/drivers/ipc/ringbuffer.o
  .text.rt_ringbuffer_putchar
@@ -290,24 +299,6 @@ Discarded input sections
  .text          0x0000000000000000        0x0 build/kernel/components/finsh/msh.o
  .data          0x0000000000000000        0x0 build/kernel/components/finsh/msh.o
  .bss           0x0000000000000000        0x0 build/kernel/components/finsh/msh.o
- .rodata.msh_help.str1.4
-                0x0000000000000000       0x22 build/kernel/components/finsh/msh.o
- .text.msh_help
-                0x0000000000000000       0x44 build/kernel/components/finsh/msh.o
- .rodata.msh_exec.str1.4
-                0x0000000000000000       0x38 build/kernel/components/finsh/msh.o
- .text.msh_exec
-                0x0000000000000000      0x1b8 build/kernel/components/finsh/msh.o
- .rodata.msh_auto_complete.str1.4
-                0x0000000000000000        0x4 build/kernel/components/finsh/msh.o
- .text.msh_auto_complete
-                0x0000000000000000       0xd0 build/kernel/components/finsh/msh.o
- .rodata.__fsym_help_name
-                0x0000000000000000        0x5 build/kernel/components/finsh/msh.o
- FSymTab        0x0000000000000000        0x8 build/kernel/components/finsh/msh.o
- .comment       0x0000000000000000       0x5a build/kernel/components/finsh/msh.o
- .ARM.attributes
-                0x0000000000000000       0x2c build/kernel/components/finsh/msh.o
  .text          0x0000000000000000        0x0 build/kernel/components/finsh/msh_parse.o
  .data          0x0000000000000000        0x0 build/kernel/components/finsh/msh_parse.o
  .bss           0x0000000000000000        0x0 build/kernel/components/finsh/msh_parse.o
@@ -323,16 +314,6 @@ Discarded input sections
  .text          0x0000000000000000        0x0 build/kernel/components/finsh/shell.o
  .data          0x0000000000000000        0x0 build/kernel/components/finsh/shell.o
  .bss           0x0000000000000000        0x0 build/kernel/components/finsh/shell.o
- .text.finsh_rx_ind
-                0x0000000000000000       0x14 build/kernel/components/finsh/shell.o
- .rodata.finsh_system_init.str1.4
-                0x0000000000000000       0x25 build/kernel/components/finsh/shell.o
- .text.finsh_system_init
-                0x0000000000000000       0x94 build/kernel/components/finsh/shell.o
- .rodata.finsh_get_prompt.part.0.str1.4
-                0x0000000000000000        0xa build/kernel/components/finsh/shell.o
- .text.finsh_get_prompt.part.0
-                0x0000000000000000       0x44 build/kernel/components/finsh/shell.o
  .text.finsh_set_prompt
                 0x0000000000000000       0x38 build/kernel/components/finsh/shell.o
  .text.finsh_get_prompt
@@ -341,16 +322,6 @@ Discarded input sections
                 0x0000000000000000       0x14 build/kernel/components/finsh/shell.o
  .text.finsh_set_prompt_mode
                 0x0000000000000000       0x20 build/kernel/components/finsh/shell.o
- .text.finsh_getchar
-                0x0000000000000000       0x54 build/kernel/components/finsh/shell.o
- .rodata.finsh_set_device.str1.4
-                0x0000000000000000       0x20 build/kernel/components/finsh/shell.o
- .text.finsh_set_device
-                0x0000000000000000       0x70 build/kernel/components/finsh/shell.o
- .rodata.finsh_thread_entry.str1.4
-                0x0000000000000000       0x23 build/kernel/components/finsh/shell.o
- .text.finsh_thread_entry
-                0x0000000000000000      0x314 build/kernel/components/finsh/shell.o
  .text.finsh_get_device
                 0x0000000000000000        0xc build/kernel/components/finsh/shell.o
  .text.finsh_set_echo
@@ -359,21 +330,6 @@ Discarded input sections
                 0x0000000000000000       0x14 build/kernel/components/finsh/shell.o
  .text.finsh_system_function_init
                 0x0000000000000000       0x14 build/kernel/components/finsh/shell.o
- .bss._syscall_table_begin
-                0x0000000000000000        0x4 build/kernel/components/finsh/shell.o
- .bss._syscall_table_end
-                0x0000000000000000        0x4 build/kernel/components/finsh/shell.o
- .bss.finsh_prompt.6098
-                0x0000000000000000       0x81 build/kernel/components/finsh/shell.o
- .bss.finsh_prompt_custom
-                0x0000000000000000        0x4 build/kernel/components/finsh/shell.o
- .rodata.__rti_finsh_system_init_name
-                0x0000000000000000       0x12 build/kernel/components/finsh/shell.o
- .rti_fn.6      0x0000000000000000        0x8 build/kernel/components/finsh/shell.o
- .comment       0x0000000000000000       0x5a build/kernel/components/finsh/shell.o
- .ARM.attributes
-                0x0000000000000000       0x2c build/kernel/components/finsh/shell.o
- COMMON         0x0000000000000000        0x4 build/kernel/components/finsh/shell.o
  .text          0x0000000000000000        0x0 build/kernel/components/libc/compilers/common/cctype.o
  .data          0x0000000000000000        0x0 build/kernel/components/libc/compilers/common/cctype.o
  .bss           0x0000000000000000        0x0 build/kernel/components/libc/compilers/common/cctype.o
@@ -391,10 +347,15 @@ Discarded input sections
  .text          0x0000000000000000        0x0 build/kernel/components/libc/compilers/common/cstdlib.o
  .data          0x0000000000000000        0x0 build/kernel/components/libc/compilers/common/cstdlib.o
  .bss           0x0000000000000000        0x0 build/kernel/components/libc/compilers/common/cstdlib.o
+ .text.__rt_libc_exit
+                0x0000000000000000       0x14 build/kernel/components/libc/compilers/common/cstdlib.o
  .text.ltoa     0x0000000000000000       0x94 build/kernel/components/libc/compilers/common/cstdlib.o
  .text.itoa     0x0000000000000000        0x8 build/kernel/components/libc/compilers/common/cstdlib.o
  .text.ultoa    0x0000000000000000       0x68 build/kernel/components/libc/compilers/common/cstdlib.o
  .text.utoa     0x0000000000000000        0x8 build/kernel/components/libc/compilers/common/cstdlib.o
+ .comment       0x0000000000000000       0x5a build/kernel/components/libc/compilers/common/cstdlib.o
+ .ARM.attributes
+                0x0000000000000000       0x2c build/kernel/components/libc/compilers/common/cstdlib.o
  .text          0x0000000000000000        0x0 build/kernel/components/libc/compilers/common/cstring.o
  .data          0x0000000000000000        0x0 build/kernel/components/libc/compilers/common/cstring.o
  .bss           0x0000000000000000        0x0 build/kernel/components/libc/compilers/common/cstring.o
@@ -485,6 +446,8 @@ Discarded input sections
  .text._calloc_r
                 0x0000000000000000       0x18 build/kernel/components/libc/compilers/newlib/syscalls.o
  .text._free_r  0x0000000000000000        0xc build/kernel/components/libc/compilers/newlib/syscalls.o
+ .text.__libc_init_array
+                0x0000000000000000        0x4 build/kernel/components/libc/compilers/newlib/syscalls.o
  .text.__errno  0x0000000000000000        0x8 build/kernel/components/libc/compilers/newlib/syscalls.o
  .text._getpid_r
                 0x0000000000000000        0x4 build/kernel/components/libc/compilers/newlib/syscalls.o
@@ -517,6 +480,10 @@ Discarded input sections
                 0x0000000000000000        0xc build/kernel/components/libc/compilers/newlib/syscalls.o
  .text._write_r
                 0x0000000000000000       0x30 build/kernel/components/libc/compilers/newlib/syscalls.o
+ .text._exit    0x0000000000000000        0x8 build/kernel/components/libc/compilers/newlib/syscalls.o
+ .comment       0x0000000000000000       0x5a build/kernel/components/libc/compilers/newlib/syscalls.o
+ .ARM.attributes
+                0x0000000000000000       0x2c build/kernel/components/libc/compilers/newlib/syscalls.o
  .text          0x0000000000000000        0x0 build/kernel/libcpu/arm/common/div0.o
  .data          0x0000000000000000        0x0 build/kernel/libcpu/arm/common/div0.o
  .bss           0x0000000000000000        0x0 build/kernel/libcpu/arm/common/div0.o
@@ -553,11 +520,6 @@ Discarded input sections
  .text          0x0000000000000000        0x0 build/kernel/src/components.o
  .data          0x0000000000000000        0x0 build/kernel/src/components.o
  .bss           0x0000000000000000        0x0 build/kernel/src/components.o
- .text.rti_start
-                0x0000000000000000        0x4 build/kernel/src/components.o
- .rodata.__rti_rti_start_name
-                0x0000000000000000        0xa build/kernel/src/components.o
- .rti_fn.0      0x0000000000000000        0x8 build/kernel/src/components.o
  .text          0x0000000000000000        0x0 build/kernel/src/idle.o
  .data          0x0000000000000000        0x0 build/kernel/src/idle.o
  .bss           0x0000000000000000        0x0 build/kernel/src/idle.o
@@ -570,26 +532,18 @@ Discarded input sections
                 0x0000000000000000      0x19c build/kernel/src/ipc.o
  .text._rt_mb_send_wait
                 0x0000000000000000      0x198 build/kernel/src/ipc.o
- .text._rt_sem_take
-                0x0000000000000000       0xec build/kernel/src/ipc.o
- .text.rt_sem_init
-                0x0000000000000000       0x20 build/kernel/src/ipc.o
  .text.rt_sem_detach
                 0x0000000000000000       0x38 build/kernel/src/ipc.o
  .text.rt_sem_create
                 0x0000000000000000       0x20 build/kernel/src/ipc.o
  .text.rt_sem_delete
                 0x0000000000000000       0x38 build/kernel/src/ipc.o
- .text.rt_sem_take
-                0x0000000000000000        0xc build/kernel/src/ipc.o
  .text.rt_sem_take_interruptible
                 0x0000000000000000        0xc build/kernel/src/ipc.o
  .text.rt_sem_take_killable
                 0x0000000000000000        0xc build/kernel/src/ipc.o
  .text.rt_sem_trytake
                 0x0000000000000000        0xc build/kernel/src/ipc.o
- .text.rt_sem_release
-                0x0000000000000000       0x54 build/kernel/src/ipc.o
  .text.rt_sem_control
                 0x0000000000000000       0x64 build/kernel/src/ipc.o
  .text.rt_mutex_detach
@@ -662,10 +616,6 @@ Discarded input sections
                 0x0000000000000000       0x20 build/kernel/src/kservice.o
  .text._rt_errno
                 0x0000000000000000       0x20 build/kernel/src/kservice.o
- .text.rt_memcpy
-                0x0000000000000000       0xa4 build/kernel/src/kservice.o
- .text.rt_memmove
-                0x0000000000000000       0x30 build/kernel/src/kservice.o
  .text.rt_memcmp
                 0x0000000000000000       0x24 build/kernel/src/kservice.o
  .text.rt_strstr
@@ -684,16 +634,12 @@ Discarded input sections
                 0x0000000000000000       0x10 build/kernel/src/kservice.o
  .text.rt_sprintf
                 0x0000000000000000       0x1c build/kernel/src/kservice.o
- .text.rt_console_get_device
-                0x0000000000000000        0xc build/kernel/src/kservice.o
  .text.rt_kputs
                 0x0000000000000000       0x3c build/kernel/src/kservice.o
  .text.rt_strdup
                 0x0000000000000000       0x34 build/kernel/src/kservice.o
  .text.rt_realloc
                 0x0000000000000000       0x2c build/kernel/src/kservice.o
- .text.rt_calloc
-                0x0000000000000000       0x1c build/kernel/src/kservice.o
  .text.rt_memory_info
                 0x0000000000000000       0x28 build/kernel/src/kservice.o
  .text.rt_malloc_align
@@ -797,7 +743,7 @@ Discarded input sections
                 0x0000000000000000       0xac build/Libraries/common/board/board_lpc.o
  .text.Board_Init
                 0x0000000000000000       0xd0 build/Libraries/common/board/board_lpc.o
- .bss.prevChar.8200
+ .bss.prevChar.8202
                 0x0000000000000000        0x1 build/Libraries/common/board/board_lpc.o
  .rodata.cs_keyBits
                 0x0000000000000000        0x3 build/Libraries/common/board/board_lpc.o
@@ -808,6 +754,12 @@ Discarded input sections
  .bss           0x0000000000000000        0x0 build/Libraries/common/chip/clock_8xx.o
  .text.Chip_IRC_SetFreq
                 0x0000000000000000       0xd0 build/Libraries/common/chip/clock_8xx.o
+ .text.Chip_Clock_SetSystemPLLSource
+                0x0000000000000000       0x14 build/Libraries/common/chip/clock_8xx.o
+ .text.Chip_Clock_SetPLLBypass
+                0x0000000000000000       0x14 build/Libraries/common/chip/clock_8xx.o
+ .text.Chip_Clock_SetMainClockSource
+                0x0000000000000000       0x14 build/Libraries/common/chip/clock_8xx.o
  .text.Chip_Clock_SetCLKOUTSource
                 0x0000000000000000       0x1c build/Libraries/common/chip/clock_8xx.o
  .text.Chip_Clock_GetWDTOSCRate
@@ -816,10 +768,6 @@ Discarded input sections
                 0x0000000000000000       0x44 build/Libraries/common/chip/clock_8xx.o
  .text.Chip_Clock_GetSystemClockRate
                 0x0000000000000000       0x18 build/Libraries/common/chip/clock_8xx.o
- .text.Chip_Clock_GetUSARTNBaseClockRate
-                0x0000000000000000       0x48 build/Libraries/common/chip/clock_8xx.o
- .text.Chip_Clock_SetUSARTNBaseClockRate
-                0x0000000000000000       0x7c build/Libraries/common/chip/clock_8xx.o
  .text.Chip_Clock_GetIOCONCLKDIVClockRate
                 0x0000000000000000       0x28 build/Libraries/common/chip/clock_8xx.o
  .text.Chip_Clock_SetIOCONCLKDIV
@@ -831,6 +779,8 @@ Discarded input sections
  .text          0x0000000000000000        0x0 build/Libraries/common/chip/ioswm_8xx.o
  .data          0x0000000000000000        0x0 build/Libraries/common/chip/ioswm_8xx.o
  .bss           0x0000000000000000        0x0 build/Libraries/common/chip/ioswm_8xx.o
+ .text.Chip_IOCON_PinSetMode
+                0x0000000000000000       0x14 build/Libraries/common/chip/ioswm_8xx.o
  .text.Chip_IOCON_PinSetHysteresis
                 0x0000000000000000       0x1c build/Libraries/common/chip/ioswm_8xx.o
  .text.Chip_IOCON_PinSetInputInverted
@@ -845,8 +795,6 @@ Discarded input sections
                 0x0000000000000000       0x18 build/Libraries/common/chip/ioswm_8xx.o
  .text.Chip_IOCON_SetPinMuxing
                 0x0000000000000000       0x1c build/Libraries/common/chip/ioswm_8xx.o
- .text.Chip_SWM_MovablePinAssign
-                0x0000000000000000       0x28 build/Libraries/common/chip/ioswm_8xx.o
  .text.Chip_SWM_FixedPinEnable
                 0x0000000000000000       0x38 build/Libraries/common/chip/ioswm_8xx.o
  .text          0x0000000000000000        0x0 build/Libraries/common/chip/syscon_8xx.o
@@ -856,11 +804,26 @@ Discarded input sections
                 0x0000000000000000       0x1c build/Libraries/common/chip/syscon_8xx.o
  .text.Chip_SYSCTL_SetWakeup
                 0x0000000000000000       0x1c build/Libraries/common/chip/syscon_8xx.o
+ .text.Chip_SYSCTL_PowerDown
+                0x0000000000000000       0x20 build/Libraries/common/chip/syscon_8xx.o
+ .text.Chip_SYSCTL_PowerUp
+                0x0000000000000000       0x24 build/Libraries/common/chip/syscon_8xx.o
+ .comment       0x0000000000000000       0x5a build/Libraries/common/chip/syscon_8xx.o
+ .ARM.attributes
+                0x0000000000000000       0x2c build/Libraries/common/chip/syscon_8xx.o
  .text          0x0000000000000000        0x0 build/Libraries/common/chip/sysinit_8xx.o
  .data          0x0000000000000000        0x0 build/Libraries/common/chip/sysinit_8xx.o
  .bss           0x0000000000000000        0x0 build/Libraries/common/chip/sysinit_8xx.o
+ .text.Chip_SetupXtalClocking
+                0x0000000000000000       0x5c build/Libraries/common/chip/sysinit_8xx.o
  .text.Chip_SetupIrcClocking
                 0x0000000000000000       0x14 build/Libraries/common/chip/sysinit_8xx.o
+ .text.SystemInit
+                0x0000000000000000       0x68 build/Libraries/common/chip/sysinit_8xx.o
+ .comment       0x0000000000000000       0x5a build/Libraries/common/chip/sysinit_8xx.o
+ .ARM.attributes
+                0x0000000000000000       0x2c build/Libraries/common/chip/sysinit_8xx.o
+ .text          0x0000000000000000       0x14 Libraries/common/startup/gcc_startup_lpc82x.o
  .data          0x0000000000000000        0x0 Libraries/common/startup/gcc_startup_lpc82x.o
  .bss           0x0000000000000000        0x0 Libraries/common/startup/gcc_startup_lpc82x.o
  .text          0x0000000000000000        0x0 build/Libraries/peri_driver/acmp/acmp_8xx.o
@@ -1146,8 +1109,6 @@ Discarded input sections
  .text          0x0000000000000000        0x0 build/Libraries/peri_driver/uart/uart_8xx.o
  .data          0x0000000000000000        0x0 build/Libraries/peri_driver/uart/uart_8xx.o
  .bss           0x0000000000000000        0x0 build/Libraries/peri_driver/uart/uart_8xx.o
- .text.Chip_UART_Init
-                0x0000000000000000       0xa4 build/Libraries/peri_driver/uart/uart_8xx.o
  .text.Chip_UART_DeInit
                 0x0000000000000000       0x40 build/Libraries/peri_driver/uart/uart_8xx.o
  .text.Chip_UART_Send
@@ -1158,8 +1119,6 @@ Discarded input sections
                 0x0000000000000000       0x20 build/Libraries/peri_driver/uart/uart_8xx.o
  .text.Chip_UART_ReadBlocking
                 0x0000000000000000       0x2c build/Libraries/peri_driver/uart/uart_8xx.o
- .text.Chip_UART_SetBaud
-                0x0000000000000000       0x18 build/Libraries/peri_driver/uart/uart_8xx.o
  .text.Chip_UART_RXIntHandlerRB
                 0x0000000000000000       0x2c build/Libraries/peri_driver/uart/uart_8xx.o
  .text.Chip_UART_TXIntHandlerRB
@@ -1170,9 +1129,6 @@ Discarded input sections
                 0x0000000000000000       0x10 build/Libraries/peri_driver/uart/uart_8xx.o
  .text.Chip_UART_IRQRBHandler
                 0x0000000000000000       0x48 build/Libraries/peri_driver/uart/uart_8xx.o
- .comment       0x0000000000000000       0x5a build/Libraries/peri_driver/uart/uart_8xx.o
- .ARM.attributes
-                0x0000000000000000       0x2c build/Libraries/peri_driver/uart/uart_8xx.o
  .text          0x0000000000000000        0x0 build/Libraries/peri_driver/wkt/wkt_8xx.o
  .data          0x0000000000000000        0x0 build/Libraries/peri_driver/wkt/wkt_8xx.o
  .bss           0x0000000000000000        0x0 build/Libraries/peri_driver/wkt/wkt_8xx.o
@@ -1210,31 +1166,25 @@ Discarded input sections
  .text          0x0000000000000000        0x0 build/drivers/board.o
  .data          0x0000000000000000        0x0 build/drivers/board.o
  .bss           0x0000000000000000        0x0 build/drivers/board.o
- .text._init    0x0000000000000000        0x4 build/drivers/board.o
  .text.Error_Handler
                 0x0000000000000000        0x4 build/drivers/board.o
  .text          0x0000000000000000        0x0 build/drivers/usart.o
  .data          0x0000000000000000        0x0 build/drivers/usart.o
  .bss           0x0000000000000000        0x0 build/drivers/usart.o
- .text.rt_uart_write
-                0x0000000000000000       0x64 build/drivers/usart.o
- .rodata.rt_hw_usart_init.str1.4
-                0x0000000000000000        0x6 build/drivers/usart.o
- .text.rt_hw_usart_init
-                0x0000000000000000       0x68 build/drivers/usart.o
- .text.rt_uart_read
-                0x0000000000000000       0x28 build/drivers/usart.o
- .text.rt_uart_init
-                0x0000000000000000       0xa4 build/drivers/usart.o
- .text.rt_uart_open
-                0x0000000000000000       0x20 build/drivers/usart.o
- .text.rt_uart_close
-                0x0000000000000000       0x20 build/drivers/usart.o
- .rodata.__rti_rt_hw_usart_init_name
-                0x0000000000000000       0x11 build/drivers/usart.o
- .rti_fn.1      0x0000000000000000        0x8 build/drivers/usart.o
+ .text          0x0000000000000000       0x10 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-atexit.o)
  .data          0x0000000000000000        0x0 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-atexit.o)
  .bss           0x0000000000000000        0x0 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-atexit.o)
+ .debug_info    0x0000000000000000      0x995 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-atexit.o)
+ .debug_abbrev  0x0000000000000000      0x22f /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-atexit.o)
+ .debug_loc     0x0000000000000000       0x32 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-atexit.o)
+ .debug_aranges
+                0x0000000000000000       0x20 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-atexit.o)
+ .debug_line    0x0000000000000000      0x152 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-atexit.o)
+ .debug_str     0x0000000000000000      0x5e4 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-atexit.o)
+ .comment       0x0000000000000000       0x4f /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-atexit.o)
+ .debug_frame   0x0000000000000000       0x28 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-atexit.o)
+ .ARM.attributes
+                0x0000000000000000       0x2c /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-atexit.o)
  .text          0x0000000000000000        0x0 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-ctype_.o)
  .data          0x0000000000000000        0x0 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-ctype_.o)
  .bss           0x0000000000000000        0x0 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-ctype_.o)
@@ -1248,12 +1198,47 @@ Discarded input sections
  .comment       0x0000000000000000       0x4f /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-ctype_.o)
  .ARM.attributes
                 0x0000000000000000       0x2c /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-ctype_.o)
+ .text          0x0000000000000000       0x20 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-exit.o)
  .data          0x0000000000000000        0x0 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-exit.o)
  .bss           0x0000000000000000        0x0 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-exit.o)
+ .debug_info    0x0000000000000000      0x9d0 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-exit.o)
+ .debug_abbrev  0x0000000000000000      0x21f /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-exit.o)
+ .debug_loc     0x0000000000000000       0x22 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-exit.o)
+ .debug_aranges
+                0x0000000000000000       0x20 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-exit.o)
+ .debug_line    0x0000000000000000      0x178 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-exit.o)
+ .debug_str     0x0000000000000000      0x5e5 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-exit.o)
+ .comment       0x0000000000000000       0x4f /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-exit.o)
+ .debug_frame   0x0000000000000000       0x28 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-exit.o)
+ .ARM.attributes
+                0x0000000000000000       0x2c /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-exit.o)
+ .text          0x0000000000000000       0x28 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-fini.o)
  .data          0x0000000000000000        0x0 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-fini.o)
  .bss           0x0000000000000000        0x0 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-fini.o)
+ .debug_info    0x0000000000000000      0x102 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-fini.o)
+ .debug_abbrev  0x0000000000000000       0xcc /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-fini.o)
+ .debug_loc     0x0000000000000000       0x46 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-fini.o)
+ .debug_aranges
+                0x0000000000000000       0x20 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-fini.o)
+ .debug_line    0x0000000000000000       0xd4 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-fini.o)
+ .debug_str     0x0000000000000000      0x1f3 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-fini.o)
+ .comment       0x0000000000000000       0x4f /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-fini.o)
+ .debug_frame   0x0000000000000000       0x2c /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-fini.o)
+ .ARM.attributes
+                0x0000000000000000       0x2c /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-fini.o)
  .text          0x0000000000000000        0x0 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-impure.o)
+ .data          0x0000000000000000      0x430 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-impure.o)
  .bss           0x0000000000000000        0x0 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-impure.o)
+ .rodata        0x0000000000000000        0x4 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-impure.o)
+ .debug_info    0x0000000000000000      0x92a /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-impure.o)
+ .debug_abbrev  0x0000000000000000      0x1b8 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-impure.o)
+ .debug_aranges
+                0x0000000000000000       0x18 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-impure.o)
+ .debug_line    0x0000000000000000       0xe3 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-impure.o)
+ .debug_str     0x0000000000000000      0x599 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-impure.o)
+ .comment       0x0000000000000000       0x4f /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-impure.o)
+ .ARM.attributes
+                0x0000000000000000       0x2c /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-impure.o)
  .text          0x0000000000000000       0x28 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-malloc.o)
  .data          0x0000000000000000        0x0 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-malloc.o)
  .bss           0x0000000000000000        0x0 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-malloc.o)
@@ -1268,20 +1253,8 @@ Discarded input sections
  .debug_frame   0x0000000000000000       0x40 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-malloc.o)
  .ARM.attributes
                 0x0000000000000000       0x2c /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-malloc.o)
- .text          0x0000000000000000       0xa8 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-memcpy-stub.o)
  .data          0x0000000000000000        0x0 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-memcpy-stub.o)
  .bss           0x0000000000000000        0x0 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-memcpy-stub.o)
- .debug_info    0x0000000000000000      0xf35 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-memcpy-stub.o)
- .debug_abbrev  0x0000000000000000      0x223 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-memcpy-stub.o)
- .debug_loc     0x0000000000000000      0x481 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-memcpy-stub.o)
- .debug_aranges
-                0x0000000000000000       0x20 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-memcpy-stub.o)
- .debug_line    0x0000000000000000      0x24d /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-memcpy-stub.o)
- .debug_str     0x0000000000000000      0x8eb /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-memcpy-stub.o)
- .comment       0x0000000000000000       0x4f /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-memcpy-stub.o)
- .debug_frame   0x0000000000000000       0x34 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-memcpy-stub.o)
- .ARM.attributes
-                0x0000000000000000       0x2c /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-memcpy-stub.o)
  .data          0x0000000000000000        0x0 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-memset.o)
  .bss           0x0000000000000000        0x0 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-memset.o)
  .text          0x0000000000000000       0xd4 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-strchr.o)
@@ -1313,48 +1286,12 @@ Discarded input sections
  .debug_frame   0x0000000000000000       0x20 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-strcpy.o)
  .ARM.attributes
                 0x0000000000000000       0x2c /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-strcpy.o)
- .text          0x0000000000000000       0x68 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-strlen-stub.o)
  .data          0x0000000000000000        0x0 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-strlen-stub.o)
  .bss           0x0000000000000000        0x0 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-strlen-stub.o)
- .debug_info    0x0000000000000000      0x973 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-strlen-stub.o)
- .debug_abbrev  0x0000000000000000      0x1e8 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-strlen-stub.o)
- .debug_loc     0x0000000000000000       0xa3 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-strlen-stub.o)
- .debug_aranges
-                0x0000000000000000       0x20 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-strlen-stub.o)
- .debug_line    0x0000000000000000      0x1c2 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-strlen-stub.o)
- .debug_str     0x0000000000000000      0x5c2 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-strlen-stub.o)
- .comment       0x0000000000000000       0x4f /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-strlen-stub.o)
- .debug_frame   0x0000000000000000       0x28 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-strlen-stub.o)
- .ARM.attributes
-                0x0000000000000000       0x2c /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-strlen-stub.o)
- .text          0x0000000000000000       0x94 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-strncmp.o)
  .data          0x0000000000000000        0x0 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-strncmp.o)
  .bss           0x0000000000000000        0x0 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-strncmp.o)
- .debug_info    0x0000000000000000      0x995 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-strncmp.o)
- .debug_abbrev  0x0000000000000000      0x1e8 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-strncmp.o)
- .debug_loc     0x0000000000000000      0x199 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-strncmp.o)
- .debug_aranges
-                0x0000000000000000       0x20 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-strncmp.o)
- .debug_line    0x0000000000000000      0x21b /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-strncmp.o)
- .debug_str     0x0000000000000000      0x59f /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-strncmp.o)
- .comment       0x0000000000000000       0x4f /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-strncmp.o)
- .debug_frame   0x0000000000000000       0x2c /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-strncmp.o)
- .ARM.attributes
-                0x0000000000000000       0x2c /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-strncmp.o)
- .text          0x0000000000000000       0x80 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-strncpy.o)
  .data          0x0000000000000000        0x0 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-strncpy.o)
  .bss           0x0000000000000000        0x0 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-strncpy.o)
- .debug_info    0x0000000000000000      0x9d2 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-strncpy.o)
- .debug_abbrev  0x0000000000000000      0x214 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-strncpy.o)
- .debug_loc     0x0000000000000000      0x20e /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-strncpy.o)
- .debug_aranges
-                0x0000000000000000       0x20 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-strncpy.o)
- .debug_line    0x0000000000000000      0x1ed /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-strncpy.o)
- .debug_str     0x0000000000000000      0x5c7 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-strncpy.o)
- .comment       0x0000000000000000       0x4f /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-strncpy.o)
- .debug_frame   0x0000000000000000       0x30 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-strncpy.o)
- .ARM.attributes
-                0x0000000000000000       0x2c /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-strncpy.o)
  .text          0x0000000000000000       0x28 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-strrchr.o)
  .data          0x0000000000000000        0x0 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-strrchr.o)
  .bss           0x0000000000000000        0x0 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-strrchr.o)
@@ -1369,10 +1306,38 @@ Discarded input sections
  .debug_frame   0x0000000000000000       0x2c /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-strrchr.o)
  .ARM.attributes
                 0x0000000000000000       0x2c /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-strrchr.o)
+ .text          0x0000000000000000       0x88 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-__atexit.o)
  .data          0x0000000000000000        0x0 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-__atexit.o)
  .bss           0x0000000000000000        0x0 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-__atexit.o)
+ .debug_info    0x0000000000000000      0x9d5 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-__atexit.o)
+ .debug_abbrev  0x0000000000000000      0x252 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-__atexit.o)
+ .debug_loc     0x0000000000000000      0x164 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-__atexit.o)
+ .debug_aranges
+                0x0000000000000000       0x20 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-__atexit.o)
+ .debug_line    0x0000000000000000      0x1f9 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-__atexit.o)
+ .debug_str     0x0000000000000000      0x602 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-__atexit.o)
+ .comment       0x0000000000000000       0x4f /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-__atexit.o)
+ .debug_frame   0x0000000000000000       0x38 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-__atexit.o)
+ .ARM.attributes
+                0x0000000000000000       0x2c /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-__atexit.o)
+ .text          0x0000000000000000       0xbc /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-__call_atexit.o)
  .data          0x0000000000000000        0x0 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-__call_atexit.o)
  .bss           0x0000000000000000        0x0 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-__call_atexit.o)
+ .text.startup  0x0000000000000000       0x18 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-__call_atexit.o)
+ .init_array.00000
+                0x0000000000000000        0x4 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-__call_atexit.o)
+ .debug_info    0x0000000000000000      0xa56 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-__call_atexit.o)
+ .debug_abbrev  0x0000000000000000      0x2af /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-__call_atexit.o)
+ .debug_loc     0x0000000000000000      0x1e6 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-__call_atexit.o)
+ .debug_aranges
+                0x0000000000000000       0x28 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-__call_atexit.o)
+ .debug_ranges  0x0000000000000000       0x38 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-__call_atexit.o)
+ .debug_line    0x0000000000000000      0x261 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-__call_atexit.o)
+ .debug_str     0x0000000000000000      0x615 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-__call_atexit.o)
+ .comment       0x0000000000000000       0x4f /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-__call_atexit.o)
+ .debug_frame   0x0000000000000000       0x54 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-__call_atexit.o)
+ .ARM.attributes
+                0x0000000000000000       0x2c /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-__call_atexit.o)
  .data          0x0000000000000000        0x0 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_udivsi3.o)
  .bss           0x0000000000000000        0x0 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_udivsi3.o)
  .text          0x0000000000000000      0x1d4 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_divsi3.o)
@@ -1400,17 +1365,8 @@ Discarded input sections
  .debug_str     0x0000000000000000       0xa3 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_aeabi_ldivmod.o)
  .ARM.attributes
                 0x0000000000000000       0x1e /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_aeabi_ldivmod.o)
- .text          0x0000000000000000       0x40 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_aeabi_uldivmod.o)
  .data          0x0000000000000000        0x0 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_aeabi_uldivmod.o)
  .bss           0x0000000000000000        0x0 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_aeabi_uldivmod.o)
- .debug_line    0x0000000000000000       0x6b /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_aeabi_uldivmod.o)
- .debug_info    0x0000000000000000       0x26 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_aeabi_uldivmod.o)
- .debug_abbrev  0x0000000000000000       0x14 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_aeabi_uldivmod.o)
- .debug_aranges
-                0x0000000000000000       0x20 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_aeabi_uldivmod.o)
- .debug_str     0x0000000000000000       0xa3 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_aeabi_uldivmod.o)
- .ARM.attributes
-                0x0000000000000000       0x1e /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_aeabi_uldivmod.o)
  .text          0x0000000000000000       0x50 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_muldi3.o)
  .data          0x0000000000000000        0x0 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_muldi3.o)
  .bss           0x0000000000000000        0x0 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_muldi3.o)
@@ -1440,22 +1396,9 @@ Discarded input sections
  .debug_frame   0x0000000000000000       0x2c /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_floatdidf.o)
  .ARM.attributes
                 0x0000000000000000       0x2c /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_floatdidf.o)
- .text          0x0000000000000000      0x198 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_udivmoddi4.o)
  .data          0x0000000000000000        0x0 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_udivmoddi4.o)
  .bss           0x0000000000000000        0x0 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_udivmoddi4.o)
  .ARM.extab     0x0000000000000000        0x0 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_udivmoddi4.o)
- .ARM.exidx     0x0000000000000000        0x8 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_udivmoddi4.o)
- .debug_info    0x0000000000000000      0x9e9 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_udivmoddi4.o)
- .debug_abbrev  0x0000000000000000      0x162 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_udivmoddi4.o)
- .debug_loc     0x0000000000000000      0x3d3 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_udivmoddi4.o)
- .debug_aranges
-                0x0000000000000000       0x20 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_udivmoddi4.o)
- .debug_line    0x0000000000000000      0x248 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_udivmoddi4.o)
- .debug_str     0x0000000000000000     0x1198 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_udivmoddi4.o)
- .comment       0x0000000000000000       0x5a /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_udivmoddi4.o)
- .debug_frame   0x0000000000000000       0x3c /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_udivmoddi4.o)
- .ARM.attributes
-                0x0000000000000000       0x2c /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_udivmoddi4.o)
  .text          0x0000000000000000       0x3c /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(bpabi.o)
  .data          0x0000000000000000        0x0 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(bpabi.o)
  .bss           0x0000000000000000        0x0 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(bpabi.o)
@@ -1531,28 +1474,10 @@ Discarded input sections
  .debug_frame   0x0000000000000000       0x28 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(floatunsidf.o)
  .ARM.attributes
                 0x0000000000000000       0x2c /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(floatunsidf.o)
- .text          0x0000000000000000       0x3c /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_clzsi2.o)
  .data          0x0000000000000000        0x0 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_clzsi2.o)
  .bss           0x0000000000000000        0x0 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_clzsi2.o)
- .debug_line    0x0000000000000000       0x74 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_clzsi2.o)
- .debug_info    0x0000000000000000       0x26 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_clzsi2.o)
- .debug_abbrev  0x0000000000000000       0x14 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_clzsi2.o)
- .debug_aranges
-                0x0000000000000000       0x20 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_clzsi2.o)
- .debug_str     0x0000000000000000       0xa3 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_clzsi2.o)
- .ARM.attributes
-                0x0000000000000000       0x1e /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_clzsi2.o)
- .text          0x0000000000000000       0x18 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_clzdi2.o)
  .data          0x0000000000000000        0x0 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_clzdi2.o)
  .bss           0x0000000000000000        0x0 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_clzdi2.o)
- .debug_line    0x0000000000000000       0x6a /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_clzdi2.o)
- .debug_info    0x0000000000000000       0x26 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_clzdi2.o)
- .debug_abbrev  0x0000000000000000       0x14 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_clzdi2.o)
- .debug_aranges
-                0x0000000000000000       0x20 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_clzdi2.o)
- .debug_str     0x0000000000000000       0xa3 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_clzdi2.o)
- .ARM.attributes
-                0x0000000000000000       0x1e /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_clzdi2.o)
  .text          0x0000000000000000      0x1cc /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_divdi3.o)
  .data          0x0000000000000000        0x0 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_divdi3.o)
  .bss           0x0000000000000000        0x0 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_divdi3.o)
@@ -1574,6 +1499,11 @@ Discarded input sections
  .data          0x0000000000000000        0x0 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/crtend.o
  .bss           0x0000000000000000        0x0 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/crtend.o
  .eh_frame      0x0000000000000000        0x4 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/crtend.o
+ .tm_clone_table
+                0x0000000000000000        0x0 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/crtend.o
+ .comment       0x0000000000000000       0x5a /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/crtend.o
+ .ARM.attributes
+                0x0000000000000000       0x2c /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/crtend.o
  .text          0x0000000000000000        0x0 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/crtn.o
  .data          0x0000000000000000        0x0 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/crtn.o
  .bss           0x0000000000000000        0x0 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/crtn.o
@@ -1585,8 +1515,8 @@ Discarded input sections
 Memory Configuration
 
 Name             Origin             Length             Attributes
-flash            0x0000000000000000 0x0000000000008000
-ram              0x0000000010000000 0x0000000000002000
+CODE             0x0000000000000000 0x0000000000008000 xr
+DATA             0x0000000010000000 0x0000000000002000 rw
 *default*        0x0000000000000000 0xffffffffffffffff
 
 Linker script and memory map
@@ -1662,649 +1592,709 @@ LOAD /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp
 END GROUP
 LOAD /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/crtend.o
 LOAD /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/crtn.o
+                0x0000000000000100                _system_stack_size = 0x100
 
-.text           0x0000000000000000     0x32a8
+.text           0x0000000000000000     0x4268
+                0x0000000000000000                . = ALIGN (0x4)
+                0x0000000000000000                _stext = .
  *(.isr_vector)
  .isr_vector    0x0000000000000000       0xc0 Libraries/common/startup/gcc_startup_lpc82x.o
-                0x0000000000000000                __isr_vector
- *(.after_vectors*)
- *(.text*)
- .text          0x00000000000000c0       0x98 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/crtbegin.o
- .text          0x0000000000000158       0x74 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/crt0.o
-                0x0000000000000158                _stack_init
-                0x0000000000000164                _mainCRTStartup
-                0x0000000000000164                _start
+                0x0000000000000000                g_pfnVectors
+                0x00000000000000c0                . = ALIGN (0x4)
+ *(.text)
+ .text          0x00000000000000c0       0xec build/kernel/libcpu/arm/cortex-m0/context_gcc.o
+                0x00000000000000c0                rt_hw_interrupt_disable
+                0x00000000000000c8                rt_hw_interrupt_enable
+                0x00000000000000ce                rt_hw_context_switch_interrupt
+                0x00000000000000ce                rt_hw_context_switch
+                0x00000000000000ea                PendSV_Handler
+                0x000000000000013e                rt_hw_context_switch_to
+                0x0000000000000176                rt_hw_interrupt_thread_switch
+                0x000000000000017a                HardFault_Handler
+                0x0000000000000186                rt_hw_interrupt_check
+ .text          0x00000000000001ac       0xa8 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-memcpy-stub.o)
+                0x00000000000001ac                memcpy
+ .text          0x0000000000000254       0xa8 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-memset.o)
+                0x0000000000000254                memset
+ .text          0x00000000000002fc       0x68 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-strlen-stub.o)
+                0x00000000000002fc                strlen
+ .text          0x0000000000000364       0x94 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-strncmp.o)
+                0x0000000000000364                strncmp
+ .text          0x00000000000003f8       0x80 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-strncpy.o)
+                0x00000000000003f8                strncpy
+ .text          0x0000000000000478      0x114 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_udivsi3.o)
+                0x0000000000000478                __udivsi3
+                0x0000000000000478                __aeabi_uidiv
+                0x0000000000000584                __aeabi_uidivmod
+ .text          0x000000000000058c        0x4 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
+                0x000000000000058c                __aeabi_ldiv0
+                0x000000000000058c                __aeabi_idiv0
+ .text          0x0000000000000590       0x40 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_aeabi_uldivmod.o)
+                0x0000000000000590                __aeabi_uldivmod
+ .text          0x00000000000005d0      0x198 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_udivmoddi4.o)
+                0x00000000000005d0                __udivmoddi4
+ .text          0x0000000000000768       0x3c /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_clzsi2.o)
+                0x0000000000000768                __clzsi2
+ .text          0x00000000000007a4       0x18 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_clzdi2.o)
+                0x00000000000007a4                __clzdi2
+ *(.text.*)
+ .text.rt_device_register
+                0x00000000000007bc       0x34 build/kernel/components/drivers/core/device.o
+                0x00000000000007bc                rt_device_register
  .text.rt_device_find
-                0x00000000000001cc        0xc build/kernel/components/drivers/core/device.o
-                0x00000000000001cc                rt_device_find
+                0x00000000000007f0        0xc build/kernel/components/drivers/core/device.o
+                0x00000000000007f0                rt_device_find
  .text.rt_device_open
-                0x00000000000001d8       0x78 build/kernel/components/drivers/core/device.o
-                0x00000000000001d8                rt_device_open
+                0x00000000000007fc       0x78 build/kernel/components/drivers/core/device.o
+                0x00000000000007fc                rt_device_open
  .text.rt_device_close
-                0x0000000000000250       0x38 build/kernel/components/drivers/core/device.o
-                0x0000000000000250                rt_device_close
+                0x0000000000000874       0x38 build/kernel/components/drivers/core/device.o
+                0x0000000000000874                rt_device_close
+ .text.rt_device_read
+                0x00000000000008ac       0x2c build/kernel/components/drivers/core/device.o
+                0x00000000000008ac                rt_device_read
  .text.rt_device_write
-                0x0000000000000288       0x2c build/kernel/components/drivers/core/device.o
-                0x0000000000000288                rt_device_write
+                0x00000000000008d8       0x2c build/kernel/components/drivers/core/device.o
+                0x00000000000008d8                rt_device_write
+ .text.rt_device_set_rx_indicate
+                0x0000000000000904        0x8 build/kernel/components/drivers/core/device.o
+                0x0000000000000904                rt_device_set_rx_indicate
+ .text.rt_ringbuffer_init
+                0x000000000000090c       0x10 build/kernel/components/drivers/ipc/ringbuffer.o
+                0x000000000000090c                rt_ringbuffer_init
  .text.rt_ringbuffer_putchar_force
-                0x00000000000002b4       0x68 build/kernel/components/drivers/ipc/ringbuffer.o
-                0x00000000000002b4                rt_ringbuffer_putchar_force
+                0x000000000000091c       0x68 build/kernel/components/drivers/ipc/ringbuffer.o
+                0x000000000000091c                rt_ringbuffer_putchar_force
  .text.rt_ringbuffer_data_len
-                0x000000000000031c       0x30 build/kernel/components/drivers/ipc/ringbuffer.o
-                0x000000000000031c                rt_ringbuffer_data_len
- .text.__rt_libc_exit
-                0x000000000000034c       0x14 build/kernel/components/libc/compilers/common/cstdlib.o
-                0x000000000000034c                __rt_libc_exit
- .text.__libc_init_array
-                0x0000000000000360        0x4 build/kernel/components/libc/compilers/newlib/syscalls.o
-                0x0000000000000360                __libc_init_array
- .text._exit    0x0000000000000364        0x8 build/kernel/components/libc/compilers/newlib/syscalls.o
-                0x0000000000000364                _exit
- .text          0x000000000000036c       0xec build/kernel/libcpu/arm/cortex-m0/context_gcc.o
-                0x000000000000036c                rt_hw_interrupt_disable
-                0x0000000000000374                rt_hw_interrupt_enable
-                0x000000000000037a                rt_hw_context_switch_interrupt
-                0x000000000000037a                rt_hw_context_switch
-                0x0000000000000396                PendSV_Handler
-                0x00000000000003ea                rt_hw_context_switch_to
-                0x0000000000000422                rt_hw_interrupt_thread_switch
-                0x0000000000000426                HardFault_Handler
-                0x0000000000000432                rt_hw_interrupt_check
+                0x0000000000000984       0x30 build/kernel/components/drivers/ipc/ringbuffer.o
+                0x0000000000000984                rt_ringbuffer_data_len
+ .text.rt_ringbuffer_get
+                0x00000000000009b4       0x7c build/kernel/components/drivers/ipc/ringbuffer.o
+                0x00000000000009b4                rt_ringbuffer_get
+ .text.msh_help
+                0x0000000000000a30       0x44 build/kernel/components/finsh/msh.o
+                0x0000000000000a30                msh_help
+ .text.msh_exec
+                0x0000000000000a74      0x1b8 build/kernel/components/finsh/msh.o
+                0x0000000000000a74                msh_exec
+ .text.msh_auto_complete
+                0x0000000000000c2c       0xd0 build/kernel/components/finsh/msh.o
+                0x0000000000000c2c                msh_auto_complete
+ .text.finsh_rx_ind
+                0x0000000000000cfc       0x14 build/kernel/components/finsh/shell.o
+ .text.finsh_system_init
+                0x0000000000000d10       0x94 build/kernel/components/finsh/shell.o
+                0x0000000000000d10                finsh_system_init
+ .text.finsh_get_prompt.part.0
+                0x0000000000000da4       0x44 build/kernel/components/finsh/shell.o
+ .text.finsh_getchar
+                0x0000000000000de8       0x54 build/kernel/components/finsh/shell.o
+                0x0000000000000de8                finsh_getchar
+ .text.finsh_set_device
+                0x0000000000000e3c       0x70 build/kernel/components/finsh/shell.o
+                0x0000000000000e3c                finsh_set_device
+ .text.finsh_thread_entry
+                0x0000000000000eac      0x314 build/kernel/components/finsh/shell.o
+                0x0000000000000eac                finsh_thread_entry
  .text.rt_hw_stack_init
-                0x0000000000000458       0x34 build/kernel/libcpu/arm/cortex-m0/cpuport.o
-                0x0000000000000458                rt_hw_stack_init
+                0x00000000000011c0       0x34 build/kernel/libcpu/arm/cortex-m0/cpuport.o
+                0x00000000000011c0                rt_hw_stack_init
  .text.rt_hw_hard_fault_exception
-                0x000000000000048c       0x78 build/kernel/libcpu/arm/cortex-m0/cpuport.o
-                0x000000000000048c                rt_hw_hard_fault_exception
+                0x00000000000011f4       0x78 build/kernel/libcpu/arm/cortex-m0/cpuport.o
+                0x00000000000011f4                rt_hw_hard_fault_exception
  .text.rt_tick_get
-                0x0000000000000504        0xc build/kernel/src/clock.o
-                0x0000000000000504                rt_tick_get
+                0x000000000000126c        0xc build/kernel/src/clock.o
+                0x000000000000126c                rt_tick_get
  .text.rt_tick_increase
-                0x0000000000000510       0x48 build/kernel/src/clock.o
-                0x0000000000000510                rt_tick_increase
- .text.rti_end  0x0000000000000558        0x4 build/kernel/src/components.o
+                0x0000000000001278       0x48 build/kernel/src/clock.o
+                0x0000000000001278                rt_tick_increase
+ .text.rti_start
+                0x00000000000012c0        0x4 build/kernel/src/components.o
+ .text.rti_end  0x00000000000012c4        0x4 build/kernel/src/components.o
  .text.rti_board_start
-                0x000000000000055c        0x4 build/kernel/src/components.o
+                0x00000000000012c8        0x4 build/kernel/src/components.o
  .text.rti_board_end
-                0x0000000000000560        0x4 build/kernel/src/components.o
+                0x00000000000012cc        0x4 build/kernel/src/components.o
  .text.rt_components_board_init
-                0x0000000000000564       0x50 build/kernel/src/components.o
-                0x0000000000000564                rt_components_board_init
+                0x00000000000012d0       0x50 build/kernel/src/components.o
+                0x00000000000012d0                rt_components_board_init
  .text.rt_components_init
-                0x00000000000005b4       0x58 build/kernel/src/components.o
-                0x00000000000005b4                rt_components_init
+                0x0000000000001320       0x58 build/kernel/src/components.o
+                0x0000000000001320                rt_components_init
  .text.rt_thread_defunct_enqueue
-                0x000000000000060c       0x18 build/kernel/src/idle.o
-                0x000000000000060c                rt_thread_defunct_enqueue
+                0x0000000000001378       0x18 build/kernel/src/idle.o
+                0x0000000000001378                rt_thread_defunct_enqueue
  .text.rt_thread_defunct_dequeue
-                0x0000000000000624       0x30 build/kernel/src/idle.o
-                0x0000000000000624                rt_thread_defunct_dequeue
+                0x0000000000001390       0x30 build/kernel/src/idle.o
+                0x0000000000001390                rt_thread_defunct_dequeue
  .text.idle_thread_entry
-                0x0000000000000654       0x40 build/kernel/src/idle.o
+                0x00000000000013c0       0x40 build/kernel/src/idle.o
  .text.rt_thread_idle_init
-                0x0000000000000694       0x48 build/kernel/src/idle.o
-                0x0000000000000694                rt_thread_idle_init
+                0x0000000000001400       0x48 build/kernel/src/idle.o
+                0x0000000000001400                rt_thread_idle_init
+ .text._rt_sem_take
+                0x0000000000001448       0xec build/kernel/src/ipc.o
  .text._thread_update_priority
-                0x00000000000006dc      0x11c build/kernel/src/ipc.o
+                0x0000000000001534      0x11c build/kernel/src/ipc.o
  .text._rt_mutex_take
-                0x00000000000007f8      0x68c build/kernel/src/ipc.o
+                0x0000000000001650      0x68c build/kernel/src/ipc.o
+ .text.rt_sem_init
+                0x0000000000001cdc       0x20 build/kernel/src/ipc.o
+                0x0000000000001cdc                rt_sem_init
+ .text.rt_sem_take
+                0x0000000000001cfc        0xc build/kernel/src/ipc.o
+                0x0000000000001cfc                rt_sem_take
+ .text.rt_sem_release
+                0x0000000000001d08       0x54 build/kernel/src/ipc.o
+                0x0000000000001d08                rt_sem_release
  .text.rt_mutex_init
-                0x0000000000000e84       0x30 build/kernel/src/ipc.o
-                0x0000000000000e84                rt_mutex_init
+                0x0000000000001d5c       0x30 build/kernel/src/ipc.o
+                0x0000000000001d5c                rt_mutex_init
  .text.rt_mutex_drop_thread
-                0x0000000000000eb4      0x25c build/kernel/src/ipc.o
-                0x0000000000000eb4                rt_mutex_drop_thread
+                0x0000000000001d8c      0x25c build/kernel/src/ipc.o
+                0x0000000000001d8c                rt_mutex_drop_thread
  .text.rt_mutex_take
-                0x0000000000001110        0xc build/kernel/src/ipc.o
-                0x0000000000001110                rt_mutex_take
+                0x0000000000001fe8        0xc build/kernel/src/ipc.o
+                0x0000000000001fe8                rt_mutex_take
  .text.rt_mutex_release
-                0x000000000000111c      0x12c build/kernel/src/ipc.o
-                0x000000000000111c                rt_mutex_release
+                0x0000000000001ff4      0x12c build/kernel/src/ipc.o
+                0x0000000000001ff4                rt_mutex_release
  .text.rt_interrupt_enter
-                0x0000000000001248       0x1c build/kernel/src/irq.o
-                0x0000000000001248                rt_interrupt_enter
+                0x0000000000002120       0x1c build/kernel/src/irq.o
+                0x0000000000002120                rt_interrupt_enter
  .text.rt_interrupt_leave
-                0x0000000000001264       0x1c build/kernel/src/irq.o
-                0x0000000000001264                rt_interrupt_leave
+                0x000000000000213c       0x1c build/kernel/src/irq.o
+                0x000000000000213c                rt_interrupt_leave
  .text.rt_interrupt_get_nest
-                0x0000000000001280       0x18 build/kernel/src/irq.o
-                0x0000000000001280                rt_interrupt_get_nest
+                0x0000000000002158       0x18 build/kernel/src/irq.o
+                0x0000000000002158                rt_interrupt_get_nest
  .text.print_number
-                0x0000000000001298      0x2f8 build/kernel/src/kservice.o
+                0x0000000000002170      0x2f8 build/kernel/src/kservice.o
  .text.rt_set_errno
-                0x0000000000001590       0x24 build/kernel/src/kservice.o
-                0x0000000000001590                rt_set_errno
+                0x0000000000002468       0x24 build/kernel/src/kservice.o
+                0x0000000000002468                rt_set_errno
  .text.rt_memset
-                0x00000000000015b4       0x9c build/kernel/src/kservice.o
-                0x00000000000015b4                rt_memset
+                0x000000000000248c       0x9c build/kernel/src/kservice.o
+                0x000000000000248c                rt_memset
+ .text.rt_memcpy
+                0x0000000000002528       0xa4 build/kernel/src/kservice.o
+                0x0000000000002528                rt_memcpy
+ .text.rt_memmove
+                0x00000000000025cc       0x30 build/kernel/src/kservice.o
+                0x00000000000025cc                rt_memmove
  .text.rt_strncpy
-                0x0000000000001650       0x34 build/kernel/src/kservice.o
-                0x0000000000001650                rt_strncpy
+                0x00000000000025fc       0x34 build/kernel/src/kservice.o
+                0x00000000000025fc                rt_strncpy
  .text.rt_strncmp
-                0x0000000000001684       0x28 build/kernel/src/kservice.o
-                0x0000000000001684                rt_strncmp
+                0x0000000000002630       0x28 build/kernel/src/kservice.o
+                0x0000000000002630                rt_strncmp
  .text.rt_vsnprintf
-                0x00000000000016ac      0x394 build/kernel/src/kservice.o
-                0x00000000000016ac                rt_vsnprintf
+                0x0000000000002658      0x394 build/kernel/src/kservice.o
+                0x0000000000002658                rt_vsnprintf
  .text.rt_snprintf
-                0x0000000000001a40       0x18 build/kernel/src/kservice.o
-                0x0000000000001a40                rt_snprintf
+                0x00000000000029ec       0x18 build/kernel/src/kservice.o
+                0x00000000000029ec                rt_snprintf
+ .text.rt_console_get_device
+                0x0000000000002a04        0xc build/kernel/src/kservice.o
+                0x0000000000002a04                rt_console_get_device
  .text.rt_console_set_device
-                0x0000000000001a58       0x34 build/kernel/src/kservice.o
-                0x0000000000001a58                rt_console_set_device
+                0x0000000000002a10       0x34 build/kernel/src/kservice.o
+                0x0000000000002a10                rt_console_set_device
  .text.rt_hw_console_output
-                0x0000000000001a8c        0x4 build/kernel/src/kservice.o
-                0x0000000000001a8c                rt_hw_console_output
+                0x0000000000002a44        0x4 build/kernel/src/kservice.o
+                0x0000000000002a44                rt_hw_console_output
  .text.rt_kprintf
-                0x0000000000001a90       0x4c build/kernel/src/kservice.o
-                0x0000000000001a90                rt_kprintf
+                0x0000000000002a48       0x4c build/kernel/src/kservice.o
+                0x0000000000002a48                rt_kprintf
  .text.rt_show_version
-                0x0000000000001adc       0x48 build/kernel/src/kservice.o
-                0x0000000000001adc                rt_show_version
+                0x0000000000002a94       0x48 build/kernel/src/kservice.o
+                0x0000000000002a94                rt_show_version
  .text.rt_system_heap_init
-                0x0000000000001b24       0x18 build/kernel/src/kservice.o
-                0x0000000000001b24                rt_system_heap_init
+                0x0000000000002adc       0x18 build/kernel/src/kservice.o
+                0x0000000000002adc                rt_system_heap_init
  .text.rt_malloc
-                0x0000000000001b3c       0x2c build/kernel/src/kservice.o
-                0x0000000000001b3c                rt_malloc
- .text.rt_free  0x0000000000001b68       0x2c build/kernel/src/kservice.o
-                0x0000000000001b68                rt_free
+                0x0000000000002af4       0x2c build/kernel/src/kservice.o
+                0x0000000000002af4                rt_malloc
+ .text.rt_calloc
+                0x0000000000002b20       0x1c build/kernel/src/kservice.o
+                0x0000000000002b20                rt_calloc
+ .text.rt_free  0x0000000000002b3c       0x2c build/kernel/src/kservice.o
+                0x0000000000002b3c                rt_free
  .text.__rt_ffs
-                0x0000000000001b94       0x50 build/kernel/src/kservice.o
-                0x0000000000001b94                __rt_ffs
+                0x0000000000002b68       0x50 build/kernel/src/kservice.o
+                0x0000000000002b68                __rt_ffs
  .text.rt_object_init
-                0x0000000000001be4       0x78 build/kernel/src/object.o
-                0x0000000000001be4                rt_object_init
+                0x0000000000002bb8       0x78 build/kernel/src/object.o
+                0x0000000000002bb8                rt_object_init
  .text.rt_object_detach
-                0x0000000000001c5c       0x24 build/kernel/src/object.o
-                0x0000000000001c5c                rt_object_detach
+                0x0000000000002c30       0x24 build/kernel/src/object.o
+                0x0000000000002c30                rt_object_detach
  .text.rt_object_allocate
-                0x0000000000001c80       0x7c build/kernel/src/object.o
-                0x0000000000001c80                rt_object_allocate
+                0x0000000000002c54       0x7c build/kernel/src/object.o
+                0x0000000000002c54                rt_object_allocate
  .text.rt_object_delete
-                0x0000000000001cfc       0x28 build/kernel/src/object.o
-                0x0000000000001cfc                rt_object_delete
+                0x0000000000002cd0       0x28 build/kernel/src/object.o
+                0x0000000000002cd0                rt_object_delete
  .text.rt_object_is_systemobject
-                0x0000000000001d24        0x8 build/kernel/src/object.o
-                0x0000000000001d24                rt_object_is_systemobject
+                0x0000000000002cf8        0x8 build/kernel/src/object.o
+                0x0000000000002cf8                rt_object_is_systemobject
  .text.rt_object_get_type
-                0x0000000000001d2c        0x8 build/kernel/src/object.o
-                0x0000000000001d2c                rt_object_get_type
+                0x0000000000002d00        0x8 build/kernel/src/object.o
+                0x0000000000002d00                rt_object_get_type
  .text.rt_object_find
-                0x0000000000001d34       0x60 build/kernel/src/object.o
-                0x0000000000001d34                rt_object_find
+                0x0000000000002d08       0x60 build/kernel/src/object.o
+                0x0000000000002d08                rt_object_find
  .text.rt_system_scheduler_init
-                0x0000000000001d94       0x2c build/kernel/src/scheduler_up.o
-                0x0000000000001d94                rt_system_scheduler_init
+                0x0000000000002d68       0x2c build/kernel/src/scheduler_up.o
+                0x0000000000002d68                rt_system_scheduler_init
  .text.rt_schedule_insert_thread
-                0x0000000000001dc0       0x80 build/kernel/src/scheduler_up.o
-                0x0000000000001dc0                rt_schedule_insert_thread
+                0x0000000000002d94       0x80 build/kernel/src/scheduler_up.o
+                0x0000000000002d94                rt_schedule_insert_thread
  .text.rt_schedule_remove_thread
-                0x0000000000001e40       0x44 build/kernel/src/scheduler_up.o
-                0x0000000000001e40                rt_schedule_remove_thread
+                0x0000000000002e14       0x44 build/kernel/src/scheduler_up.o
+                0x0000000000002e14                rt_schedule_remove_thread
  .text.rt_system_scheduler_start
-                0x0000000000001e84       0x3c build/kernel/src/scheduler_up.o
-                0x0000000000001e84                rt_system_scheduler_start
+                0x0000000000002e58       0x3c build/kernel/src/scheduler_up.o
+                0x0000000000002e58                rt_system_scheduler_start
  .text.rt_schedule
-                0x0000000000001ec0      0x10c build/kernel/src/scheduler_up.o
-                0x0000000000001ec0                rt_schedule
+                0x0000000000002e94      0x10c build/kernel/src/scheduler_up.o
+                0x0000000000002e94                rt_schedule
  .text.rt_enter_critical
-                0x0000000000001fcc       0x18 build/kernel/src/scheduler_up.o
-                0x0000000000001fcc                rt_enter_critical
+                0x0000000000002fa0       0x18 build/kernel/src/scheduler_up.o
+                0x0000000000002fa0                rt_enter_critical
  .text.rt_exit_critical
-                0x0000000000001fe4       0x38 build/kernel/src/scheduler_up.o
-                0x0000000000001fe4                rt_exit_critical
+                0x0000000000002fb8       0x38 build/kernel/src/scheduler_up.o
+                0x0000000000002fb8                rt_exit_critical
  .text._thread_timeout
-                0x000000000000201c       0x34 build/kernel/src/thread.o
+                0x0000000000002ff0       0x34 build/kernel/src/thread.o
  .text._thread_exit
-                0x0000000000002050       0x38 build/kernel/src/thread.o
+                0x0000000000003024       0x38 build/kernel/src/thread.o
  .text.rt_thread_init
-                0x0000000000002088       0x94 build/kernel/src/thread.o
-                0x0000000000002088                rt_thread_init
+                0x000000000000305c       0x94 build/kernel/src/thread.o
+                0x000000000000305c                rt_thread_init
  .text.rt_thread_self
-                0x000000000000211c        0xc build/kernel/src/thread.o
-                0x000000000000211c                rt_thread_self
+                0x00000000000030f0        0xc build/kernel/src/thread.o
+                0x00000000000030f0                rt_thread_self
  .text.rt_thread_detach
-                0x0000000000002128       0x5c build/kernel/src/thread.o
-                0x0000000000002128                rt_thread_detach
+                0x00000000000030fc       0x5c build/kernel/src/thread.o
+                0x00000000000030fc                rt_thread_detach
  .text.rt_thread_create
-                0x0000000000002184       0xb0 build/kernel/src/thread.o
-                0x0000000000002184                rt_thread_create
+                0x0000000000003158       0xb0 build/kernel/src/thread.o
+                0x0000000000003158                rt_thread_create
  .text.rt_thread_suspend_with_flag
-                0x0000000000002234       0x54 build/kernel/src/thread.o
-                0x0000000000002234                rt_thread_suspend_with_flag
+                0x0000000000003208       0x54 build/kernel/src/thread.o
+                0x0000000000003208                rt_thread_suspend_with_flag
  .text.rt_thread_sleep
-                0x0000000000002288       0x68 build/kernel/src/thread.o
-                0x0000000000002288                rt_thread_sleep
+                0x000000000000325c       0x68 build/kernel/src/thread.o
+                0x000000000000325c                rt_thread_sleep
  .text.rt_thread_delay
-                0x00000000000022f0        0x8 build/kernel/src/thread.o
-                0x00000000000022f0                rt_thread_delay
+                0x00000000000032c4        0x8 build/kernel/src/thread.o
+                0x00000000000032c4                rt_thread_delay
  .text.rt_thread_resume
-                0x00000000000022f8       0x40 build/kernel/src/thread.o
-                0x00000000000022f8                rt_thread_resume
+                0x00000000000032cc       0x40 build/kernel/src/thread.o
+                0x00000000000032cc                rt_thread_resume
  .text.rt_thread_startup
-                0x0000000000002338       0x2c build/kernel/src/thread.o
-                0x0000000000002338                rt_thread_startup
+                0x000000000000330c       0x2c build/kernel/src/thread.o
+                0x000000000000330c                rt_thread_startup
  .text.rt_thread_control
-                0x0000000000002364       0x74 build/kernel/src/thread.o
-                0x0000000000002364                rt_thread_control
+                0x0000000000003338       0x74 build/kernel/src/thread.o
+                0x0000000000003338                rt_thread_control
  .text.rt_timer_init
-                0x00000000000023d8       0x3c build/kernel/src/timer.o
-                0x00000000000023d8                rt_timer_init
+                0x00000000000033ac       0x3c build/kernel/src/timer.o
+                0x00000000000033ac                rt_timer_init
  .text.rt_timer_detach
-                0x0000000000002414       0x30 build/kernel/src/timer.o
-                0x0000000000002414                rt_timer_detach
+                0x00000000000033e8       0x30 build/kernel/src/timer.o
+                0x00000000000033e8                rt_timer_detach
  .text.rt_timer_start
-                0x0000000000002444       0x8c build/kernel/src/timer.o
-                0x0000000000002444                rt_timer_start
+                0x0000000000003418       0x8c build/kernel/src/timer.o
+                0x0000000000003418                rt_timer_start
  .text.rt_timer_stop
-                0x00000000000024d0       0x38 build/kernel/src/timer.o
-                0x00000000000024d0                rt_timer_stop
+                0x00000000000034a4       0x38 build/kernel/src/timer.o
+                0x00000000000034a4                rt_timer_stop
  .text.rt_timer_control
-                0x0000000000002508       0x70 build/kernel/src/timer.o
-                0x0000000000002508                rt_timer_control
+                0x00000000000034dc       0x70 build/kernel/src/timer.o
+                0x00000000000034dc                rt_timer_control
  .text.rt_timer_check
-                0x0000000000002578       0xd8 build/kernel/src/timer.o
-                0x0000000000002578                rt_timer_check
+                0x000000000000354c       0xd8 build/kernel/src/timer.o
+                0x000000000000354c                rt_timer_check
  .text.rt_system_timer_init
-                0x0000000000002650        0xc build/kernel/src/timer.o
-                0x0000000000002650                rt_system_timer_init
+                0x0000000000003624        0xc build/kernel/src/timer.o
+                0x0000000000003624                rt_system_timer_init
  .text.rt_system_timer_thread_init
-                0x000000000000265c        0x4 build/kernel/src/timer.o
-                0x000000000000265c                rt_system_timer_thread_init
- .text.Chip_Clock_SetSystemPLLSource
-                0x0000000000002660       0x14 build/Libraries/common/chip/clock_8xx.o
-                0x0000000000002660                Chip_Clock_SetSystemPLLSource
- .text.Chip_Clock_SetPLLBypass
-                0x0000000000002674       0x14 build/Libraries/common/chip/clock_8xx.o
-                0x0000000000002674                Chip_Clock_SetPLLBypass
- .text.Chip_Clock_SetMainClockSource
-                0x0000000000002688       0x14 build/Libraries/common/chip/clock_8xx.o
-                0x0000000000002688                Chip_Clock_SetMainClockSource
+                0x0000000000003630        0x4 build/kernel/src/timer.o
+                0x0000000000003630                rt_system_timer_thread_init
  .text.Chip_Clock_GetSystemPLLOutClockRate
-                0x000000000000269c       0x5c build/Libraries/common/chip/clock_8xx.o
-                0x000000000000269c                Chip_Clock_GetSystemPLLOutClockRate
+                0x0000000000003634       0x5c build/Libraries/common/chip/clock_8xx.o
+                0x0000000000003634                Chip_Clock_GetSystemPLLOutClockRate
  .text.Chip_Clock_GetMainClockRate
-                0x00000000000026f8       0x7c build/Libraries/common/chip/clock_8xx.o
-                0x00000000000026f8                Chip_Clock_GetMainClockRate
+                0x0000000000003690       0x7c build/Libraries/common/chip/clock_8xx.o
+                0x0000000000003690                Chip_Clock_GetMainClockRate
  .text.SystemCoreClockUpdate
-                0x0000000000002774       0x20 build/Libraries/common/chip/clock_8xx.o
-                0x0000000000002774                SystemCoreClockUpdate
- .text.Chip_IOCON_PinSetMode
-                0x0000000000002794       0x14 build/Libraries/common/chip/ioswm_8xx.o
-                0x0000000000002794                Chip_IOCON_PinSetMode
- .text.Chip_SYSCTL_PowerDown
-                0x00000000000027a8       0x20 build/Libraries/common/chip/syscon_8xx.o
-                0x00000000000027a8                Chip_SYSCTL_PowerDown
- .text.Chip_SYSCTL_PowerUp
-                0x00000000000027c8       0x24 build/Libraries/common/chip/syscon_8xx.o
-                0x00000000000027c8                Chip_SYSCTL_PowerUp
- .text.Chip_SetupXtalClocking
-                0x00000000000027ec       0x5c build/Libraries/common/chip/sysinit_8xx.o
-                0x00000000000027ec                Chip_SetupXtalClocking
- .text.SystemInit
-                0x0000000000002848       0x68 build/Libraries/common/chip/sysinit_8xx.o
-                0x0000000000002848                SystemInit
- .text          0x00000000000028b0        0xc Libraries/common/startup/gcc_startup_lpc82x.o
-                0x00000000000028b0                NMI_Handler
-                0x00000000000028b4                SVC_Handler
-                0x00000000000028ba                CMP_IRQHandler
-                0x00000000000028ba                PININT7_IRQHandler
-                0x00000000000028ba                I2C0_IRQHandler
-                0x00000000000028ba                WKT_IRQHandler
-                0x00000000000028ba                PININT2_IRQHandler
-                0x00000000000028ba                PININT1_IRQHandler
-                0x00000000000028ba                MRT_IRQHandler
-                0x00000000000028ba                I2C1_IRQHandler
-                0x00000000000028ba                ADC_SEQB_IRQHandler
-                0x00000000000028ba                UART0_IRQHandler
-                0x00000000000028ba                SPI1_IRQHandler
-                0x00000000000028ba                ADC_OVR_IRQHandler
-                0x00000000000028ba                I2C2_IRQHandler
-                0x00000000000028ba                Flash_IRQHandler
-                0x00000000000028ba                PININT3_IRQHandler
-                0x00000000000028ba                UART2_IRQHandler
-                0x00000000000028ba                PININT5_IRQHandler
-                0x00000000000028ba                Default_Handler
-                0x00000000000028ba                PININT4_IRQHandler
-                0x00000000000028ba                ADC_THCMP_IRQHandler
-                0x00000000000028ba                PININT0_IRQHandler
-                0x00000000000028ba                BOD_IRQHandler
-                0x00000000000028ba                I2C3_IRQHandler
-                0x00000000000028ba                SCT_IRQHandler
-                0x00000000000028ba                WDT_IRQHandler
-                0x00000000000028ba                ADC_SEQA_IRQHandler
-                0x00000000000028ba                PININT6_IRQHandler
-                0x00000000000028ba                SPI0_IRQHandler
-                0x00000000000028ba                DMA_IRQHandler
+                0x000000000000370c       0x20 build/Libraries/common/chip/clock_8xx.o
+                0x000000000000370c                SystemCoreClockUpdate
+ .text.Chip_Clock_GetUSARTNBaseClockRate
+                0x000000000000372c       0x48 build/Libraries/common/chip/clock_8xx.o
+                0x000000000000372c                Chip_Clock_GetUSARTNBaseClockRate
+ .text.Chip_Clock_SetUSARTNBaseClockRate
+                0x0000000000003774       0x7c build/Libraries/common/chip/clock_8xx.o
+                0x0000000000003774                Chip_Clock_SetUSARTNBaseClockRate
+ .text.Chip_SWM_MovablePinAssign
+                0x00000000000037f0       0x28 build/Libraries/common/chip/ioswm_8xx.o
+                0x00000000000037f0                Chip_SWM_MovablePinAssign
  .text.Reset_Handler
-                0x00000000000028bc       0x34 Libraries/common/startup/gcc_startup_lpc82x.o
-                0x00000000000028bc                Reset_Handler
+                0x0000000000003818       0x40 Libraries/common/startup/gcc_startup_lpc82x.o
+                0x0000000000003818                Reset_Handler
+ .text.Default_Handler
+                0x0000000000003858        0x2 Libraries/common/startup/gcc_startup_lpc82x.o
+                0x0000000000003858                SRAM_PARITY_IRQHandler
+                0x0000000000003858                EFC_IRQHandler
+                0x0000000000003858                TKEY_IRQHandler
+                0x0000000000003858                TIM1_CC_IRQHandler
+                0x0000000000003858                TIM6_IRQHandler
+                0x0000000000003858                NMI_Handler
+                0x0000000000003858                CAN1_IRQHandler
+                0x0000000000003858                EXTI_IRQHandler
+                0x0000000000003858                GPIOAB_IRQHandler
+                0x0000000000003858                SPI1_IRQHandler
+                0x0000000000003858                TIM17_IRQHandler
+                0x0000000000003858                RTC_IRQHandler
+                0x0000000000003858                LCD_IRQHandler
+                0x0000000000003858                LPUART_IRQHandler
+                0x0000000000003858                CLKRDY_IRQHandler
+                0x0000000000003858                UART2_IRQHandler
+                0x0000000000003858                TIM16_IRQHandler
+                0x0000000000003858                TIM3_IRQHandler
+                0x0000000000003858                Default_Handler
+                0x0000000000003858                RSV_IRQHandler
+                0x0000000000003858                TIM14_IRQHandler
+                0x0000000000003858                ADC_IRQHandler
+                0x0000000000003858                TIM15_IRQHandler
+                0x0000000000003858                SPI2_IRQHandler
+                0x0000000000003858                MemManage_Handler
+                0x0000000000003858                WDT_IRQHandler
+                0x0000000000003858                SVC_Handler
+                0x0000000000003858                GPIOCD_IRQHandler
+                0x0000000000003858                AES_IRQHandler
+                0x0000000000003858                DMA_IRQHandler
+                0x0000000000003858                UART3_IRQHandler
+                0x0000000000003858                TIM1_BRK_UP_TRG_COM_IRQHandler
+ *fill*         0x000000000000385a        0x2 00000000
+ .text.Chip_UART_Init
+                0x000000000000385c       0xa4 build/Libraries/peri_driver/uart/uart_8xx.o
+                0x000000000000385c                Chip_UART_Init
+ .text.Chip_UART_SetBaud
+                0x0000000000003900       0x18 build/Libraries/peri_driver/uart/uart_8xx.o
+                0x0000000000003900                Chip_UART_SetBaud
  .text.rt_init_thread_entry
-                0x00000000000028f0        0x8 build/applications/application.o
-                0x00000000000028f0                rt_init_thread_entry
+                0x0000000000003918        0x8 build/applications/application.o
+                0x0000000000003918                rt_init_thread_entry
  .text.rt_led_thread_entry
-                0x00000000000028f8       0x40 build/applications/application.o
-                0x00000000000028f8                rt_led_thread_entry
+                0x0000000000003920       0x40 build/applications/application.o
+                0x0000000000003920                rt_led_thread_entry
  .text.rt_application_init
-                0x0000000000002938       0x54 build/applications/application.o
-                0x0000000000002938                rt_application_init
+                0x0000000000003960       0x54 build/applications/application.o
+                0x0000000000003960                rt_application_init
  .text.rtthread_startup
-                0x000000000000298c       0x34 build/applications/startup.o
-                0x000000000000298c                rtthread_startup
+                0x00000000000039b4       0x34 build/applications/startup.o
+                0x00000000000039b4                rtthread_startup
  .text.startup.main
-                0x00000000000029c0       0x10 build/applications/startup.o
-                0x00000000000029c0                main
+                0x00000000000039e8       0x10 build/applications/startup.o
+                0x00000000000039e8                main
  .text.SysTick_Handler
-                0x00000000000029d0       0x10 build/drivers/board.o
-                0x00000000000029d0                SysTick_Handler
+                0x00000000000039f8       0x10 build/drivers/board.o
+                0x00000000000039f8                SysTick_Handler
  .text.rt_hw_board_init
-                0x00000000000029e0       0x54 build/drivers/board.o
-                0x00000000000029e0                rt_hw_board_init
+                0x0000000000003a08       0x54 build/drivers/board.o
+                0x0000000000003a08                rt_hw_board_init
+ .text.rt_uart_write
+                0x0000000000003a5c       0x64 build/drivers/usart.o
+ .text.rt_hw_usart_init
+                0x0000000000003ac0       0x68 build/drivers/usart.o
+                0x0000000000003ac0                rt_hw_usart_init
+ .text.rt_uart_read
+                0x0000000000003b28       0x28 build/drivers/usart.o
+ .text.rt_uart_init
+                0x0000000000003b50       0xa4 build/drivers/usart.o
+ .text.rt_uart_open
+                0x0000000000003bf4       0x20 build/drivers/usart.o
+ .text.rt_uart_close
+                0x0000000000003c14       0x20 build/drivers/usart.o
  .text.uart_irq_handler
-                0x0000000000002a34       0x38 build/drivers/usart.o
-                0x0000000000002a34                uart_irq_handler
+                0x0000000000003c34       0x38 build/drivers/usart.o
+                0x0000000000003c34                uart_irq_handler
  .text.UART1_IRQHandler
-                0x0000000000002a6c       0x10 build/drivers/usart.o
-                0x0000000000002a6c                UART1_IRQHandler
- .text          0x0000000000002a7c       0x10 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-atexit.o)
-                0x0000000000002a7c                atexit
- .text          0x0000000000002a8c       0x20 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-exit.o)
-                0x0000000000002a8c                exit
- .text          0x0000000000002aac       0x28 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-fini.o)
-                0x0000000000002aac                __libc_fini_array
- .text          0x0000000000002ad4       0xa8 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-memset.o)
-                0x0000000000002ad4                memset
- .text          0x0000000000002b7c       0x88 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-__atexit.o)
-                0x0000000000002b7c                __register_exitproc
- .text          0x0000000000002c04       0xbc /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-__call_atexit.o)
-                0x0000000000002c04                __call_exitprocs
- .text.startup  0x0000000000002cc0       0x18 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-__call_atexit.o)
- .text          0x0000000000002cd8      0x114 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_udivsi3.o)
-                0x0000000000002cd8                __udivsi3
-                0x0000000000002cd8                __aeabi_uidiv
-                0x0000000000002de4                __aeabi_uidivmod
- .text          0x0000000000002dec        0x4 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
-                0x0000000000002dec                __aeabi_ldiv0
-                0x0000000000002dec                __aeabi_idiv0
+                0x0000000000003c6c       0x10 build/drivers/usart.o
+                0x0000000000003c6c                UART1_IRQHandler
+ *(.rodata)
  *(.rodata*)
+ .rodata.msh_help.str1.4
+                0x0000000000003c7c       0x20 build/kernel/components/finsh/msh.o
+                                         0x22 (size before relaxing)
+ .rodata.msh_exec.str1.4
+                0x0000000000003c9c       0x38 build/kernel/components/finsh/msh.o
+ .rodata.msh_auto_complete.str1.4
+                0x0000000000003cd4       0x38 build/kernel/components/finsh/msh.o
+                                          0x4 (size before relaxing)
+ .rodata.__fsym_help_name
+                0x0000000000003cd4        0x5 build/kernel/components/finsh/msh.o
+                0x0000000000003cd4                __fsym_help_name
+ *fill*         0x0000000000003cd9        0x3 00000000
+ .rodata.finsh_system_init.str1.4
+                0x0000000000003cdc       0x25 build/kernel/components/finsh/shell.o
+ *fill*         0x0000000000003d01        0x3 00000000
+ .rodata.finsh_get_prompt.part.0.str1.4
+                0x0000000000003d04        0xa build/kernel/components/finsh/shell.o
+ *fill*         0x0000000000003d0e        0x2 00000000
+ .rodata.finsh_set_device.str1.4
+                0x0000000000003d10       0x20 build/kernel/components/finsh/shell.o
+ .rodata.finsh_thread_entry.str1.4
+                0x0000000000003d30       0x1f build/kernel/components/finsh/shell.o
+                                         0x23 (size before relaxing)
+ *fill*         0x0000000000003d4f        0x1 00000000
+ .rodata.__rti_finsh_system_init_name
+                0x0000000000003d50       0x12 build/kernel/components/finsh/shell.o
+                0x0000000000003d50                __rti_finsh_system_init_name
+ *fill*         0x0000000000003d62        0x2 00000000
  .rodata.rt_hw_hard_fault_exception.str1.4
-                0x0000000000002df0       0x9a build/kernel/libcpu/arm/cortex-m0/cpuport.o
- *fill*         0x0000000000002e8a        0x2 
+                0x0000000000003d64       0x9a build/kernel/libcpu/arm/cortex-m0/cpuport.o
+ *fill*         0x0000000000003dfe        0x2 00000000
  .rodata.rt_components_board_init.str1.4
-                0x0000000000002e8c       0x1a build/kernel/src/components.o
- *fill*         0x0000000000002ea6        0x2 
+                0x0000000000003e00       0x1a build/kernel/src/components.o
+ *fill*         0x0000000000003e1a        0x2 00000000
  .rodata.rt_components_init.str1.4
-                0x0000000000002ea8       0x1f build/kernel/src/components.o
- *fill*         0x0000000000002ec7        0x1 
+                0x0000000000003e1c       0x1f build/kernel/src/components.o
+ *fill*         0x0000000000003e3b        0x1 00000000
  .rodata.__rti_rti_board_end_name
-                0x0000000000002ec8        0xe build/kernel/src/components.o
-                0x0000000000002ec8                __rti_rti_board_end_name
- *fill*         0x0000000000002ed6        0x2 
+                0x0000000000003e3c        0xe build/kernel/src/components.o
+                0x0000000000003e3c                __rti_rti_board_end_name
+ *fill*         0x0000000000003e4a        0x2 00000000
  .rodata.__rti_rti_board_start_name
-                0x0000000000002ed8       0x10 build/kernel/src/components.o
-                0x0000000000002ed8                __rti_rti_board_start_name
+                0x0000000000003e4c       0x10 build/kernel/src/components.o
+                0x0000000000003e4c                __rti_rti_board_start_name
  .rodata.__rti_rti_end_name
-                0x0000000000002ee8        0x8 build/kernel/src/components.o
-                0x0000000000002ee8                __rti_rti_end_name
+                0x0000000000003e5c        0x8 build/kernel/src/components.o
+                0x0000000000003e5c                __rti_rti_end_name
+ .rodata.__rti_rti_start_name
+                0x0000000000003e64        0xa build/kernel/src/components.o
+                0x0000000000003e64                __rti_rti_start_name
+ *fill*         0x0000000000003e6e        0x2 00000000
  .rodata.rt_thread_idle_init.str1.4
-                0x0000000000002ef0        0x8 build/kernel/src/idle.o
+                0x0000000000003e70        0x8 build/kernel/src/idle.o
  .rodata.rt_vsnprintf.str1.4
-                0x0000000000002ef8        0x7 build/kernel/src/kservice.o
- *fill*         0x0000000000002eff        0x1 
+                0x0000000000003e78        0x7 build/kernel/src/kservice.o
+ *fill*         0x0000000000003e7f        0x1 00000000
  .rodata.rt_vsnprintf
-                0x0000000000002f00      0x150 build/kernel/src/kservice.o
+                0x0000000000003e80      0x150 build/kernel/src/kservice.o
  .rodata.rt_show_version.str1.4
-                0x0000000000003050       0x96 build/kernel/src/kservice.o
- *fill*         0x00000000000030e6        0x2 
+                0x0000000000003fd0       0x96 build/kernel/src/kservice.o
+ *fill*         0x0000000000004066        0x2 00000000
  .rodata.rt_system_heap_init.str1.4
-                0x00000000000030e8        0x5 build/kernel/src/kservice.o
- *fill*         0x00000000000030ed        0x3 
+                0x0000000000004068        0x5 build/kernel/src/kservice.o
+ *fill*         0x000000000000406d        0x3 00000000
  .rodata.__lowest_bit_bitmap
-                0x00000000000030f0      0x100 build/kernel/src/kservice.o
-                0x00000000000030f0                __lowest_bit_bitmap
+                0x0000000000004070      0x100 build/kernel/src/kservice.o
+                0x0000000000004070                __lowest_bit_bitmap
  .rodata.large_digits.5464
-                0x00000000000031f0       0x11 build/kernel/src/kservice.o
- *fill*         0x0000000000003201        0x3 
+                0x0000000000004170       0x11 build/kernel/src/kservice.o
+ *fill*         0x0000000000004181        0x3 00000000
  .rodata.small_digits.5463
-                0x0000000000003204       0x11 build/kernel/src/kservice.o
- *fill*         0x0000000000003215        0x3 
+                0x0000000000004184       0x11 build/kernel/src/kservice.o
+ *fill*         0x0000000000004195        0x3 00000000
  .rodata.rt_timer_control
-                0x0000000000003218       0x28 build/kernel/src/timer.o
+                0x0000000000004198       0x28 build/kernel/src/timer.o
  .rodata.ExtRateIn
-                0x0000000000003240        0x4 build/Libraries/common/board/board_lpc.o
-                0x0000000000003240                ExtRateIn
+                0x00000000000041c0        0x4 build/Libraries/common/board/board_lpc.o
+                0x00000000000041c0                ExtRateIn
  .rodata.OscRateIn
-                0x0000000000003244        0x4 build/Libraries/common/board/board_lpc.o
-                0x0000000000003244                OscRateIn
+                0x00000000000041c4        0x4 build/Libraries/common/board/board_lpc.o
+                0x00000000000041c4                OscRateIn
  .rodata.wdtOSCRate
-                0x0000000000003248       0x40 build/Libraries/common/chip/clock_8xx.o
+                0x00000000000041c8       0x40 build/Libraries/common/chip/clock_8xx.o
  .rodata.rt_application_init.str1.4
-                0x0000000000003288        0xc build/applications/application.o
+                0x0000000000004208        0xc build/applications/application.o
  .rodata.rt_hw_board_init.str1.4
-                0x0000000000003294        0x6 build/drivers/board.o
- *fill*         0x000000000000329a        0x2 
- .rodata        0x000000000000329c        0x4 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-impure.o)
-                0x000000000000329c                _global_impure_ptr
-                0x00000000000032a0                . = ALIGN (0x4)
-                [!provide]                        PROVIDE (__init_array_start = .)
- *(SORT_BY_NAME(.init_array.*))
- .init_array.00000
-                0x00000000000032a0        0x4 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-__call_atexit.o)
- *(.init_array)
- .init_array    0x00000000000032a4        0x4 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/crtbegin.o
-                [!provide]                        PROVIDE (__init_array_end = .)
-                0x00000000000032a8                . = ALIGN (0x4)
-                0x00000000000032a8                _etext = .
+                0x0000000000004214        0x6 build/drivers/board.o
+ .rodata.rt_hw_usart_init.str1.4
+                0x000000000000421a        0x6 build/drivers/usart.o
+ *fill*         0x000000000000421a        0x2 00000000
+ .rodata.__rti_rt_hw_usart_init_name
+                0x000000000000421c       0x11 build/drivers/usart.o
+                0x000000000000421c                __rti_rt_hw_usart_init_name
+ *(.glue_7)
+ .glue_7        0x000000000000422d        0x0 linker stubs
+ *(.glue_7t)
+ .glue_7t       0x000000000000422d        0x0 linker stubs
+ *(.gnu.linkonce.t*)
+                0x0000000000004230                . = ALIGN (0x4)
+ *fill*         0x000000000000422d        0x3 00000000
+                0x0000000000004230                __fsymtab_start = .
+ *(FSymTab)
+ FSymTab        0x0000000000004230        0x8 build/kernel/components/finsh/msh.o
+                0x0000000000004230                __fsym_help
+                0x0000000000004238                __fsymtab_end = .
+                0x0000000000004238                . = ALIGN (0x4)
+                0x0000000000004238                __vsymtab_start = .
+ *(VSymTab)
+                0x0000000000004238                __vsymtab_end = .
+                0x0000000000004238                . = ALIGN (0x4)
+                0x0000000000004238                . = ALIGN (0x4)
+                0x0000000000004238                __rt_init_start = .
+ *(SORT_BY_NAME(.rti_fn*))
+ .rti_fn.0      0x0000000000004238        0x8 build/kernel/src/components.o
+                0x0000000000004238                __rt_init_desc_rti_start
+ .rti_fn.0.end  0x0000000000004240        0x8 build/kernel/src/components.o
+                0x0000000000004240                __rt_init_desc_rti_board_start
+ .rti_fn.1      0x0000000000004248        0x8 build/drivers/usart.o
+                0x0000000000004248                __rt_init_desc_rt_hw_usart_init
+ .rti_fn.1.end  0x0000000000004250        0x8 build/kernel/src/components.o
+                0x0000000000004250                __rt_init_desc_rti_board_end
+ .rti_fn.6      0x0000000000004258        0x8 build/kernel/components/finsh/shell.o
+                0x0000000000004258                __rt_init_desc_finsh_system_init
+ .rti_fn.6.end  0x0000000000004260        0x8 build/kernel/src/components.o
+                0x0000000000004260                __rt_init_desc_rti_end
+                0x0000000000004268                __rt_init_end = .
+                0x0000000000004268                . = ALIGN (0x4)
+                0x0000000000004268                . = ALIGN (0x4)
+                0x0000000000004268                _etext = .
+                0x0000000000004268                __exidx_start = .
 
-.glue_7         0x00000000000032a8        0x0
- .glue_7        0x00000000000032a8        0x0 linker stubs
+.vfp11_veneer   0x0000000000004268        0x0
+ .vfp11_veneer  0x0000000000004268        0x0 linker stubs
 
-.glue_7t        0x00000000000032a8        0x0
- .glue_7t       0x00000000000032a8        0x0 linker stubs
+.v4_bx          0x0000000000004268        0x0
+ .v4_bx         0x0000000000004268        0x0 linker stubs
 
-.vfp11_veneer   0x00000000000032a8        0x0
- .vfp11_veneer  0x00000000000032a8        0x0 linker stubs
+.init           0x0000000000004268        0x4
+ .init          0x0000000000004268        0x4 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/crti.o
+                0x0000000000004268                _init
 
-.v4_bx          0x00000000000032a8        0x0
- .v4_bx         0x00000000000032a8        0x0 linker stubs
+.fini           0x000000000000426c        0x4
+ .fini          0x000000000000426c        0x4 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/crti.o
+                0x000000000000426c                _fini
 
-.init           0x00000000000032a8        0x4
- .init          0x00000000000032a8        0x4 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/crti.o
-                0x00000000000032a8                _init
+.iplt           0x0000000000004270        0x0
+ .iplt          0x0000000000004270        0x0 build/kernel/components/drivers/core/device.o
 
-.fini           0x00000000000032ac        0x4
- .fini          0x00000000000032ac        0x4 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/crti.o
-                0x00000000000032ac                _fini
+.ARM.exidx      0x0000000000004270        0x8
+ *(.ARM.exidx* .gnu.linkonce.armexidx.*)
+ .ARM.exidx     0x0000000000004270        0x8 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_udivmoddi4.o)
+                0x0000000000004278                _sidata = .
+                0x0000000000004278                __exidx_end = .
 
-.iplt           0x00000000000032b0        0x0
- .iplt          0x00000000000032b0        0x0 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/crtbegin.o
+.rel.dyn        0x0000000000004278        0x0
+ .rel.iplt      0x0000000000004278        0x0 build/kernel/components/drivers/core/device.o
 
-.eh_frame       0x00000000000032b0        0x0
- .eh_frame      0x00000000000032b0        0x0 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/crtbegin.o
-
-.ARM.exidx      0x00000000000032b0        0x8
- .ARM.exidx     0x00000000000032b0        0x8 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/crt0.o
-                                         0x10 (size before relaxing)
-
-.rti_fn.0.end   0x00000000000032b8        0x8
- .rti_fn.0.end  0x00000000000032b8        0x8 build/kernel/src/components.o
-                0x00000000000032b8                __rt_init_desc_rti_board_start
-
-.rti_fn.1.end   0x00000000000032c0        0x8
- .rti_fn.1.end  0x00000000000032c0        0x8 build/kernel/src/components.o
-                0x00000000000032c0                __rt_init_desc_rti_board_end
-
-.rti_fn.6.end   0x00000000000032c8        0x8
- .rti_fn.6.end  0x00000000000032c8        0x8 build/kernel/src/components.o
-                0x00000000000032c8                __rt_init_desc_rti_end
-
-.rel.dyn        0x00000000000032d0        0x0
- .rel.iplt      0x00000000000032d0        0x0 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/crtbegin.o
-
-.data           0x0000000010000000      0x4b8 load address 0x00000000000032d0
+.data           0x0000000010000000       0x88 load address 0x0000000000004278
                 0x0000000010000000                . = ALIGN (0x4)
-                0x0000000010000000                _data = .
- *(.data*)
+                0x0000000010000000                _sdata = .
+ *(.data)
+ *(.data.*)
  .data._rt_thread_defunct
                 0x0000000010000000        0x8 build/kernel/src/idle.o
  .data._object_container
                 0x0000000010000008       0x80 build/kernel/src/object.o
- .data          0x0000000010000088      0x430 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-impure.o)
-                0x0000000010000088                _impure_ptr
-                0x00000000100004b8                . = ALIGN (0x4)
-                0x00000000100004b8                _edata = .
+ *(.gnu.linkonce.d*)
+                0x0000000010000088                . = ALIGN (0x4)
+                0x0000000010000088                _edata = .
 
-.tm_clone_table
-                0x00000000100004b8        0x0 load address 0x0000000000003788
- .tm_clone_table
-                0x00000000100004b8        0x0 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/crtbegin.o
- .tm_clone_table
-                0x00000000100004b8        0x0 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/crtend.o
+.igot.plt       0x0000000010000088        0x0 load address 0x0000000000004300
+ .igot.plt      0x0000000010000088        0x0 build/kernel/components/drivers/core/device.o
 
-.igot.plt       0x00000000100004b8        0x0 load address 0x0000000000003788
- .igot.plt      0x00000000100004b8        0x0 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/crtbegin.o
+.stack          0x0000000010000088      0x100 load address 0x0000000000004300
+                0x0000000010000188                . = (. + _system_stack_size)
+ *fill*         0x0000000010000088      0x100 
+                0x0000000010000188                . = ALIGN (0x4)
+                0x0000000010000188                _estack = .
+                0x0000000010000188                __bss_start = .
 
-.bss            0x00000000100004b8      0x32c load address 0x0000000000003788
-                0x00000000100004b8                _bss = .
- *(.bss*)
- .bss           0x00000000100004b8       0x1c /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/crtbegin.o
- .bss.rt_tick   0x00000000100004d4        0x4 build/kernel/src/clock.o
+.bss            0x0000000010000188      0x3a0 load address 0x0000000000004400
+                0x0000000010000188                . = ALIGN (0x4)
+                0x0000000010000188                _sbss = .
+ *(.bss)
+ *(.bss.*)
+ .bss._syscall_table_begin
+                0x0000000010000188        0x4 build/kernel/components/finsh/shell.o
+                0x0000000010000188                _syscall_table_begin
+ .bss._syscall_table_end
+                0x000000001000018c        0x4 build/kernel/components/finsh/shell.o
+                0x000000001000018c                _syscall_table_end
+ .bss.finsh_prompt.6098
+                0x0000000010000190       0x81 build/kernel/components/finsh/shell.o
+ *fill*         0x0000000010000211        0x3 
+ .bss.finsh_prompt_custom
+                0x0000000010000214        0x4 build/kernel/components/finsh/shell.o
+ .bss.rt_tick   0x0000000010000218        0x4 build/kernel/src/clock.o
  .bss.idle_thread
-                0x00000000100004d8       0x84 build/kernel/src/idle.o
- *fill*         0x000000001000055c        0x4 
+                0x000000001000021c       0x84 build/kernel/src/idle.o
  .bss.idle_thread_stack
-                0x0000000010000560      0x100 build/kernel/src/idle.o
+                0x00000000100002a0      0x100 build/kernel/src/idle.o
  .bss.rt_interrupt_nest
-                0x0000000010000660        0x1 build/kernel/src/irq.o
-                0x0000000010000660                rt_interrupt_nest
- *fill*         0x0000000010000661        0x3 
+                0x00000000100003a0        0x1 build/kernel/src/irq.o
+                0x00000000100003a0                rt_interrupt_nest
+ *fill*         0x00000000100003a1        0x3 
  .bss.__rt_errno
-                0x0000000010000664        0x4 build/kernel/src/kservice.o
+                0x00000000100003a4        0x4 build/kernel/src/kservice.o
  .bss._console_device
-                0x0000000010000668        0x4 build/kernel/src/kservice.o
- .bss._lock     0x000000001000066c       0x2c build/kernel/src/kservice.o
+                0x00000000100003a8        0x4 build/kernel/src/kservice.o
+ .bss._lock     0x00000000100003ac       0x2c build/kernel/src/kservice.o
  .bss.rt_log_buf.5583
-                0x0000000010000698       0x80 build/kernel/src/kservice.o
+                0x00000000100003d8       0x80 build/kernel/src/kservice.o
  .bss.rt_current_thread
-                0x0000000010000718        0x4 build/kernel/src/scheduler_up.o
-                0x0000000010000718                rt_current_thread
+                0x0000000010000458        0x4 build/kernel/src/scheduler_up.o
+                0x0000000010000458                rt_current_thread
  .bss.rt_scheduler_lock_nest
-                0x000000001000071c        0x2 build/kernel/src/scheduler_up.o
- *fill*         0x000000001000071e        0x2 
+                0x000000001000045c        0x2 build/kernel/src/scheduler_up.o
+ *fill*         0x000000001000045e        0x2 
  .bss._timer_list
-                0x0000000010000720        0x8 build/kernel/src/timer.o
+                0x0000000010000460        0x8 build/kernel/src/timer.o
  .bss.random_nr.5332
-                0x0000000010000728        0x4 build/kernel/src/timer.o
+                0x0000000010000468        0x4 build/kernel/src/timer.o
  *(COMMON)
- COMMON         0x000000001000072c        0xc build/kernel/libcpu/arm/cortex-m0/cpuport.o
-                0x000000001000072c                rt_interrupt_to_thread
-                0x0000000010000730                rt_interrupt_from_thread
-                0x0000000010000734                rt_thread_switch_interrupt_flag
- COMMON         0x0000000010000738       0x48 build/kernel/src/scheduler_up.o
-                0x0000000010000738                rt_thread_priority_table
-                0x0000000010000778                rt_current_priority
-                0x000000001000077c                rt_thread_ready_priority_group
- COMMON         0x0000000010000780        0x4 build/Libraries/common/chip/clock_8xx.o
-                0x0000000010000780                SystemCoreClock
- COMMON         0x0000000010000784       0x60 build/drivers/usart.o
-                0x0000000010000784                uart1_device
-                0x00000000100007e4                . = ALIGN (0x4)
-                0x00000000100007e4                _ebss = .
-                [!provide]                        PROVIDE (end = .)
-                [!provide]                        PROVIDE (_pvHeapStart = .)
-                [!provide]                        PROVIDE (_vStackTop = (ORIGIN (ram) + LENGTH (ram)))
-OUTPUT(rtthread-lpc842.elf elf32-littlearm)
-LOAD linker stubs
+ COMMON         0x000000001000046c        0x4 build/kernel/components/finsh/shell.o
+                0x000000001000046c                shell
+ COMMON         0x0000000010000470        0xc build/kernel/libcpu/arm/cortex-m0/cpuport.o
+                0x0000000010000470                rt_interrupt_to_thread
+                0x0000000010000474                rt_interrupt_from_thread
+                0x0000000010000478                rt_thread_switch_interrupt_flag
+ COMMON         0x000000001000047c       0x48 build/kernel/src/scheduler_up.o
+                0x000000001000047c                rt_thread_priority_table
+                0x00000000100004bc                rt_current_priority
+                0x00000000100004c0                rt_thread_ready_priority_group
+ COMMON         0x00000000100004c4        0x4 build/Libraries/common/chip/clock_8xx.o
+                0x00000000100004c4                SystemCoreClock
+ COMMON         0x00000000100004c8       0x60 build/drivers/usart.o
+                0x00000000100004c8                uart1_device
+                0x0000000010000528                . = ALIGN (0x4)
+                0x0000000010000528                _ebss = .
+ *(.bss.init)
+                0x0000000010000528                __bss_end = .
+                0x0000000010000528                _end = .
 
-.ARM.attributes
-                0x0000000000000000       0x28
- .ARM.attributes
-                0x0000000000000000       0x1e /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/crti.o
- .ARM.attributes
-                0x000000000000001e       0x2c /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/crtbegin.o
- .ARM.attributes
-                0x000000000000004a       0x1b /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/crt0.o
- .ARM.attributes
-                0x0000000000000065       0x2c build/kernel/components/drivers/core/device.o
- .ARM.attributes
-                0x0000000000000091       0x2c build/kernel/components/drivers/ipc/ringbuffer.o
- .ARM.attributes
-                0x00000000000000bd       0x2c build/kernel/components/libc/compilers/common/cstdlib.o
- .ARM.attributes
-                0x00000000000000e9       0x2c build/kernel/components/libc/compilers/newlib/syscalls.o
- .ARM.attributes
-                0x0000000000000115       0x21 build/kernel/libcpu/arm/cortex-m0/context_gcc.o
- .ARM.attributes
-                0x0000000000000136       0x2c build/kernel/libcpu/arm/cortex-m0/cpuport.o
- .ARM.attributes
-                0x0000000000000162       0x2c build/kernel/src/clock.o
- .ARM.attributes
-                0x000000000000018e       0x2c build/kernel/src/components.o
- .ARM.attributes
-                0x00000000000001ba       0x2c build/kernel/src/idle.o
- .ARM.attributes
-                0x00000000000001e6       0x2c build/kernel/src/ipc.o
- .ARM.attributes
-                0x0000000000000212       0x2c build/kernel/src/irq.o
- .ARM.attributes
-                0x000000000000023e       0x2c build/kernel/src/kservice.o
- .ARM.attributes
-                0x000000000000026a       0x2c build/kernel/src/object.o
- .ARM.attributes
-                0x0000000000000296       0x2c build/kernel/src/scheduler_up.o
- .ARM.attributes
-                0x00000000000002c2       0x2c build/kernel/src/thread.o
- .ARM.attributes
-                0x00000000000002ee       0x2c build/kernel/src/timer.o
- .ARM.attributes
-                0x000000000000031a       0x2c build/Libraries/common/board/board_lpc.o
- .ARM.attributes
-                0x0000000000000346       0x2c build/Libraries/common/chip/clock_8xx.o
- .ARM.attributes
-                0x0000000000000372       0x2c build/Libraries/common/chip/ioswm_8xx.o
- .ARM.attributes
-                0x000000000000039e       0x2c build/Libraries/common/chip/syscon_8xx.o
- .ARM.attributes
-                0x00000000000003ca       0x2c build/Libraries/common/chip/sysinit_8xx.o
- .ARM.attributes
-                0x00000000000003f6       0x1b Libraries/common/startup/gcc_startup_lpc82x.o
- .ARM.attributes
-                0x0000000000000411       0x2c build/applications/application.o
- .ARM.attributes
-                0x000000000000043d       0x2c build/applications/startup.o
- .ARM.attributes
-                0x0000000000000469       0x2c build/drivers/board.o
- .ARM.attributes
-                0x0000000000000495       0x2c build/drivers/usart.o
- .ARM.attributes
-                0x00000000000004c1       0x2c /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-atexit.o)
- .ARM.attributes
-                0x00000000000004ed       0x2c /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-exit.o)
- .ARM.attributes
-                0x0000000000000519       0x2c /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-fini.o)
- .ARM.attributes
-                0x0000000000000545       0x2c /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-impure.o)
- .ARM.attributes
-                0x0000000000000571       0x2c /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-memset.o)
- .ARM.attributes
-                0x000000000000059d       0x2c /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-__atexit.o)
- .ARM.attributes
-                0x00000000000005c9       0x2c /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-__call_atexit.o)
- .ARM.attributes
-                0x00000000000005f5       0x1e /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_udivsi3.o)
- .ARM.attributes
-                0x0000000000000613       0x1e /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
- .ARM.attributes
-                0x0000000000000631       0x2c /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/crtend.o
+.stab
+ *(.stab)
+
+.stabstr
+ *(.stabstr)
+
+.stab.excl
+ *(.stab.excl)
+
+.stab.exclstr
+ *(.stab.exclstr)
+
+.stab.index
+ *(.stab.index)
+
+.stab.indexstr
+ *(.stab.indexstr)
 
 .comment        0x0000000000000000       0xa7
- .comment       0x0000000000000000       0x59 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/crtbegin.o
+ *(.comment)
+ .comment       0x0000000000000000       0x59 build/kernel/components/drivers/core/device.o
                                          0x5a (size before relaxing)
- .comment       0x0000000000000059       0x5a build/kernel/components/drivers/core/device.o
  .comment       0x0000000000000059       0x5a build/kernel/components/drivers/ipc/ringbuffer.o
- .comment       0x0000000000000059       0x5a build/kernel/components/libc/compilers/common/cstdlib.o
- .comment       0x0000000000000059       0x5a build/kernel/components/libc/compilers/newlib/syscalls.o
+ .comment       0x0000000000000059       0x5a build/kernel/components/finsh/msh.o
+ .comment       0x0000000000000059       0x5a build/kernel/components/finsh/shell.o
  .comment       0x0000000000000059       0x5a build/kernel/libcpu/arm/cortex-m0/cpuport.o
  .comment       0x0000000000000059       0x5a build/kernel/src/clock.o
  .comment       0x0000000000000059       0x5a build/kernel/src/components.o
@@ -2319,128 +2309,240 @@ LOAD linker stubs
  .comment       0x0000000000000059       0x5a build/Libraries/common/board/board_lpc.o
  .comment       0x0000000000000059       0x5a build/Libraries/common/chip/clock_8xx.o
  .comment       0x0000000000000059       0x5a build/Libraries/common/chip/ioswm_8xx.o
- .comment       0x0000000000000059       0x5a build/Libraries/common/chip/syscon_8xx.o
- .comment       0x0000000000000059       0x5a build/Libraries/common/chip/sysinit_8xx.o
+ .comment       0x0000000000000059       0x5a build/Libraries/peri_driver/uart/uart_8xx.o
  .comment       0x0000000000000059       0x5a build/applications/application.o
  .comment       0x0000000000000059       0x5a build/applications/startup.o
  .comment       0x0000000000000059       0x5a build/drivers/board.o
  .comment       0x0000000000000059       0x5a build/drivers/usart.o
- .comment       0x0000000000000059       0x4e /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-atexit.o)
+ .comment       0x0000000000000059       0x4e /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-memcpy-stub.o)
                                          0x4f (size before relaxing)
- .comment       0x00000000000000a7       0x4f /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-exit.o)
- .comment       0x00000000000000a7       0x4f /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-fini.o)
- .comment       0x00000000000000a7       0x4f /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-impure.o)
  .comment       0x00000000000000a7       0x4f /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-memset.o)
- .comment       0x00000000000000a7       0x4f /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-__atexit.o)
- .comment       0x00000000000000a7       0x4f /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-__call_atexit.o)
- .comment       0x00000000000000a7       0x5a /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/crtend.o
+ .comment       0x00000000000000a7       0x4f /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-strlen-stub.o)
+ .comment       0x00000000000000a7       0x4f /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-strncmp.o)
+ .comment       0x00000000000000a7       0x4f /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-strncpy.o)
+ .comment       0x00000000000000a7       0x5a /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_udivmoddi4.o)
 
-.debug_line     0x0000000000000000      0xcb4
- .debug_line    0x0000000000000000       0x8c /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/crt0.o
- .debug_line    0x000000000000008c      0x152 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-atexit.o)
- .debug_line    0x00000000000001de      0x178 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-exit.o)
- .debug_line    0x0000000000000356       0xd4 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-fini.o)
- .debug_line    0x000000000000042a       0xe3 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-impure.o)
- .debug_line    0x000000000000050d      0x281 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-memset.o)
- .debug_line    0x000000000000078e      0x1f9 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-__atexit.o)
- .debug_line    0x0000000000000987      0x261 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-__call_atexit.o)
- .debug_line    0x0000000000000be8       0x6c /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_udivsi3.o)
- .debug_line    0x0000000000000c54       0x60 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
+.ARM.attributes
+                0x0000000000000000       0x28
+ .ARM.attributes
+                0x0000000000000000       0x1e /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/crti.o
+ .ARM.attributes
+                0x000000000000001e       0x2c build/kernel/components/drivers/core/device.o
+ .ARM.attributes
+                0x000000000000004a       0x2c build/kernel/components/drivers/ipc/ringbuffer.o
+ .ARM.attributes
+                0x0000000000000076       0x2c build/kernel/components/finsh/msh.o
+ .ARM.attributes
+                0x00000000000000a2       0x2c build/kernel/components/finsh/shell.o
+ .ARM.attributes
+                0x00000000000000ce       0x21 build/kernel/libcpu/arm/cortex-m0/context_gcc.o
+ .ARM.attributes
+                0x00000000000000ef       0x2c build/kernel/libcpu/arm/cortex-m0/cpuport.o
+ .ARM.attributes
+                0x000000000000011b       0x2c build/kernel/src/clock.o
+ .ARM.attributes
+                0x0000000000000147       0x2c build/kernel/src/components.o
+ .ARM.attributes
+                0x0000000000000173       0x2c build/kernel/src/idle.o
+ .ARM.attributes
+                0x000000000000019f       0x2c build/kernel/src/ipc.o
+ .ARM.attributes
+                0x00000000000001cb       0x2c build/kernel/src/irq.o
+ .ARM.attributes
+                0x00000000000001f7       0x2c build/kernel/src/kservice.o
+ .ARM.attributes
+                0x0000000000000223       0x2c build/kernel/src/object.o
+ .ARM.attributes
+                0x000000000000024f       0x2c build/kernel/src/scheduler_up.o
+ .ARM.attributes
+                0x000000000000027b       0x2c build/kernel/src/thread.o
+ .ARM.attributes
+                0x00000000000002a7       0x2c build/kernel/src/timer.o
+ .ARM.attributes
+                0x00000000000002d3       0x2c build/Libraries/common/board/board_lpc.o
+ .ARM.attributes
+                0x00000000000002ff       0x2c build/Libraries/common/chip/clock_8xx.o
+ .ARM.attributes
+                0x000000000000032b       0x2c build/Libraries/common/chip/ioswm_8xx.o
+ .ARM.attributes
+                0x0000000000000357       0x21 Libraries/common/startup/gcc_startup_lpc82x.o
+ .ARM.attributes
+                0x0000000000000378       0x2c build/Libraries/peri_driver/uart/uart_8xx.o
+ .ARM.attributes
+                0x00000000000003a4       0x2c build/applications/application.o
+ .ARM.attributes
+                0x00000000000003d0       0x2c build/applications/startup.o
+ .ARM.attributes
+                0x00000000000003fc       0x2c build/drivers/board.o
+ .ARM.attributes
+                0x0000000000000428       0x2c build/drivers/usart.o
+ .ARM.attributes
+                0x0000000000000454       0x2c /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-memcpy-stub.o)
+ .ARM.attributes
+                0x0000000000000480       0x2c /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-memset.o)
+ .ARM.attributes
+                0x00000000000004ac       0x2c /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-strlen-stub.o)
+ .ARM.attributes
+                0x00000000000004d8       0x2c /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-strncmp.o)
+ .ARM.attributes
+                0x0000000000000504       0x2c /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-strncpy.o)
+ .ARM.attributes
+                0x0000000000000530       0x1e /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_udivsi3.o)
+ .ARM.attributes
+                0x000000000000054e       0x1e /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
+ .ARM.attributes
+                0x000000000000056c       0x1e /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_aeabi_uldivmod.o)
+ .ARM.attributes
+                0x000000000000058a       0x2c /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_udivmoddi4.o)
+ .ARM.attributes
+                0x00000000000005b6       0x1e /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_clzsi2.o)
+ .ARM.attributes
+                0x00000000000005d4       0x1e /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_clzdi2.o)
 
-.debug_info     0x0000000000000000     0x414f
- .debug_info    0x0000000000000000       0x26 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/crt0.o
- .debug_info    0x0000000000000026      0x995 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-atexit.o)
- .debug_info    0x00000000000009bb      0x9d0 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-exit.o)
- .debug_info    0x000000000000138b      0x102 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-fini.o)
- .debug_info    0x000000000000148d      0x92a /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-impure.o)
- .debug_info    0x0000000000001db7      0xf21 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-memset.o)
- .debug_info    0x0000000000002cd8      0x9d5 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-__atexit.o)
- .debug_info    0x00000000000036ad      0xa56 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-__call_atexit.o)
- .debug_info    0x0000000000004103       0x26 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_udivsi3.o)
- .debug_info    0x0000000000004129       0x26 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
+.debug
+ *(.debug)
 
-.debug_abbrev   0x0000000000000000      0xe26
- .debug_abbrev  0x0000000000000000       0x14 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/crt0.o
- .debug_abbrev  0x0000000000000014      0x22f /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-atexit.o)
- .debug_abbrev  0x0000000000000243      0x21f /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-exit.o)
- .debug_abbrev  0x0000000000000462       0xcc /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-fini.o)
- .debug_abbrev  0x000000000000052e      0x1b8 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-impure.o)
- .debug_abbrev  0x00000000000006e6      0x217 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-memset.o)
- .debug_abbrev  0x00000000000008fd      0x252 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-__atexit.o)
- .debug_abbrev  0x0000000000000b4f      0x2af /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-__call_atexit.o)
- .debug_abbrev  0x0000000000000dfe       0x14 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_udivsi3.o)
- .debug_abbrev  0x0000000000000e12       0x14 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
+.line
+ *(.line)
 
-.debug_aranges  0x0000000000000000      0x140
- .debug_aranges
-                0x0000000000000000       0x20 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/crt0.o
- .debug_aranges
-                0x0000000000000020       0x20 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-atexit.o)
- .debug_aranges
-                0x0000000000000040       0x20 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-exit.o)
- .debug_aranges
-                0x0000000000000060       0x20 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-fini.o)
- .debug_aranges
-                0x0000000000000080       0x18 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-impure.o)
- .debug_aranges
-                0x0000000000000098       0x20 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-memset.o)
- .debug_aranges
-                0x00000000000000b8       0x20 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-__atexit.o)
- .debug_aranges
-                0x00000000000000d8       0x28 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-__call_atexit.o)
- .debug_aranges
-                0x0000000000000100       0x20 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_udivsi3.o)
- .debug_aranges
-                0x0000000000000120       0x20 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
+.debug_srcinfo
+ *(.debug_srcinfo)
 
-.debug_str      0x0000000000000000      0xc33
- .debug_str     0x0000000000000000       0x94 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/crt0.o
- .debug_str     0x0000000000000094      0x56f /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-atexit.o)
-                                        0x5e4 (size before relaxing)
- .debug_str     0x0000000000000603       0x74 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-exit.o)
-                                        0x5e5 (size before relaxing)
- .debug_str     0x0000000000000677       0xc4 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-fini.o)
-                                        0x1f3 (size before relaxing)
- .debug_str     0x000000000000073b       0x97 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-impure.o)
-                                        0x599 (size before relaxing)
- .debug_str     0x00000000000007d2      0x313 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-memset.o)
+.debug_sfnames
+ *(.debug_sfnames)
+
+.debug_aranges  0x0000000000000000      0x160
+ *(.debug_aranges)
+ .debug_aranges
+                0x0000000000000000       0x20 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-memcpy-stub.o)
+ .debug_aranges
+                0x0000000000000020       0x20 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-memset.o)
+ .debug_aranges
+                0x0000000000000040       0x20 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-strlen-stub.o)
+ .debug_aranges
+                0x0000000000000060       0x20 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-strncmp.o)
+ .debug_aranges
+                0x0000000000000080       0x20 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-strncpy.o)
+ .debug_aranges
+                0x00000000000000a0       0x20 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_udivsi3.o)
+ .debug_aranges
+                0x00000000000000c0       0x20 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
+ .debug_aranges
+                0x00000000000000e0       0x20 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_aeabi_uldivmod.o)
+ .debug_aranges
+                0x0000000000000100       0x20 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_udivmoddi4.o)
+ .debug_aranges
+                0x0000000000000120       0x20 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_clzsi2.o)
+ .debug_aranges
+                0x0000000000000140       0x20 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_clzdi2.o)
+
+.debug_pubnames
+ *(.debug_pubnames)
+
+.debug_info     0x0000000000000000     0x45d7
+ *(.debug_info .gnu.linkonce.wi.*)
+ .debug_info    0x0000000000000000      0xf35 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-memcpy-stub.o)
+ .debug_info    0x0000000000000f35      0xf21 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-memset.o)
+ .debug_info    0x0000000000001e56      0x973 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-strlen-stub.o)
+ .debug_info    0x00000000000027c9      0x995 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-strncmp.o)
+ .debug_info    0x000000000000315e      0x9d2 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-strncpy.o)
+ .debug_info    0x0000000000003b30       0x26 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_udivsi3.o)
+ .debug_info    0x0000000000003b56       0x26 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
+ .debug_info    0x0000000000003b7c       0x26 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_aeabi_uldivmod.o)
+ .debug_info    0x0000000000003ba2      0x9e9 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_udivmoddi4.o)
+ .debug_info    0x000000000000458b       0x26 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_clzsi2.o)
+ .debug_info    0x00000000000045b1       0x26 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_clzdi2.o)
+
+.debug_abbrev   0x0000000000000000      0xbe4
+ *(.debug_abbrev)
+ .debug_abbrev  0x0000000000000000      0x223 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-memcpy-stub.o)
+ .debug_abbrev  0x0000000000000223      0x217 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-memset.o)
+ .debug_abbrev  0x000000000000043a      0x1e8 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-strlen-stub.o)
+ .debug_abbrev  0x0000000000000622      0x1e8 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-strncmp.o)
+ .debug_abbrev  0x000000000000080a      0x214 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-strncpy.o)
+ .debug_abbrev  0x0000000000000a1e       0x14 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_udivsi3.o)
+ .debug_abbrev  0x0000000000000a32       0x14 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
+ .debug_abbrev  0x0000000000000a46       0x14 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_aeabi_uldivmod.o)
+ .debug_abbrev  0x0000000000000a5a      0x162 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_udivmoddi4.o)
+ .debug_abbrev  0x0000000000000bbc       0x14 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_clzsi2.o)
+ .debug_abbrev  0x0000000000000bd0       0x14 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_clzdi2.o)
+
+.debug_line     0x0000000000000000      0xef5
+ *(.debug_line)
+ .debug_line    0x0000000000000000      0x24d /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-memcpy-stub.o)
+ .debug_line    0x000000000000024d      0x281 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-memset.o)
+ .debug_line    0x00000000000004ce      0x1c2 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-strlen-stub.o)
+ .debug_line    0x0000000000000690      0x21b /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-strncmp.o)
+ .debug_line    0x00000000000008ab      0x1ed /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-strncpy.o)
+ .debug_line    0x0000000000000a98       0x6c /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_udivsi3.o)
+ .debug_line    0x0000000000000b04       0x60 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
+ .debug_line    0x0000000000000b64       0x6b /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_aeabi_uldivmod.o)
+ .debug_line    0x0000000000000bcf      0x248 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_udivmoddi4.o)
+ .debug_line    0x0000000000000e17       0x74 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_clzsi2.o)
+ .debug_line    0x0000000000000e8b       0x6a /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_clzdi2.o)
+
+.debug_frame    0x0000000000000000      0x144
+ *(.debug_frame)
+ .debug_frame   0x0000000000000000       0x34 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-memcpy-stub.o)
+ .debug_frame   0x0000000000000034       0x30 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-memset.o)
+ .debug_frame   0x0000000000000064       0x28 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-strlen-stub.o)
+ .debug_frame   0x000000000000008c       0x2c /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-strncmp.o)
+ .debug_frame   0x00000000000000b8       0x30 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-strncpy.o)
+ .debug_frame   0x00000000000000e8       0x20 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_udivsi3.o)
+ .debug_frame   0x0000000000000108       0x3c /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_udivmoddi4.o)
+
+.debug_str      0x0000000000000000     0x1ad3
+ *(.debug_str)
+ .debug_str     0x0000000000000000      0x7eb /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-memcpy-stub.o)
+                                        0x8eb (size before relaxing)
+ .debug_str     0x00000000000007eb       0xa8 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-memset.o)
                                         0x8c6 (size before relaxing)
- .debug_str     0x0000000000000ae5       0x54 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-__atexit.o)
-                                        0x602 (size before relaxing)
- .debug_str     0x0000000000000b39       0x63 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-__call_atexit.o)
-                                        0x615 (size before relaxing)
- .debug_str     0x0000000000000b9c       0x97 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_udivsi3.o)
+ .debug_str     0x0000000000000893       0x4e /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-strlen-stub.o)
+                                        0x5c2 (size before relaxing)
+ .debug_str     0x00000000000008e1       0x3d /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-strncmp.o)
+                                        0x59f (size before relaxing)
+ .debug_str     0x000000000000091e       0x3d /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-strncpy.o)
+                                        0x5c7 (size before relaxing)
+ .debug_str     0x000000000000095b       0xa3 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_udivsi3.o)
+ .debug_str     0x00000000000009fe       0xa3 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
+ .debug_str     0x00000000000009fe       0x30 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_aeabi_uldivmod.o)
                                          0xa3 (size before relaxing)
- .debug_str     0x0000000000000c33       0xa3 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
+ .debug_str     0x0000000000000a2e     0x10a5 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_udivmoddi4.o)
+                                       0x1198 (size before relaxing)
+ .debug_str     0x0000000000001ad3       0xa3 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_clzsi2.o)
+ .debug_str     0x0000000000001ad3       0xa3 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_clzdi2.o)
 
-.debug_loc      0x0000000000000000      0x6c3
- .debug_loc     0x0000000000000000       0x32 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-atexit.o)
- .debug_loc     0x0000000000000032       0x22 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-exit.o)
- .debug_loc     0x0000000000000054       0x46 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-fini.o)
- .debug_loc     0x000000000000009a      0x2df /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-memset.o)
- .debug_loc     0x0000000000000379      0x164 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-__atexit.o)
- .debug_loc     0x00000000000004dd      0x1e6 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-__call_atexit.o)
+.debug_loc      0x0000000000000000      0xf7d
+ *(.debug_loc)
+ .debug_loc     0x0000000000000000      0x481 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-memcpy-stub.o)
+ .debug_loc     0x0000000000000481      0x2df /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-memset.o)
+ .debug_loc     0x0000000000000760       0xa3 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-strlen-stub.o)
+ .debug_loc     0x0000000000000803      0x199 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-strncmp.o)
+ .debug_loc     0x000000000000099c      0x20e /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-strncpy.o)
+ .debug_loc     0x0000000000000baa      0x3d3 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_udivmoddi4.o)
 
-.debug_frame    0x0000000000000000      0x158
- .debug_frame   0x0000000000000000       0x28 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-atexit.o)
- .debug_frame   0x0000000000000028       0x28 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-exit.o)
- .debug_frame   0x0000000000000050       0x2c /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-fini.o)
- .debug_frame   0x000000000000007c       0x30 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-memset.o)
- .debug_frame   0x00000000000000ac       0x38 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-__atexit.o)
- .debug_frame   0x00000000000000e4       0x54 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-__call_atexit.o)
- .debug_frame   0x0000000000000138       0x20 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_udivsi3.o)
+.debug_macinfo
+ *(.debug_macinfo)
 
-.debug_ranges   0x0000000000000000       0x38
- .debug_ranges  0x0000000000000000       0x38 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-__call_atexit.o)
+.debug_weaknames
+ *(.debug_weaknames)
+
+.debug_funcnames
+ *(.debug_funcnames)
+
+.debug_typenames
+ *(.debug_typenames)
+
+.debug_varnames
+ *(.debug_varnames)
+OUTPUT(rtthread-lpc842.elf elf32-littlearm)
+LOAD linker stubs
 
 Cross Reference Table
 
 Symbol                                            File
-ADC_OVR_IRQHandler                                Libraries/common/startup/gcc_startup_lpc82x.o
-ADC_SEQA_IRQHandler                               Libraries/common/startup/gcc_startup_lpc82x.o
-ADC_SEQB_IRQHandler                               Libraries/common/startup/gcc_startup_lpc82x.o
-ADC_THCMP_IRQHandler                              Libraries/common/startup/gcc_startup_lpc82x.o
-BOD_IRQHandler                                    Libraries/common/startup/gcc_startup_lpc82x.o
+ADC_IRQHandler                                    Libraries/common/startup/gcc_startup_lpc82x.o
+AES_IRQHandler                                    Libraries/common/startup/gcc_startup_lpc82x.o
 Board_Debug_Init                                  build/Libraries/common/board/board_lpc.o
 Board_Init                                        build/Libraries/common/board/board_lpc.o
 Board_Key_GetKeyDown                              build/Libraries/common/board/board_lpc.o
@@ -2452,7 +2554,8 @@ Board_UARTPutChar                                 build/Libraries/common/board/b
 Board_UARTPutSTR                                  build/Libraries/common/board/board_lpc.o
 Board_UARTPutTextChar                             build/Libraries/common/board/board_lpc.o
 Board_itoa                                        build/Libraries/common/board/board_lpc.o
-CMP_IRQHandler                                    Libraries/common/startup/gcc_startup_lpc82x.o
+CAN1_IRQHandler                                   Libraries/common/startup/gcc_startup_lpc82x.o
+CLKRDY_IRQHandler                                 Libraries/common/startup/gcc_startup_lpc82x.o
 ChipEz_DMA_AbortChannel                           build/Libraries/peri_driver/dma/dma_8xx.o
 ChipEz_DMA_Init                                   build/Libraries/peri_driver/dma/dma_8xx.o
 ChipEz_DMA_InitChannel                            build/Libraries/peri_driver/dma/dma_8xx.o
@@ -2604,28 +2707,24 @@ Chip_WWDT_DeInit                                  build/Libraries/peri_driver/ww
 Chip_WWDT_Init                                    build/Libraries/peri_driver/wwdt/wwdt_8xx.o
 DMA_IRQHandler                                    Libraries/common/startup/gcc_startup_lpc82x.o
 Default_Handler                                   Libraries/common/startup/gcc_startup_lpc82x.o
+EFC_IRQHandler                                    Libraries/common/startup/gcc_startup_lpc82x.o
+EXTI_IRQHandler                                   Libraries/common/startup/gcc_startup_lpc82x.o
 Error_Handler                                     build/drivers/board.o
 ExtRateIn                                         build/Libraries/common/board/board_lpc.o
                                                   build/Libraries/common/chip/clock_8xx.o
-Flash_IRQHandler                                  Libraries/common/startup/gcc_startup_lpc82x.o
+GPIOAB_IRQHandler                                 Libraries/common/startup/gcc_startup_lpc82x.o
+GPIOCD_IRQHandler                                 Libraries/common/startup/gcc_startup_lpc82x.o
 HardFault_Handler                                 build/kernel/libcpu/arm/cortex-m0/context_gcc.o
-I2C0_IRQHandler                                   Libraries/common/startup/gcc_startup_lpc82x.o
 I2C1_IRQHandler                                   Libraries/common/startup/gcc_startup_lpc82x.o
-I2C2_IRQHandler                                   Libraries/common/startup/gcc_startup_lpc82x.o
-I2C3_IRQHandler                                   Libraries/common/startup/gcc_startup_lpc82x.o
-MRT_IRQHandler                                    Libraries/common/startup/gcc_startup_lpc82x.o
+LCD_IRQHandler                                    Libraries/common/startup/gcc_startup_lpc82x.o
+LPUART_IRQHandler                                 Libraries/common/startup/gcc_startup_lpc82x.o
+MemManage_Handler                                 Libraries/common/startup/gcc_startup_lpc82x.o
 NMI_Handler                                       Libraries/common/startup/gcc_startup_lpc82x.o
 OscRateIn                                         build/Libraries/common/board/board_lpc.o
                                                   build/Libraries/common/chip/clock_8xx.o
-PININT0_IRQHandler                                Libraries/common/startup/gcc_startup_lpc82x.o
-PININT1_IRQHandler                                Libraries/common/startup/gcc_startup_lpc82x.o
-PININT2_IRQHandler                                Libraries/common/startup/gcc_startup_lpc82x.o
-PININT3_IRQHandler                                Libraries/common/startup/gcc_startup_lpc82x.o
-PININT4_IRQHandler                                Libraries/common/startup/gcc_startup_lpc82x.o
-PININT5_IRQHandler                                Libraries/common/startup/gcc_startup_lpc82x.o
-PININT6_IRQHandler                                Libraries/common/startup/gcc_startup_lpc82x.o
-PININT7_IRQHandler                                Libraries/common/startup/gcc_startup_lpc82x.o
 PendSV_Handler                                    build/kernel/libcpu/arm/cortex-m0/context_gcc.o
+RSV_IRQHandler                                    Libraries/common/startup/gcc_startup_lpc82x.o
+RTC_IRQHandler                                    Libraries/common/startup/gcc_startup_lpc82x.o
 Reset_Handler                                     Libraries/common/startup/gcc_startup_lpc82x.o
 RingBuf_Copy                                      build/Libraries/peri_driver/uart/ring_buffer.o
 RingBuf_Deinit                                    build/Libraries/peri_driver/uart/ring_buffer.o
@@ -2641,9 +2740,9 @@ RingBuf_Read1Byte                                 build/Libraries/peri_driver/ua
 RingBuf_Write                                     build/Libraries/peri_driver/uart/ring_buffer.o
                                                   build/Libraries/peri_driver/uart/uart_8xx.o
 RingBuf_Write1Byte                                build/Libraries/peri_driver/uart/ring_buffer.o
-SCT_IRQHandler                                    Libraries/common/startup/gcc_startup_lpc82x.o
-SPI0_IRQHandler                                   Libraries/common/startup/gcc_startup_lpc82x.o
 SPI1_IRQHandler                                   Libraries/common/startup/gcc_startup_lpc82x.o
+SPI2_IRQHandler                                   Libraries/common/startup/gcc_startup_lpc82x.o
+SRAM_PARITY_IRQHandler                            Libraries/common/startup/gcc_startup_lpc82x.o
 SVC_Handler                                       Libraries/common/startup/gcc_startup_lpc82x.o
 StopWatch_Init                                    build/Libraries/peri_driver/mrt/stopwatch.o
 StopWatch_MsToTicks                               build/Libraries/peri_driver/mrt/stopwatch.o
@@ -2661,16 +2760,22 @@ SystemCoreClock                                   build/Libraries/common/chip/cl
 SystemCoreClockUpdate                             build/Libraries/common/chip/clock_8xx.o
                                                   build/drivers/board.o
 SystemInit                                        build/Libraries/common/chip/sysinit_8xx.o
-                                                  Libraries/common/startup/gcc_startup_lpc82x.o
-UART0_IRQHandler                                  Libraries/common/startup/gcc_startup_lpc82x.o
+TIM14_IRQHandler                                  Libraries/common/startup/gcc_startup_lpc82x.o
+TIM15_IRQHandler                                  Libraries/common/startup/gcc_startup_lpc82x.o
+TIM16_IRQHandler                                  Libraries/common/startup/gcc_startup_lpc82x.o
+TIM17_IRQHandler                                  Libraries/common/startup/gcc_startup_lpc82x.o
+TIM1_BRK_UP_TRG_COM_IRQHandler                    Libraries/common/startup/gcc_startup_lpc82x.o
+TIM1_CC_IRQHandler                                Libraries/common/startup/gcc_startup_lpc82x.o
+TIM3_IRQHandler                                   Libraries/common/startup/gcc_startup_lpc82x.o
+TIM6_IRQHandler                                   Libraries/common/startup/gcc_startup_lpc82x.o
+TKEY_IRQHandler                                   Libraries/common/startup/gcc_startup_lpc82x.o
 UART1_IRQHandler                                  build/drivers/usart.o
                                                   Libraries/common/startup/gcc_startup_lpc82x.o
 UART2_IRQHandler                                  Libraries/common/startup/gcc_startup_lpc82x.o
+UART3_IRQHandler                                  Libraries/common/startup/gcc_startup_lpc82x.o
 WDT_IRQHandler                                    Libraries/common/startup/gcc_startup_lpc82x.o
-WKT_IRQHandler                                    Libraries/common/startup/gcc_startup_lpc82x.o
 _ITM_deregisterTMCloneTable                       /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/crtbegin.o
 _ITM_registerTMCloneTable                         /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/crtbegin.o
-__StackTop                                        Libraries/common/startup/gcc_startup_lpc82x.o
 __TMC_END__                                       /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/crtend.o
                                                   /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/crtbegin.o
 __aeabi_dadd                                      /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(adddf3.o)
@@ -2733,8 +2838,6 @@ __clzsi2                                          /usr/lib/gcc/arm-none-eabi/9.2
                                                   /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(floatsidf.o)
                                                   /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(muldf3.o)
                                                   /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(adddf3.o)
-__data_end__                                      Libraries/common/startup/gcc_startup_lpc82x.o
-__data_start__                                    Libraries/common/startup/gcc_startup_lpc82x.o
 __deregister_frame_info                           /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/crtbegin.o
 __div0                                            build/kernel/libcpu/arm/common/div0.o
 __divdi3                                          /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_divdi3.o)
@@ -2742,7 +2845,6 @@ __divdi3                                          /usr/lib/gcc/arm-none-eabi/9.2
 __divsi3                                          /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_divsi3.o)
 __dso_handle                                      /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/crtbegin.o
 __errno                                           build/kernel/components/libc/compilers/newlib/syscalls.o
-__etext                                           Libraries/common/startup/gcc_startup_lpc82x.o
 __fini_array_end                                  /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-fini.o)
 __fini_array_start                                /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-fini.o)
 __floatdidf                                       /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_floatdidf.o)
@@ -2752,7 +2854,6 @@ __fsymtab_end                                     build/kernel/components/finsh/
 __fsymtab_start                                   build/kernel/components/finsh/shell.o
 __gnu_ldivmod_helper                              /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(bpabi.o)
                                                   /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_aeabi_ldivmod.o)
-__isr_vector                                      Libraries/common/startup/gcc_startup_lpc82x.o
 __libc_fini                                       /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-__call_atexit.o)
 __libc_fini_array                                 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-fini.o)
                                                   /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-__call_atexit.o)
@@ -2790,6 +2891,9 @@ _close_r                                          build/kernel/components/libc/c
 _ctype_                                           /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-ctype_.o)
                                                   build/kernel/components/libc/compilers/common/cstring.o
                                                   build/kernel/components/finsh/msh_parse.o
+_ebss                                             Libraries/common/startup/gcc_startup_lpc82x.o
+_edata                                            Libraries/common/startup/gcc_startup_lpc82x.o
+_estack                                           Libraries/common/startup/gcc_startup_lpc82x.o
 _execve_r                                         build/kernel/components/libc/compilers/newlib/syscalls.o
 _exit                                             build/kernel/components/libc/compilers/newlib/syscalls.o
                                                   /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-exit.o)
@@ -2823,9 +2927,11 @@ _realloc_r                                        build/kernel/components/libc/c
 _rename_r                                         build/kernel/components/libc/compilers/newlib/syscalls.o
 _rt_errno                                         build/kernel/src/kservice.o
                                                   build/kernel/components/libc/compilers/newlib/syscalls.o
+_sbss                                             Libraries/common/startup/gcc_startup_lpc82x.o
+_sdata                                            Libraries/common/startup/gcc_startup_lpc82x.o
+_sidata                                           Libraries/common/startup/gcc_startup_lpc82x.o
 _stack_init                                       /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/crt0.o
 _start                                            /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/crt0.o
-                                                  Libraries/common/startup/gcc_startup_lpc82x.o
 _stat_r                                           build/kernel/components/libc/compilers/newlib/syscalls.o
 _syscall_table_begin                              build/kernel/components/finsh/shell.o
                                                   build/kernel/components/finsh/msh.o
@@ -2867,6 +2973,7 @@ finsh_system_init                                 build/kernel/components/finsh/
 finsh_thread_entry                                build/kernel/components/finsh/shell.o
 flock                                             build/kernel/components/libc/compilers/newlib/syscalls.o
 free                                              /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-malloc.o)
+g_pfnVectors                                      Libraries/common/startup/gcc_startup_lpc82x.o
 gettimeofday                                      build/kernel/components/libc/compilers/common/ctime.o
 gmtime                                            build/kernel/components/libc/compilers/common/ctime.o
 gmtime_r                                          build/kernel/components/libc/compilers/common/ctime.o
@@ -2878,6 +2985,7 @@ localtime                                         build/kernel/components/libc/c
 localtime_r                                       build/kernel/components/libc/compilers/common/ctime.o
 ltoa                                              build/kernel/components/libc/compilers/common/cstdlib.o
 main                                              build/applications/startup.o
+                                                  Libraries/common/startup/gcc_startup_lpc82x.o
                                                   /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/crt0.o
 malloc                                            /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-malloc.o)
                                                   build/kernel/components/libc/compilers/common/cstring.o

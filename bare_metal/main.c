@@ -1,4 +1,5 @@
 #include <stdio.h>
+
 #include "lpc_chip/board.h"
 
 /*****************************************************************************
@@ -62,7 +63,7 @@ int main(void) {
   Board_LED_clear();
   ansi_clr_screen();
   Board_UARTPutSTR("Hello,UART demo:\n");
-  Board_UARTPutSTR("build date: " __DATE__ " build time: " __TIME__ "\n");
+  Board_UARTPutSTR("build datetime: " __DATE__ " " __TIME__ "\n");
 
   /* Enable SysTick Timer */
   SysTick_Config(SystemCoreClock / TICKRATE_HZ);
@@ -70,12 +71,12 @@ int main(void) {
   /* Loop forever */
   while (1) {
     __WFI();
-    /*	if (sys_event & EV_TICK_CT_DISPLAY) {
-                    sys_event &= ~EV_TICK_CT_DISPLAY;
-                    Board_UARTPutSTR("system tick: ");
-                    Board_itoa(tick_ct, out_str, 10);
-                    Board_UARTPutSTR(out_str);
-                    Board_UARTPutChar(0x0d);
-            }*/
+    if (sys_event & EV_TICK_CT_DISPLAY) {
+      sys_event &= ~EV_TICK_CT_DISPLAY;
+      Board_UARTPutSTR("system tick: ");
+      Board_itoa(tick_ct, out_str, 10);
+      Board_UARTPutSTR(out_str);
+      Board_UARTPutChar(0x0d);
+    }
   }
 }

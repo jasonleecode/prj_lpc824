@@ -1,199 +1,270 @@
-/* File: startup_ARMCM0.S
- * Purpose: startup file for Cortex-M0 devices. Should use with 
- *   GCC for ARM Embedded Processors
- * Version: V1.2
- * Date: 15 Nov 2011
- * 
- * Copyright (c) 2011, ARM Limited
- * All rights reserved.
- * SPDX-License-Identifier: Apache-2.0
- * 
- * Redistribution and use in source and binary forms, with or without
- * modification, are permitted provided that the following conditions are met:
-    * Redistributions of source code must retain the above copyright
-      notice, this list of conditions and the following disclaimer.
-    * Redistributions in binary form must reproduce the above copyright
-      notice, this list of conditions and the following disclaimer in the
-      documentation and/or other materials provided with the distribution.
-    * Neither the name of the ARM Limited nor the
-      names of its contributors may be used to endorse or promote products
-      derived from this software without specific prior written permission.
- * 
- * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
- * ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
- * WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
- * DISCLAIMED. IN NO EVENT SHALL ARM LIMITED BE LIABLE FOR ANY
- * DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
- * (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
- * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
- * ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
- * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
- * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
- */
-    .syntax unified
-    .arch armv6-m
+/*******************************************************************************
+;* File Name          : gcc_startup_lpc82x.s
+;* Version            : V1.0.0
+;* Date               : 2023
+;* Description        : .
+;*******************************************************************************/
 
-/* Memory Model
-   The HEAP starts at the end of the DATA section and grows upward.
-   
-   The STACK starts at the end of the RAM and grows downward.
-   
-   The HEAP and stack STACK are only checked at compile time:
-   (DATA_SIZE + HEAP_SIZE + STACK_SIZE) < RAM_SIZE
-   
-   This is just a check for the bare minimum for the Heap+Stack area before
-   aborting compilation, it is not the run time limit:
-   Heap_Size + Stack_Size = 0x80 + 0x80 = 0x100
- */
-    
-    .section .isr_vector
-    .align 2
-    .globl __isr_vector
-__isr_vector:
-    .long    __StackTop            /* Top of Stack */
-    .long    Reset_Handler         /* Reset Handler */
-    .long    NMI_Handler           /* NMI Handler */
-    .long    HardFault_Handler     /* Hard Fault Handler */
-    .long    0                     /* Reserved */
-    .long    0                     /* Reserved */
-    .long    0                     /* Reserved */
-    .long    0                     /* Reserved */
-    .long    0                     /* Reserved */
-    .long    0                     /* Reserved */
-    .long    0                     /* Reserved */
-    .long    SVC_Handler           /* SVCall Handler */
-    .long    0                     /* Reserved */
-    .long    0                     /* Reserved */
-    .long    PendSV_Handler        /* PendSV Handler */
-    .long    SysTick_Handler       /* SysTick Handler */
+  .syntax unified
+  .cpu cortex-m0
+  .fpu softvfp
+  .thumb
 
-/* LPC824 interrupts */
-    .long    SPI0_IRQHandler                         // SPI0 controller
-    .long    SPI1_IRQHandler                         // SPI1 controller
-    .long    0                                       // Reserved
-    .long    UART0_IRQHandler                        // UART0
-    .long    UART1_IRQHandler                        // UART1
-    .long    UART2_IRQHandler                        // UART2
-    .long    0                                       // Reserved
-    .long    I2C1_IRQHandler                         // I2C ch1 controller
-    .long    I2C0_IRQHandler                         // I2C ch0 controller
-    .long    SCT_IRQHandler                          // Smart Counter Timer
-    .long    MRT_IRQHandler                          // Multi-Rate Timer
-    .long    CMP_IRQHandler                          // Comparator
-    .long    WDT_IRQHandler                          // PIO1 (0:11)
-    .long    BOD_IRQHandler                          // Brown Out Detect
-    .long    Flash_IRQHandler                        // Flash interrupt
-    .long    WKT_IRQHandler                          // Wakeup timer
-    .long    ADC_SEQA_IRQHandler                     // ADC sequence A completion
-    .long    ADC_SEQB_IRQHandler                     // ADC sequence B completion
-    .long    ADC_THCMP_IRQHandler                    // ADC threshold compare
-    .long    ADC_OVR_IRQHandler                      // ADC overrun
-    .long    DMA_IRQHandler                          // DMA interrupt
-    .long    I2C2_IRQHandler                         // I2C2 controller
-    .long    I2C3_IRQHandler                         // I2C3 controller
-    .long    0                                       // Reserved
-    .long    PININT0_IRQHandler                      // PIO INT0
-    .long    PININT1_IRQHandler                      // PIO INT1
-    .long    PININT2_IRQHandler                      // PIO INT2
-    .long    PININT3_IRQHandler                      // PIO INT3
-    .long    PININT4_IRQHandler                      // PIO INT4
-    .long    PININT5_IRQHandler                      // PIO INT5
-    .long    PININT6_IRQHandler                      // PIO INT6
-    .long    PININT7_IRQHandler                      // PIO INT7
-    
-    .size    __isr_vector, . - __isr_vector
+.global g_pfnVectors
+.global Default_Handler
+
+/* start address for the initialization values of the .data section.
+defined in linker script */
+.word _sidata
+/* start address for the .data section. defined in linker script */
+.word _sdata
+/* end address for the .data section. defined in linker script */
+.word _edata
+/* start address for the .bss section. defined in linker script */
+.word _sbss
+/* end address for the .bss section. defined in linker script */
+.word _ebss
+
+/**
+ * @brief  This is the code that gets called when the processor first
+ *          starts execution following a reset event. Only the absolutely
+ *          necessary set is performed, after which the application
+ *          supplied main() routine is called.
+ * @param  None
+ * @retval : None
+*/
 
     .section .text.Reset_Handler
-    .thumb
-    .thumb_func
-    .align 2
-    .globl    Reset_Handler
-    .type    Reset_Handler, %function
+  .weak Reset_Handler
+  .type Reset_Handler, %function
 Reset_Handler:
-/*     Loop to copy data from read only memory to RAM. The ranges
- *      of copy from/to are specified by following symbols evaluated in 
- *      linker script.
- *      __etext: End of code section, i.e., begin of data sections to copy from.
- *      __data_start__/__data_end__: RAM address range that data should be
- *      copied to. Both must be aligned to 4 bytes boundary.  */
 
-    ldr    r1, =__etext
-    ldr    r2, =__data_start__
-    ldr    r3, =__data_end__
+/* Copy the data segment initializers from flash to SRAM */
+  movs r1, #0
+  b LoopCopyDataInit
 
-    subs    r3, r2
-    ble    .Lflash_to_ram_loop_end
+CopyDataInit:
+  ldr r3, =_sidata
+  ldr r3, [r3, r1]
+  str r3, [r0, r1]
+  adds r1, r1, #4
 
-    movs    r4, 0
-.Lflash_to_ram_loop:
-    ldr    r0, [r1,r4]
-    str    r0, [r2,r4]
-    adds    r4, 4
-    cmp    r4, r3
-    blt    .Lflash_to_ram_loop
-.Lflash_to_ram_loop_end:
+LoopCopyDataInit:
+  ldr r0, =_sdata
+  ldr r3, =_edata
+  adds r2, r0, r1
+  cmp r2, r3
+  bcc CopyDataInit
+  ldr r2, =_sbss
+  b LoopFillZerobss
+/* Zero fill the bss segment. */
+FillZerobss:
+  movs r3, #0
+  str r3, [r2, #4]
+  adds r2, r2, #4
 
-    ldr    r0, =SystemInit
-    blx    r0
-    ldr    r0, =_start
-    bx    r0
-    .pool
-    .size Reset_Handler, . - Reset_Handler
-    
-    .text
-/*    Macro to define default handlers. Default handler
- *    will be weak symbol and just dead loops. They can be
- *    overwritten by other handlers */
-    .macro    def_default_handler    handler_name
-    .align 1
-    .thumb_func
-    .weak    \handler_name
-    .type    \handler_name, %function
-\handler_name :
-    b    .
-    .size    \handler_name, . - \handler_name
-    .endm
+LoopFillZerobss:
+  ldr r3, = _ebss
+  cmp r2, r3
+  bcc FillZerobss
+/* Call the clock system intitialization function.*/
+  /* bl  SystemInit */
+/* Call the application's entry point.*/
+  bl main
+LoopForever:
+    b LoopForever
+.size Reset_Handler, .-Reset_Handler
 
-    def_default_handler     NMI_Handler
-    def_default_handler     HardFault_Handler
-    def_default_handler     SVC_Handler
-    def_default_handler     PendSV_Handler
-    def_default_handler     SysTick_Handler
-    def_default_handler     Default_Handler
+/**
+ * @brief  This is the code that gets called when the processor receives an
+ *         unexpected interrupt.  This simply enters an infinite loop, preserving
+ *         the system state for examination by a debugger.
+ *
+ * @param  None
+ * @retval None
+*/
+    .section .text.Default_Handler,"ax",%progbits
+Default_Handler:
+Infinite_Loop:
+  b Infinite_Loop
+  .size Default_Handler, .-Default_Handler
+/*******************************************************************************
+*
+* The minimal vector table for a Cortex M0. Note that the proper constructs
+* must be placed on this to ensure that it ends up at physical address
+* 0x0000.0000.
+*******************************************************************************/
+  .section .isr_vector,"a",%progbits
+  .type g_pfnVectors, %object
+  .size g_pfnVectors, .-g_pfnVectors
 
-    .macro    def_irq_default_handler    handler_name
-    .weak     \handler_name
-    .set      \handler_name, Default_Handler
-    .endm
 
-    def_irq_default_handler    SPI0_IRQHandler
-    def_irq_default_handler    SPI1_IRQHandler
-    def_irq_default_handler    UART0_IRQHandler
-    def_irq_default_handler    UART1_IRQHandler
-    def_irq_default_handler    UART2_IRQHandler
-    def_irq_default_handler    I2C0_IRQHandler
-    def_irq_default_handler    I2C1_IRQHandler
-    def_irq_default_handler    I2C2_IRQHandler
-    def_irq_default_handler    I2C3_IRQHandler
-    def_irq_default_handler    SCT_IRQHandler
-    def_irq_default_handler    MRT_IRQHandler
-    def_irq_default_handler    CMP_IRQHandler
-    def_irq_default_handler    WDT_IRQHandler
-    def_irq_default_handler    BOD_IRQHandler
-    def_irq_default_handler    Flash_IRQHandler
-    def_irq_default_handler    WKT_IRQHandler
-    def_irq_default_handler    ADC_SEQA_IRQHandler
-    def_irq_default_handler    ADC_SEQB_IRQHandler
-    def_irq_default_handler    ADC_THCMP_IRQHandler
-    def_irq_default_handler    ADC_OVR_IRQHandler
-    def_irq_default_handler    DMA_IRQHandler
-    def_irq_default_handler    PININT0_IRQHandler
-    def_irq_default_handler    PININT1_IRQHandler
-    def_irq_default_handler    PININT2_IRQHandler
-    def_irq_default_handler    PININT3_IRQHandler
-    def_irq_default_handler    PININT4_IRQHandler
-    def_irq_default_handler    PININT5_IRQHandler
-    def_irq_default_handler    PININT6_IRQHandler
-    def_irq_default_handler    PININT7_IRQHandler
+g_pfnVectors:
+  .word _estack
+  .word Reset_Handler
+  .word NMI_Handler
+  .word HardFault_Handler
+  .word MemManage_Handler
+  .word 0
+  .word 0
+  .word 0
+  .word 0
+  .word 0
+  .word 0
+  .word SVC_Handler
+  .word 0
+  .word 0
+  .word PendSV_Handler
+  .word SysTick_Handler
 
-    .end
+  /* External Interrupts */
+  .word WDT_IRQHandler                  /* 0:  WDT_IRQHandler   */
+  .word RTC_IRQHandler                  /* 1:  RTC_IRQHandler    */
+  .word EFC_IRQHandler                  /* 2:  EFC_IRQHandler    */
+  .word GPIOAB_IRQHandler               /* 3:  GPIOAB_IRQHandler */
+  .word GPIOCD_IRQHandler               /* 4:  GPIOCD_IRQHandler */
+  .word EXTI_IRQHandler                 /* 5:  EXTI_IRQHandler   */
+  .word SRAM_PARITY_IRQHandler          /* 6:  SRAM_PARITY_IRQHandler */
+  .word CLKRDY_IRQHandler               /* 7:  CLKRDY_IRQHandler */
+  .word LCD_IRQHandler                  /* 8:  LCD_IRQHandler    */
+  .word DMA_IRQHandler                  /* 9:  DMA_IRQHandler    */
+  .word UART3_IRQHandler                /* 10: UART3_IRQHandler  */
+  .word TKEY_IRQHandler                 /* 11: TKEY_IRQHandler   */
+  .word ADC_IRQHandler                  /* 12: ADC_IRQHandler    */
+  .word TIM1_BRK_UP_TRG_COM_IRQHandler  /* 13: TIM1_BRK_UP_TRG_COM_IRQHandler */
+  .word TIM1_CC_IRQHandler              /* 14: TIM1_CC_IRQHandler */
+  .word RSV_IRQHandler                  /* 15: Reserved          */
+  .word TIM3_IRQHandler                 /* 16: TIM3_IRQHandler   */
+  .word TIM6_IRQHandler                 /* 17: TIM6_IRQHandler   */
+  .word RSV_IRQHandler                  /* 18: Reserved          */
+  .word TIM14_IRQHandler                /* 19: TIM14_IRQHandler  */
+  .word TIM15_IRQHandler                /* 20: TIM15_IRQHandler  */
+  .word TIM16_IRQHandler                /* 21: TIM16_IRQHandler  */
+  .word TIM17_IRQHandler                /* 22: TIM17_IRQHandler  */
+  .word I2C1_IRQHandler                 /* 23: I2C1_IRQHandler   */
+  .word I2C2_IRQHandler                 /* 24: I2C2_IRQHandler   */
+  .word SPI1_IRQHandler                 /* 25: SPI1_IRQHandler   */
+  .word SPI2_IRQHandler                 /* 26: SPI2_IRQHandler   */
+  .word UART1_IRQHandler                /* 27: UART1_IRQHandler  */
+  .word UART2_IRQHandler                /* 28: UART2_IRQHandler  */
+  .word LPUART_IRQHandler               /* 29: LPUART_IRQHandler */
+  .word CAN1_IRQHandler                 /* 30: CAN1_IRQHandler   */
+  .word AES_IRQHandler                  /* 31: AES_IRQHandler    */
+
+/*******************************************************************************
+*
+* Provide weak aliases for each Exception handler to the Default_Handler.
+* As they are weak aliases, any function with the same name will override
+* this definition.
+*
+*******************************************************************************/
+
+  .weak NMI_Handler
+  .thumb_set NMI_Handler,Default_Handler
+
+  .weak HardFault_Handler
+  .thumb_set HardFault_Handler,Default_Handler
+
+  .weak MemManage_Handler
+  .thumb_set MemManage_Handler,Default_Handler
+
+  .weak SVC_Handler
+  .thumb_set SVC_Handler,Default_Handler
+
+  .weak PendSV_Handler
+  .thumb_set PendSV_Handler,Default_Handler
+
+  .weak SysTick_Handler
+  .thumb_set SysTick_Handler,Default_Handler
+
+  .weak WDT_IRQHandler
+  .thumb_set WDT_IRQHandler,Default_Handler
+
+  .weak RTC_IRQHandler
+  .thumb_set RTC_IRQHandler,Default_Handler
+
+  .weak EFC_IRQHandler
+  .thumb_set EFC_IRQHandler,Default_Handler
+
+  .weak GPIOAB_IRQHandler
+  .thumb_set GPIOAB_IRQHandler,Default_Handler
+
+  .weak GPIOCD_IRQHandler
+  .thumb_set GPIOCD_IRQHandler,Default_Handler
+
+  .weak EXTI_IRQHandler
+  .thumb_set EXTI_IRQHandler,Default_Handler
+
+  .weak SRAM_PARITY_IRQHandler
+  .thumb_set SRAM_PARITY_IRQHandler,Default_Handler
+
+  .weak CLKRDY_IRQHandler
+  .thumb_set CLKRDY_IRQHandler,Default_Handler
+
+  .weak LCD_IRQHandler
+  .thumb_set LCD_IRQHandler,Default_Handler
+
+  .weak DMA_IRQHandler
+  .thumb_set DMA_IRQHandler,Default_Handler
+
+  .weak UART3_IRQHandler
+  .thumb_set UART3_IRQHandler,Default_Handler
+
+  .weak TKEY_IRQHandler
+  .thumb_set TKEY_IRQHandler,Default_Handler
+
+  .weak ADC_IRQHandler
+  .thumb_set ADC_IRQHandler,Default_Handler
+
+  .weak TIM1_BRK_UP_TRG_COM_IRQHandler
+  .thumb_set TIM1_BRK_UP_TRG_COM_IRQHandler,Default_Handler
+
+  .weak TIM1_CC_IRQHandler
+  .thumb_set TIM1_CC_IRQHandler,Default_Handler
+
+  .weak TIM3_IRQHandler
+  .thumb_set TIM3_IRQHandler,Default_Handler
+
+  .weak TIM6_IRQHandler
+  .thumb_set TIM6_IRQHandler,Default_Handler
+
+  .weak RSV_IRQHandler
+  .thumb_set RSV_IRQHandler,Default_Handler
+
+  .weak TIM14_IRQHandler
+  .thumb_set TIM14_IRQHandler,Default_Handler
+
+  .weak TIM15_IRQHandler
+  .thumb_set TIM15_IRQHandler,Default_Handler
+
+  .weak TIM16_IRQHandler
+  .thumb_set TIM16_IRQHandler,Default_Handler
+
+  .weak TIM17_IRQHandler
+  .thumb_set TIM17_IRQHandler,Default_Handler
+
+  .weak I2C1_IRQHandler
+  .thumb_set I2C2_IRQHandler,Default_Handler
+
+  .weak SPI1_IRQHandler
+  .thumb_set SPI1_IRQHandler,Default_Handler
+
+  .weak SPI2_IRQHandler
+  .thumb_set SPI2_IRQHandler,Default_Handler
+
+  .weak UART1_IRQHandler
+  .thumb_set UART1_IRQHandler,Default_Handler
+
+  .weak UART2_IRQHandler
+  .thumb_set UART2_IRQHandler,Default_Handler
+
+  .weak LPUART_IRQHandler
+  .thumb_set LPUART_IRQHandler,Default_Handler
+
+  .weak CAN1_IRQHandler
+  .thumb_set CAN1_IRQHandler,Default_Handler
+
+  .weak AES_IRQHandler
+  .thumb_set AES_IRQHandler,Default_Handler
+
+/************************ (C) COPYRIGHT Jason Lee *****END OF FILE****/
