@@ -93,7 +93,7 @@ menu "On-chip Peripheral Drivers"
                 default n
         endif
 
-    // source "../Libraries/peri_driver/Kconfig"
+    # source "../Libraries/peri_driver/Kconfig"
 
 endmenu
 

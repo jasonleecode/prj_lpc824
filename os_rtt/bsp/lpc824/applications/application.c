@@ -10,32 +10,21 @@
  */
 
 #include <board.h>
+#include <stdint.h>
+#include <rthw.h>
 #include <rtthread.h>
 
 #include "peri_driver.h"
 
-#define INIT_STACK_SIZE     512
-#define LED_STACK_SIZE      256
+#define LED_STACK_SIZE      128
 
 #ifndef RT_USING_HEAP
 /* if there is not enable heap, we should use static thread and stack. */
-rt_align(8)
-static rt_uint8_t init_stack[INIT_STACK_SIZE];
-static struct rt_thread init_thread;
-
 rt_align(8)
 static rt_uint8_t led_stack[LED_STACK_SIZE];
 static struct rt_thread led_thread;
 #endif
 
-void rt_init_thread_entry(void* parameter)
-{
-     /* initialization RT-Thread Components */
-#ifdef RT_USING_COMPONENTS_INIT
-    rt_components_init();
-#endif
-
-}
 
 void rt_led_thread_entry(void *parameter)
 {
@@ -54,35 +43,42 @@ void rt_led_thread_entry(void *parameter)
     }
 }
 
-int rt_application_init()
+/**
+ * @addtogroup LPC8xx
+ */
+
+/*@{*/
+
+/*******************************************************************************
+* Function Name  : assert_failed
+* Description    : Reports the name of the source file and the source line number
+*                  where the assert error has occurred.
+* Input          : - file: pointer to the source file name
+*                  - line: assert error line source number
+* Output         : None
+* Return         : None
+*******************************************************************************/
+void assert_failed(uint8_t* file, uint32_t line)
+{
+    rt_kprintf("\n\r Wrong parameter value detected on\r\n");
+    rt_kprintf("       file  %s\r\n", file);
+    rt_kprintf("       line  %d\r\n", line);
+
+    while (1) ;
+}
+
+int main(void)
 {
     rt_thread_t tid;
 
-#ifdef RT_USING_HEAP
-    tid = rt_thread_create("init",
-        rt_init_thread_entry, RT_NULL,
-        INIT_STACK_SIZE, RT_THREAD_PRIORITY_MAX/3, 20);
-#else
-    {
-
-        rt_err_t result;
-
-        tid = &init_thread;
-        result = rt_thread_init(tid, "init", rt_init_thread_entry, RT_NULL,
-                                init_stack, sizeof(init_stack), RT_THREAD_PRIORITY_MAX / 3, 20);
-        RT_ASSERT(result == RT_EOK);
-    }
-#endif
-    if (tid != RT_NULL)
-        rt_thread_startup(tid);
+    rt_kprintf("Hello, World!\r\n");
 
 #ifdef RT_USING_HEAP
     tid = rt_thread_create("led",
         rt_led_thread_entry, RT_NULL,
-        LED_STACK_SIZE, RT_THREAD_PRIORITY_MAX/3, 20);
+        LED_STACK_SIZE, RT_THREAD_PRIORITY_MAX / 3, 20);
 #else
     {
-
         rt_err_t result;
 
         tid = &led_thread;
@@ -93,6 +89,7 @@ int rt_application_init()
 #endif
     if (tid != RT_NULL)
         rt_thread_startup(tid);
+
 
     return 0;
 }
