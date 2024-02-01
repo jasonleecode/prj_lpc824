@@ -4,3 +4,4 @@ build
 *.o
 .sconsign.dblite
 __pycache__
+.vscode-ctags

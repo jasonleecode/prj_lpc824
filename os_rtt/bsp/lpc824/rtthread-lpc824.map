@@ -1274,7 +1274,7 @@ Discarded input sections
  .text.Error_Handler
                 0x0000000000000000        0x4 build/drivers/board.o
  .rodata.rt_hw_board_init.str1.4
-                0x0000000000000000        0x5 build/drivers/board.o
+                0x0000000000000000        0x6 build/drivers/board.o
  .text.rt_hw_board_init
                 0x0000000000000000       0x54 build/drivers/board.o
  .text          0x0000000000000000        0x0 build/drivers/usart.o
