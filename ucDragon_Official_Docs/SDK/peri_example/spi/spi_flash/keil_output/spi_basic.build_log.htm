@@ -1,0 +1,57 @@
+<html>
+<body>
+<pre>
+<h1>礦ision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: μVision V5.14.0.0
+Copyright (C) 2015 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: ll 番茄花园, 番茄花园, LIC=HN045-GJC1C-AQR0M-X67HR-TL52J-2TC63
+ 
+Tool Versions:
+Toolchain:       MDK-ARM Standard  Version: 5.14.0.0
+Toolchain Path:  F:\Keil_v5\ARM\ARMCC\Bin
+C Compiler:      Armcc.exe V5.05 update 1 (build 106)
+Assembler:       Armasm.exe V5.05 update 1 (build 106)
+Linker/Locator:  ArmLink.exe V5.05 update 1 (build 106)
+Library Manager: ArmAr.exe V5.05 update 1 (build 106)
+Hex Converter:   FromElf.exe V5.05 update 1 (build 106)
+CPU DLL:         SARMCM3.DLL V5.14.0.0
+Dialog DLL:      DARMCM1.DLL V1.12.0.0
+Target DLL:      Segger\JL2CM3.dll V2.99.13.0
+Dialog DLL:      TARMCM1.DLL V1.9.0.0
+ 
+<h2>Project:</h2>
+E:\光盘资料\2015\freescale\lpc8xx\驱动\peri_example\spi\spi_flash\project_spi_basic.uvprojx
+Project File Date:  05/11/2016
+
+<h2>Output:</h2>
+Build target 'iFlash'
+compiling main_spi_basic.c...
+main_spi_basic.c(155): warning:  #177-D: variable "i" was declared but never referenced
+        int i;
+main_spi_basic.c(53): warning:  #177-D: variable "DelayConfigStruct" was declared but never referenced
+  static SPI_DELAY_CONFIG_T DelayConfigStruct;
+main_spi_basic.c(55): warning:  #177-D: variable "XfSetup" was declared but never referenced
+  static SPI_DATA_SETUP_T XfSetup;
+main_spi_basic.c: 3 warnings, 0 errors
+compiling w25x32.c...
+linking...
+Program Size: Code=4556 RO-data=1160 RW-data=24 ZI-data=432  
+After Build - User command #2: ..\..\..\tools\keil_after_build.bat F:\Keil_v5\ARM\BIN\ELFDWT.exe F:\Keil_v5\ARM\ARMCC\BIN\FromElf.exe E:\光盘资料\2015\freescale\lpc8xx\驱动\peri_example\spi\spi_flash\keil_output\spi_basic.axf E:\光盘资料\2015\freescale\lpc8xx\驱动\peri_example\spi\spi_flash\keil_output\spi_basic.hex E:\光盘资料\2015\freescale\lpc8xx\驱动\peri_example\spi\spi_flash\keil_output\spi_basic.bin
+E:\光盘资料\2015\freescale\lpc8xx\驱动\peri_example\spi\spi_flash>F:\Keil_v5\ARM\BIN\ELFDWT.exe E:\光盘资料\2015\freescale\lpc8xx\驱动\peri_example\spi\spi_flash\keil_output\spi_basic.axf BASEADDRESS(0x00000000) 
+ELFDWT - Signature Creator V1.1.0.0
+COPYRIGHT Keil - An ARM Company, Copyright (C) 2014
+*** Updated Signature over Range[32] (0x00000000 - 0x00000018): @0x0000001C = 0xEFFFFBA1
+*** Processing completed, no Errors.
+E:\光盘资料\2015\freescale\lpc8xx\驱动\peri_example\spi\spi_flash>F:\Keil_v5\ARM\ARMCC\BIN\FromElf.exe --i32 --output E:\光盘资料\2015\freescale\lpc8xx\驱动\peri_example\spi\spi_flash\keil_output\spi_basic.hex E:\光盘资料\2015\freescale\lpc8xx\驱动\peri_example\spi\spi_flash\keil_output\spi_basic.axf 
+E:\光盘资料\2015\freescale\lpc8xx\驱动\peri_example\spi\spi_flash>F:\Keil_v5\ARM\ARMCC\BIN\FromElf.exe --bin --output E:\光盘资料\2015\freescale\lpc8xx\驱动\peri_example\spi\spi_flash\keil_output\spi_basic.bin E:\光盘资料\2015\freescale\lpc8xx\驱动\peri_example\spi\spi_flash\keil_output\spi_basic.axf 
+".\keil_output\spi_basic.axf" - 0 Error(s), 3 Warning(s).
+
+<h2>Collection of Component include folders:</h2>
+  E:\光盘资料\2015\freescale\lpc8xx\驱动\peri_example\spi\spi_flash\RTE
+  F:\Keil_v5\ARM\PACK\Keil\LPC800_DFP\1.2.0\Device\Include
+
+<h2>Collection of Component Files used:</h2>
+</pre>
+</body>
+</html>

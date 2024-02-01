@@ -1,0 +1,23 @@
+--cpu Cortex-M0+
+".\keil_output\keil_freertos_startup_lpc82x.o"
+".\keil_output\main_freertos_blinky.o"
+".\keil_output\croutine.o"
+".\keil_output\list.o"
+".\keil_output\queue.o"
+".\keil_output\tasks.o"
+".\keil_output\timers.o"
+".\keil_output\port.o"
+".\keil_output\freertoscommonhooks.o"
+".\keil_output\heap_3.o"
+".\keil_output\gpio_8xx.o"
+".\keil_output\uart_8xx.o"
+".\keil_output\ring_buffer.o"
+".\keil_output\sysinit_8xx.o"
+".\keil_output\board.o"
+".\keil_output\ioswm_8xx.o"
+".\keil_output\clock_8xx.o"
+".\keil_output\syscon_8xx.o"
+--library_type=microlib --strict --scatter ".\keil_output\freertos_blinky.sct"
+--summary_stderr --info summarysizes --map --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list ".\keil_output\freertos_blinky.map" -o .\keil_output\freertos_blinky.axf

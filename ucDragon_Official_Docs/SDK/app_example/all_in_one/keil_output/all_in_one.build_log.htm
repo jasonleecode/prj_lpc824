@@ -1,0 +1,57 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: ¦ÌVision V5.14.0.0
+Copyright (C) 2015 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: li Sky123.Org, Sky123.Org, LIC=ZB456-D6KZH-DKFBN-Y4XA3-RW7ZR-RL2XY
+ 
+Tool Versions:
+Toolchain:       MDK-ARM Standard  Version: 5.14.0.0
+Toolchain Path:  F:\Keil_v5\ARM\ARMCC\Bin
+C Compiler:      Armcc.exe V5.05 update 1 (build 106)
+Assembler:       Armasm.exe V5.05 update 1 (build 106)
+Linker/Locator:  ArmLink.exe V5.05 update 1 (build 106)
+Library Manager: ArmAr.exe V5.05 update 1 (build 106)
+Hex Converter:   FromElf.exe V5.05 update 1 (build 106)
+CPU DLL:         SARMCM3.DLL V5.14.0.0
+Dialog DLL:      DARMCM1.DLL V1.12.0.0
+Target DLL:      CMSIS_AGDI.dll V1.21.0.0
+Dialog DLL:      TARMCM1.DLL V1.9.0.0
+ 
+<h2>Project:</h2>
+F:\YL-LPC824\soc\app_example\all_in_one\app_all_in_one.uvprojx
+Project File Date:  05/23/2016
+
+<h2>Output:</h2>
+Build target 'iFlash'
+compiling main_all_in_one.c...
+main_all_in_one.c(62): warning:  #177-D: variable "DelayConfigStruct" was declared but never referenced
+  static SPI_DELAY_CONFIG_T DelayConfigStruct;
+main_all_in_one.c(147): warning:  #177-D: function "WrEepromByte" was declared but never referenced
+  static void WrEepromByte(uint8_t byteAddr, uint8_t byteData)
+main_all_in_one.c(178): warning:  #177-D: function "RdEepromByte" was declared but never referenced
+  static void RdEepromByte(uint8_t byteAddr, uint8_t *byteData)
+main_all_in_one.c: 3 warnings, 0 errors
+linking...
+Program Size: Code=7096 RO-data=1164 RW-data=40 ZI-data=904  
+FromELF: creating hex file...
+After Build - User command #2: ..\..\tools\keil_after_build.bat F:\Keil_v5\ARM\BIN\ELFDWT.exe F:\Keil_v5\ARM\ARMCC\BIN\FromElf.exe F:\YL-LPC824\soc\app_example\all_in_one\keil_output\all_in_one.axf F:\YL-LPC824\soc\app_example\all_in_one\keil_output\all_in_one.hex F:\YL-LPC824\soc\app_example\all_in_one\keil_output\all_in_one.bin
+F:\YL-LPC824\soc\app_example\all_in_one>F:\Keil_v5\ARM\BIN\ELFDWT.exe F:\YL-LPC824\soc\app_example\all_in_one\keil_output\all_in_one.axf BASEADDRESS(0x00000000) 
+ELFDWT - Signature Creator V1.1.0.0
+COPYRIGHT Keil - An ARM Company, Copyright (C) 2014
+*** Updated Signature over Range[32] (0x00000000 - 0x00000018): @0x0000001C = 0xEFFFF9B9
+*** Processing completed, no Errors.
+F:\YL-LPC824\soc\app_example\all_in_one>F:\Keil_v5\ARM\ARMCC\BIN\FromElf.exe --i32 --output F:\YL-LPC824\soc\app_example\all_in_one\keil_output\all_in_one.hex F:\YL-LPC824\soc\app_example\all_in_one\keil_output\all_in_one.axf 
+F:\YL-LPC824\soc\app_example\all_in_one>F:\Keil_v5\ARM\ARMCC\BIN\FromElf.exe --bin --output F:\YL-LPC824\soc\app_example\all_in_one\keil_output\all_in_one.bin F:\YL-LPC824\soc\app_example\all_in_one\keil_output\all_in_one.axf 
+".\keil_output\all_in_one.axf" - 0 Error(s), 3 Warning(s).
+
+<h2>Collection of Component include folders:</h2>
+  F:\YL-LPC824\soc\app_example\all_in_one\RTE
+  F:\Keil_v5\ARM\PACK\Keil\LPC800_DFP\1.2.0\Device\Include
+
+<h2>Collection of Component Files used:</h2>
+</pre>
+</body>
+</html>

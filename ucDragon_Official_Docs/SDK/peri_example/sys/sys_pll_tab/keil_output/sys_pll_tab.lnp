@@ -1,0 +1,15 @@
+--cpu Cortex-M0+
+".\keil_output\main_sys_pll_tab.o"
+".\keil_output\gpio_8xx.o"
+".\keil_output\uart_8xx.o"
+".\keil_output\ring_buffer.o"
+".\keil_output\keil_startup_lpc82x.o"
+".\keil_output\sysinit_8xx.o"
+".\keil_output\board.o"
+".\keil_output\ioswm_8xx.o"
+".\keil_output\clock_8xx.o"
+".\keil_output\syscon_8xx.o"
+--library_type=microlib --strict --scatter ".\keil_output\sys_pll_tab.sct"
+--summary_stderr --info summarysizes --map --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list ".\keil_output\sys_pll_tab.map" -o .\keil_output\sys_pll_tab.axf

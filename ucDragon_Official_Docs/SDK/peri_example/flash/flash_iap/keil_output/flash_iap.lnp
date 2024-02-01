@@ -1,0 +1,16 @@
+--cpu Cortex-M0+
+".\keil_output\main_flash_iap.o"
+".\keil_output\keil_startup_lpc82x.o"
+".\keil_output\sysinit_8xx.o"
+".\keil_output\board.o"
+".\keil_output\ioswm_8xx.o"
+".\keil_output\clock_8xx.o"
+".\keil_output\syscon_8xx.o"
+".\keil_output\uart_8xx.o"
+".\keil_output\gpio_8xx.o"
+".\keil_output\ring_buffer.o"
+".\keil_output\iap.o"
+--library_type=microlib --strict --scatter "sys_iap.sct"
+--summary_stderr --info summarysizes --map --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list ".\keil_output\flash_iap.map" -o .\keil_output\flash_iap.axf

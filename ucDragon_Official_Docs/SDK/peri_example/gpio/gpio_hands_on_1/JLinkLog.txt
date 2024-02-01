@@ -1,0 +1,27 @@
+
+T1B508 000:397 SEGGER J-Link V4.96d Log File (0020ms, 0388ms total)
+T1B508 000:397 DLL Compiled: Jan 29 2015 11:45:37 (0020ms, 0388ms total)
+T1B508 000:397 Logging started @ 2016-05-17 09:34 (0020ms, 0388ms total)
+T1B508 000:417 JLINK_SetWarnOutHandler(...) (0000ms, 0388ms total)
+T1B508 000:417 JLINK_OpenEx(...)
+Firmware: J-Link ARM V7 compiled Jun 20 2012 19:45:53
+Hardware: V7.00
+S/N: 57001768
+Feature(s): RDI, FlashBP, FlashDL, JFlash, GDBFULL  returns O.K. (0286ms, 0674ms total)
+T1B508 000:703 JLINK_SetErrorOutHandler(...) (0000ms, 0674ms total)
+T1B508 000:703 JLINK_ExecCommand("ProjectFile = "E:\光盘资料\2015\freescale\lpc8xx\驱动\peri_example\gpio\gpio_hands_on_1\JLinkSettings.ini"", ...)Device "UNSPECIFIED" selected.  returns 0x00 (0025ms, 0699ms total)
+T1B508 000:734 JLINK_ExecCommand("Device = LPC824M201JHI33", ...)Device "UNSPECIFIED" selected.  returns 0x00 (0004ms, 0703ms total)
+T1B508 000:738 JLINK_ExecCommand("DisableConnectionTimeout", ...)  returns 0x01 (0000ms, 0703ms total)
+T1B508 000:738 JLINK_GetHardwareVersion()  returns 0x11170 (0000ms, 0703ms total)
+T1B508 000:738 JLINK_GetDLLVersion()  returns 49604 (0000ms, 0703ms total)
+T1B508 000:738 JLINK_GetFirmwareString(...) (0000ms, 0703ms total)
+T1B508 000:761 JLINK_GetDLLVersion()  returns 49604 (0000ms, 0703ms total)
+T1B508 000:761 JLINK_GetCompileDateTime() (0000ms, 0703ms total)
+T1B508 000:764 JLINK_GetFirmwareString(...) (0000ms, 0703ms total)
+T1B508 000:766 JLINK_GetHardwareVersion()  returns 0x11170 (0000ms, 0703ms total)
+T1B508 000:774 JLINK_TIF_Select(JLINKARM_TIF_SWD)  returns 0x00 (0005ms, 0708ms total)
+T1B508 000:779 JLINK_SetSpeed(20000) (0004ms, 0712ms total)
+T1B508 000:783 JLINK_GetId()  returns 0x00000000 (0002ms, 0714ms total)
+T1B508 001:976 JLINK_Close() (0001ms, 0716ms total)
+T1B508 001:976  (0001ms, 0716ms total)
+T1B508 001:976 Closed (0001ms, 0716ms total)

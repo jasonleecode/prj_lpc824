@@ -1,0 +1,16 @@
+--cpu Cortex-M0+
+".\keil_output\24c02.o"
+".\keil_output\gpio_8xx.o"
+".\keil_output\uart_8xx.o"
+".\keil_output\ring_buffer.o"
+".\keil_output\i2c_8xx.o"
+".\keil_output\keil_startup_lpc82x.o"
+".\keil_output\sysinit_8xx.o"
+".\keil_output\board.o"
+".\keil_output\ioswm_8xx.o"
+".\keil_output\clock_8xx.o"
+".\keil_output\syscon_8xx.o"
+--library_type=microlib --strict --scatter ".\keil_output\rom_i2c_interrupt.sct"
+--summary_stderr --info summarysizes --map --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list ".\keil_output\rom_i2c_interrupt.map" -o .\keil_output\rom_i2c_interrupt.axf

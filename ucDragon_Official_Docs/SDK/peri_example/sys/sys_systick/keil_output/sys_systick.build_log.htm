@@ -1,0 +1,61 @@
+<html>
+<body>
+<pre>
+<h1>礦ision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: μVision V5.14.0.0
+Copyright (C) 2015 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: ll 番茄花园, 番茄花园, LIC=HN045-GJC1C-AQR0M-X67HR-TL52J-2TC63
+ 
+Tool Versions:
+Toolchain:       MDK-ARM Standard  Version: 5.14.0.0
+Toolchain Path:  F:\Keil_v5\ARM\ARMCC\Bin
+C Compiler:      Armcc.exe V5.05 update 1 (build 106)
+Assembler:       Armasm.exe V5.05 update 1 (build 106)
+Linker/Locator:  ArmLink.exe V5.05 update 1 (build 106)
+Library Manager: ArmAr.exe V5.05 update 1 (build 106)
+Hex Converter:   FromElf.exe V5.05 update 1 (build 106)
+CPU DLL:         SARMCM3.DLL V5.14.0.0
+Dialog DLL:      DARMCM1.DLL V1.12.0.0
+Target DLL:      Segger\JL2CM3.dll V2.99.13.0
+Dialog DLL:      TARMCM1.DLL V1.9.0.0
+ 
+<h2>Project:</h2>
+E:\光盘资料\2015\freescale\lpc8xx\驱动\peri_example\sys\sys_systick\project_sys_systick.uvprojx
+Project File Date:  03/14/2016
+
+<h2>Output:</h2>
+Build target 'iFlash'
+compiling main_sys_systick.c...
+compiling gpio_8xx.c...
+compiling uart_8xx.c...
+compiling ring_buffer.c...
+assembling keil_startup_lpc82x.s...
+compiling sysinit_8xx.c...
+compiling board.c...
+..\..\..\common\board\board.c(237): warning:  #177-D: variable "pSWM" was declared but never referenced
+        LPC_SWM_T *pSWM = LPC_SWM;
+..\..\..\common\board\board.c: 1 warning, 0 errors
+compiling ioswm_8xx.c...
+compiling clock_8xx.c...
+compiling syscon_8xx.c...
+linking...
+Program Size: Code=2440 RO-data=1160 RW-data=8 ZI-data=384  
+After Build - User command #2: ..\..\..\tools\keil_after_build.bat F:\Keil_v5\ARM\BIN\ELFDWT.exe F:\Keil_v5\ARM\ARMCC\BIN\FromElf.exe E:\光盘资料\2015\freescale\lpc8xx\驱动\peri_example\sys\sys_systick\keil_output\sys_systick.axf E:\光盘资料\2015\freescale\lpc8xx\驱动\peri_example\sys\sys_systick\keil_output\sys_systick.hex E:\光盘资料\2015\freescale\lpc8xx\驱动\peri_example\sys\sys_systick\keil_output\sys_systick.bin
+E:\光盘资料\2015\freescale\lpc8xx\驱动\peri_example\sys\sys_systick>F:\Keil_v5\ARM\BIN\ELFDWT.exe E:\光盘资料\2015\freescale\lpc8xx\驱动\peri_example\sys\sys_systick\keil_output\sys_systick.axf BASEADDRESS(0x00000000) 
+ELFDWT - Signature Creator V1.1.0.0
+COPYRIGHT Keil - An ARM Company, Copyright (C) 2014
+*** Updated Signature over Range[32] (0x00000000 - 0x00000018): @0x0000001C = 0xEFFFFBE1
+*** Processing completed, no Errors.
+E:\光盘资料\2015\freescale\lpc8xx\驱动\peri_example\sys\sys_systick>F:\Keil_v5\ARM\ARMCC\BIN\FromElf.exe --i32 --output E:\光盘资料\2015\freescale\lpc8xx\驱动\peri_example\sys\sys_systick\keil_output\sys_systick.hex E:\光盘资料\2015\freescale\lpc8xx\驱动\peri_example\sys\sys_systick\keil_output\sys_systick.axf 
+E:\光盘资料\2015\freescale\lpc8xx\驱动\peri_example\sys\sys_systick>F:\Keil_v5\ARM\ARMCC\BIN\FromElf.exe --bin --output E:\光盘资料\2015\freescale\lpc8xx\驱动\peri_example\sys\sys_systick\keil_output\sys_systick.bin E:\光盘资料\2015\freescale\lpc8xx\驱动\peri_example\sys\sys_systick\keil_output\sys_systick.axf 
+".\keil_output\sys_systick.axf" - 0 Error(s), 1 Warning(s).
+
+<h2>Collection of Component include folders:</h2>
+  E:\光盘资料\2015\freescale\lpc8xx\驱动\peri_example\sys\sys_systick\RTE
+  F:\Keil_v5\ARM\PACK\Keil\LPC800_DFP\1.2.0\Device\Include
+
+<h2>Collection of Component Files used:</h2>
+</pre>
+</body>
+</html>
