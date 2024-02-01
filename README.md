@@ -3,6 +3,7 @@ LPC824Lite这个开发板是我2016年（也可能是2015年，时间久了有�
 
 LPC824Lite development board was won as a prize at the RT-Thread salon event held at Beihang University(BUAA) in 2016 (or possibly 2015, it's a bit hazy due to the passage of time). However, I haven't had the time to play with it until now. This board was developed by uCdragon Technology using NXP's LPC824 chip, based on the Cortex-M0 core with a main frequency of 30MHz, 32KB of on-chip Flash, and 8KB of RAM. It comes with abundant onboard resources, including a 2KB I2C EEPROM (AT24C02) and a 4MB SPI Flash (W24Q32). I've now organized its bare-metal program and the one based on RT-Thread here.Build environment is Ubuntu 20.04.
 
+ucDragon_Official_Docs/lpc824lite.jpg
 # 
 <++>
 
