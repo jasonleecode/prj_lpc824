@@ -5,20 +5,23 @@ LPC824Lite development board was won as a prize at the RT-Thread salon event hel
 
 ![image](ucDragon_Official_Docs/lpc824lite.jpg)
 # 
-<++>
 
 # install toolchain
-arm-linux-gcc
-<++>
+brew install arm-linux-gcc  
+pip install kconfiglib
 
 
 # build
-`make
-` <++>
+## bare_metal platform build
+`
+make  
+`
 
-<++>
+## os_rtt platform build  
+`
+scons
+`
+
 
 # download and run
-
-
-<++>
+this dev kit support IAP, so, drag bin file to it.
