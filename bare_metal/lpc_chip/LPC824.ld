@@ -4,6 +4,9 @@ MEMORY
   ram : org = 0x10000000, len = 8k
 }
 
+/* 堆栈大小定义 (min: 256 bytes) */
+__stack_size__ = 512;
+
 ENTRY(ResetISR)
 
 SECTIONS
@@ -44,6 +47,12 @@ SECTIONS
         PROVIDE(end = .);
     } > ram
 
-    PROVIDE(_pvHeapStart = .);
+    /* 定义堆的开始 */
+    PROVIDE(_pvHeapStart = _ebss);
+    
+    /* 定义堆的结尾（为栈留出空间）*/
+    PROVIDE(_pvHeapLimit = ORIGIN(ram) + LENGTH(ram) - __stack_size__);
+    
+    /* 定义栈顶 */
     PROVIDE(_vStackTop = ORIGIN(ram) + LENGTH(ram));
 }

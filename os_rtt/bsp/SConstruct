@@ -5,8 +5,9 @@ import rtconfig
 if os.getenv('RTT_ROOT'):
     RTT_ROOT = os.getenv('RTT_ROOT')
 else:
-    #RTT_ROOT = os.path.join(Dir('#').get_abspath(), 'rt-thread')
-    RTT_ROOT = os.path.normpath(os.getcwd() + '/../..')
+    # 使用相对路径，自动从bsp目录推导RTT_ROOT
+    # bsp目录结构: os_rtt/bsp/SConstruct, os_rtt是RTT_ROOT
+    RTT_ROOT = os.path.normpath(os.path.join(os.getcwd(), '..'))
 
 sys.path = sys.path + [os.path.join(RTT_ROOT, 'tools')]
 from building import *

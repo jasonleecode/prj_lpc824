@@ -33,7 +33,9 @@
 #define __BOARD_API_H_
 
 #include "lpc_types.h"
+#if defined(DEBUG_ENABLE) && defined(DEBUG_SEMIHOSTING)
 #include <stdio.h>
+#endif
 
 #ifdef __cplusplus
 extern "C" {

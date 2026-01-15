@@ -38,10 +38,10 @@ if PLATFORM == 'gcc':
     OBJDUMP = PREFIX + 'objdump'
     OBJCPY = PREFIX + 'objcopy'
 
-    DEVICE = ' -mcpu=cortex-m0 -mthumb -ffunction-sections -fdata-sections'
-    CFLAGS = DEVICE
+    DEVICE = ' -mcpu=cortex-m0 -mthumb -mfloat-abi=soft -ffunction-sections -fdata-sections'
+    CFLAGS = DEVICE + ' -I../include'
     AFLAGS = ' -c' + DEVICE + ' -x assembler-with-cpp'
-    LFLAGS = DEVICE + ' -Wl,--gc-sections,-Map=rtthread-lpc824.map,-cref,-u,Reset_Handler -T lpc824_rom.ld'
+    LFLAGS = DEVICE + ' -Wl,--gc-sections,-Map=rtthread-lpc824.map,-cref,-u,Reset_Handler -T lpc824_rom.ld -nostdlib -nodefaultlibs -lgcc'
 
     CPATH = ''
     LPATH = ''
