@@ -1138,17 +1138,38 @@ Discarded input sections
  .data          0x00000000        0x0 build/drivers/board.o
  .bss           0x00000000        0x0 build/drivers/board.o
  .text.Error_Handler
-                0x00000000        0x4 build/drivers/board.o
+                0x00000000        0x8 build/drivers/board.o
  .rodata.rt_hw_board_init.str1.4
                 0x00000000        0x6 build/drivers/board.o
  .text.rt_hw_board_init
-                0x00000000       0x54 build/drivers/board.o
+                0x00000000       0x6c build/drivers/board.o
+ .text.board_enter_sleep
+                0x00000000       0x10 build/drivers/board.o
+ .text.board_enter_deep_sleep
+                0x00000000       0x10 build/drivers/board.o
+ .text.board_enter_power_down
+                0x00000000       0x10 build/drivers/board.o
+ .text.board_enter_deep_powerdown
+                0x00000000       0x10 build/drivers/board.o
+ .text.board_enter_power_mode
+                0x00000000       0x34 build/drivers/board.o
+ .text          0x00000000        0x0 build/drivers/drv_pwm.o
+ .data          0x00000000        0x0 build/drivers/drv_pwm.o
+ .bss           0x00000000        0x0 build/drivers/drv_pwm.o
+ .comment       0x00000000       0x13 build/drivers/drv_pwm.o
+ .ARM.attributes
+                0x00000000       0x2c build/drivers/drv_pwm.o
  .text          0x00000000        0x0 build/drivers/usart.o
  .data          0x00000000        0x0 build/drivers/usart.o
  .bss           0x00000000        0x0 build/drivers/usart.o
- .comment       0x00000000       0x13 build/drivers/usart.o
- .ARM.attributes
-                0x00000000       0x2c build/drivers/usart.o
+ .rodata.uart_irq_handler.str1.4
+                0x00000000      0x1db build/drivers/usart.o
+ .text.uart_irq_handler
+                0x00000000      0x1ec build/drivers/usart.o
+ .bss.uart_cmd_pos
+                0x00000000        0x4 build/drivers/usart.o
+ .bss.uart_cmd_buffer
+                0x00000000       0x40 build/drivers/usart.o
 
 Memory Configuration
 
@@ -1217,10 +1238,11 @@ LOAD build/Libraries/peri_driver/wkt/wkt_8xx.o
 LOAD build/Libraries/peri_driver/wwdt/wwdt_8xx.o
 LOAD build/applications/application.o
 LOAD build/drivers/board.o
+LOAD build/drivers/drv_pwm.o
 LOAD build/drivers/usart.o
                 0x00000100                        _system_stack_size = 0x100
 
-.text           0x00000000     0x2398
+.text           0x00000000     0x23a0
                 0x00000000                        . = ALIGN (0x4)
                 0x00000000                        _stext = .
  *(.isr_vector)
@@ -1450,77 +1472,82 @@ LOAD build/drivers/usart.o
  .text.SysTick_Handler
                 0x00001e8c       0x10 build/drivers/board.o
                 0x00001e8c                SysTick_Handler
+ .text.rt_hw_usart_init
+                0x00001e9c        0x4 build/drivers/usart.o
+                0x00001e9c                rt_hw_usart_init
  *(.rodata)
  *(.rodata*)
  .rodata.rt_hw_hard_fault_exception.str1.4
-                0x00001e9c       0xb8 build/kernel/libcpu/arm/cortex-m0/cpuport.o
+                0x00001ea0       0xb8 build/kernel/libcpu/arm/cortex-m0/cpuport.o
                                  0x9a (size before relaxing)
  .rodata.rt_vsnprintf.str1.4
-                0x00001f54        0x7 build/kernel/src/kservice.o
+                0x00001f58        0x7 build/kernel/src/kservice.o
  .rodata.rt_vsnprintf
-                0x00001f54      0x2e4 build/kernel/src/kservice.o
+                0x00001f58      0x2e4 build/kernel/src/kservice.o
  .rodata.small_digits.1
-                0x00002238       0x11 build/kernel/src/kservice.o
- *fill*         0x00002249        0x3 00000000
+                0x0000223c       0x11 build/kernel/src/kservice.o
+ *fill*         0x0000224d        0x3 00000000
  .rodata.large_digits.2
-                0x0000224c       0x11 build/kernel/src/kservice.o
- *fill*         0x0000225d        0x3 00000000
+                0x00002250       0x11 build/kernel/src/kservice.o
+ *fill*         0x00002261        0x3 00000000
  .rodata.__lowest_bit_bitmap
-                0x00002260      0x100 build/kernel/src/kservice.o
-                0x00002260                __lowest_bit_bitmap
+                0x00002264      0x100 build/kernel/src/kservice.o
+                0x00002264                __lowest_bit_bitmap
  .rodata.rt_timer_control
-                0x00002360       0x28 build/kernel/src/timer.o
+                0x00002364       0x28 build/kernel/src/timer.o
  .rodata.main.str1.4
-                0x00002388       0x14 build/applications/application.o
+                0x0000238c       0x14 build/applications/application.o
  *(.glue_7)
- .glue_7        0x00002388        0x0 linker stubs
+ .glue_7        0x0000238c        0x0 linker stubs
  *(.glue_7t)
- .glue_7t       0x00002388        0x0 linker stubs
+ .glue_7t       0x0000238c        0x0 linker stubs
  *(.gnu.linkonce.t*)
-                0x0000239c                        . = ALIGN (0x4)
-                0x00002388                        __fsymtab_start = .
+                0x000023a0                        . = ALIGN (0x4)
+                0x0000238c                        __fsymtab_start = .
  *(FSymTab)
-                0x00002388                        __fsymtab_end = .
-                0x0000239c                        . = ALIGN (0x4)
-                0x00002388                        __vsymtab_start = .
+                0x0000238c                        __fsymtab_end = .
+                0x000023a0                        . = ALIGN (0x4)
+                0x0000238c                        __vsymtab_start = .
  *(VSymTab)
-                0x00002388                        __vsymtab_end = .
-                0x0000239c                        . = ALIGN (0x4)
-                0x0000239c                        . = ALIGN (0x4)
-                0x00002388                        __rt_init_start = .
+                0x0000238c                        __vsymtab_end = .
+                0x000023a0                        . = ALIGN (0x4)
+                0x000023a0                        . = ALIGN (0x4)
+                0x0000238c                        __rt_init_start = .
  *(SORT_BY_NAME(.rti_fn*))
- .rti_fn.0      0x00002388        0x4 build/kernel/src/components.o
-                0x00002388                __rt_init_rti_start
- .rti_fn.0.end  0x0000238c        0x4 build/kernel/src/components.o
-                0x0000238c                __rt_init_rti_board_start
- .rti_fn.1.end  0x00002390        0x4 build/kernel/src/components.o
-                0x00002390                __rt_init_rti_board_end
- .rti_fn.6.end  0x00002394        0x4 build/kernel/src/components.o
-                0x00002394                __rt_init_rti_end
-                0x00002398                        __rt_init_end = .
-                0x0000239c                        . = ALIGN (0x4)
-                0x0000239c                        . = ALIGN (0x4)
-                0x00002398                        _etext = .
-                0x00002398                        __exidx_start = .
+ .rti_fn.0      0x0000238c        0x4 build/kernel/src/components.o
+                0x0000238c                __rt_init_rti_start
+ .rti_fn.0.end  0x00002390        0x4 build/kernel/src/components.o
+                0x00002390                __rt_init_rti_board_start
+ .rti_fn.1      0x00002394        0x4 build/drivers/usart.o
+                0x00002394                __rt_init_rt_hw_usart_init
+ .rti_fn.1.end  0x00002398        0x4 build/kernel/src/components.o
+                0x00002398                __rt_init_rti_board_end
+ .rti_fn.6.end  0x0000239c        0x4 build/kernel/src/components.o
+                0x0000239c                __rt_init_rti_end
+                0x000023a0                        __rt_init_end = .
+                0x000023a0                        . = ALIGN (0x4)
+                0x000023a0                        . = ALIGN (0x4)
+                0x000023a0                        _etext = .
+                0x000023a0                        __exidx_start = .
 
-.vfp11_veneer   0x00002398        0x0
- .vfp11_veneer  0x00002398        0x0 linker stubs
+.vfp11_veneer   0x000023a0        0x0
+ .vfp11_veneer  0x000023a0        0x0 linker stubs
 
-.v4_bx          0x00002398        0x0
- .v4_bx         0x00002398        0x0 linker stubs
+.v4_bx          0x000023a0        0x0
+ .v4_bx         0x000023a0        0x0 linker stubs
 
-.iplt           0x00002398        0x0
- .iplt          0x00002398        0x0 build/kernel/components/drivers/core/device.o
+.iplt           0x000023a0        0x0
+ .iplt          0x000023a0        0x0 build/kernel/components/drivers/core/device.o
 
-.rel.dyn        0x00002398        0x0
- .rel.iplt      0x00002398        0x0 build/kernel/components/drivers/core/device.o
+.rel.dyn        0x000023a0        0x0
+ .rel.iplt      0x000023a0        0x0 build/kernel/components/drivers/core/device.o
 
-.ARM.exidx      0x00002398        0x0
+.ARM.exidx      0x000023a0        0x0
  *(.ARM.exidx* .gnu.linkonce.armexidx.*)
-                0x00002398                        _sidata = .
-                0x00002398                        __exidx_end = .
+                0x000023a0                        _sidata = .
+                0x000023a0                        __exidx_end = .
 
-.data           0x10000000       0x98 load address 0x00002398
+.data           0x10000000       0x98 load address 0x000023a0
                 0x10000000                        . = ALIGN (0x4)
                 0x10000000                        _sdata = .
  *(.data)
@@ -1533,17 +1560,17 @@ LOAD build/drivers/usart.o
                 0x10000098                        . = ALIGN (0x4)
                 0x10000098                        _edata = .
 
-.igot.plt       0x10000098        0x0 load address 0x00002430
+.igot.plt       0x10000098        0x0 load address 0x00002438
  .igot.plt      0x10000098        0x0 build/kernel/components/drivers/core/device.o
 
-.stack          0x10000098      0x100 load address 0x00002430
+.stack          0x10000098      0x100 load address 0x00002438
                 0x10000198                        . = (. + _system_stack_size)
  *fill*         0x10000098      0x100 
                 0x10000198                        . = ALIGN (0x4)
                 0x10000198                        _estack = .
                 0x10000198                        __bss_start = .
 
-.bss            0x10000198       0xf0 load address 0x00002530
+.bss            0x10000198       0xf0 load address 0x00002538
                 0x10000198                        . = ALIGN (0x4)
                 0x10000198                        _sbss = .
  *(.bss)
@@ -1637,6 +1664,7 @@ LOAD build/drivers/usart.o
  .comment       0x00000012       0x13 build/kernel/src/timer.o
  .comment       0x00000012       0x13 build/applications/application.o
  .comment       0x00000012       0x13 build/drivers/board.o
+ .comment       0x00000012       0x13 build/drivers/usart.o
 
 .ARM.attributes
                 0x00000000       0x2a
@@ -1676,6 +1704,8 @@ LOAD build/drivers/usart.o
                 0x000002aa       0x2c build/applications/application.o
  .ARM.attributes
                 0x000002d6       0x2c build/drivers/board.o
+ .ARM.attributes
+                0x00000302       0x2c build/drivers/usart.o
 
 .debug
  *(.debug)
@@ -1827,10 +1857,14 @@ Chip_IRC_SetFreq                                  build/Libraries/common/chip/cl
 Chip_PININT_SetPatternMatchConfig                 build/Libraries/peri_driver/pinint/pinint_8xx.o
 Chip_PININT_SetPatternMatchSrc                    build/Libraries/peri_driver/pinint/pinint_8xx.o
 Chip_PMU_DeepPowerDownState                       build/Libraries/peri_driver/pmu/pmu_8xx.o
+                                                  build/drivers/board.o
 Chip_PMU_DeepSleepState                           build/Libraries/peri_driver/pmu/pmu_8xx.o
+                                                  build/drivers/board.o
 Chip_PMU_PowerDownState                           build/Libraries/peri_driver/pmu/pmu_8xx.o
+                                                  build/drivers/board.o
 Chip_PMU_Sleep                                    build/Libraries/peri_driver/pmu/pmu_8xx.o
 Chip_PMU_SleepState                               build/Libraries/peri_driver/pmu/pmu_8xx.o
+                                                  build/drivers/board.o
 Chip_SCTPWM_SetOutPin                             build/Libraries/peri_driver/sctimer/sct_pwm_8xx.o
 Chip_SCTPWM_SetRate                               build/Libraries/peri_driver/sctimer/sct_pwm_8xx.o
 Chip_SCT_DeInit                                   build/Libraries/peri_driver/sctimer/sct_8xx.o
@@ -1988,6 +2022,7 @@ __div0                                            build/kernel/libcpu/arm/common
 __lowest_bit_bitmap                               build/kernel/src/kservice.o
 __rt_ffs                                          build/kernel/src/kservice.o
                                                   build/kernel/src/scheduler_up.o
+__rt_init_rt_hw_usart_init                        build/drivers/usart.o
 __rt_init_rti_board_end                           build/kernel/src/components.o
 __rt_init_rti_board_start                         build/kernel/src/components.o
 __rt_init_rti_end                                 build/kernel/src/components.o
@@ -2007,6 +2042,15 @@ asctime_r                                         build/kernel/components/libc/c
 assert_failed                                     build/applications/application.o
 bcmp                                              build/kernel/components/libc/compilers/common/cstring.o
 bcopy                                             build/kernel/components/libc/compilers/common/cstring.o
+board_enter_deep_powerdown                        build/drivers/board.o
+                                                  build/drivers/usart.o
+board_enter_deep_sleep                            build/drivers/board.o
+                                                  build/drivers/usart.o
+board_enter_power_down                            build/drivers/board.o
+                                                  build/drivers/usart.o
+board_enter_power_mode                            build/drivers/board.o
+board_enter_sleep                                 build/drivers/board.o
+                                                  build/drivers/usart.o
 bzero                                             build/kernel/components/libc/compilers/common/cstring.o
 clock                                             build/kernel/components/libc/compilers/common/ctime.o
 ctime                                             build/kernel/components/libc/compilers/common/ctime.o
@@ -2099,6 +2143,7 @@ rt_device_unregister                              build/kernel/components/driver
 rt_device_write                                   build/kernel/components/drivers/core/device.o
                                                   build/kernel/src/kservice.o
 rt_enter_critical                                 build/kernel/src/scheduler_up.o
+                                                  build/drivers/board.o
                                                   build/kernel/src/object.o
                                                   build/kernel/components/drivers/ipc/workqueue.o
                                                   build/kernel/components/drivers/ipc/dataqueue.o
@@ -2185,19 +2230,23 @@ rt_hw_show_memory                                 build/kernel/libcpu/arm/common
 rt_hw_stack_init                                  build/kernel/libcpu/arm/cortex-m0/cpuport.o
                                                   build/kernel/src/thread.o
 rt_hw_us_delay                                    build/kernel/src/kservice.o
+rt_hw_usart_init                                  build/drivers/usart.o
 rt_interrupt_enter                                build/kernel/src/irq.o
+                                                  build/drivers/usart.o
                                                   build/drivers/board.o
 rt_interrupt_from_thread                          build/kernel/libcpu/arm/cortex-m0/cpuport.o
                                                   build/kernel/libcpu/arm/cortex-m0/context_gcc.o
 rt_interrupt_get_nest                             build/kernel/src/irq.o
                                                   build/kernel/src/kservice.o
 rt_interrupt_leave                                build/kernel/src/irq.o
+                                                  build/drivers/usart.o
                                                   build/drivers/board.o
 rt_interrupt_nest                                 build/kernel/src/irq.o
                                                   build/kernel/src/scheduler_up.o
 rt_interrupt_to_thread                            build/kernel/libcpu/arm/cortex-m0/cpuport.o
                                                   build/kernel/libcpu/arm/cortex-m0/context_gcc.o
 rt_kprintf                                        build/kernel/src/kservice.o
+                                                  build/drivers/usart.o
                                                   build/applications/application.o
                                                   build/kernel/src/mem.o
                                                   build/kernel/libcpu/arm/cortex-m0/cpuport.o
@@ -2326,6 +2375,7 @@ rt_realloc                                        build/kernel/src/kservice.o
 rt_ringbuffer_create                              build/kernel/components/drivers/ipc/ringbuffer.o
                                                   build/kernel/components/drivers/ipc/pipe.o
 rt_ringbuffer_data_len                            build/kernel/components/drivers/ipc/ringbuffer.o
+                                                  build/drivers/usart.o
 rt_ringbuffer_destroy                             build/kernel/components/drivers/ipc/ringbuffer.o
                                                   build/kernel/components/drivers/ipc/pipe.o
 rt_ringbuffer_get                                 build/kernel/components/drivers/ipc/ringbuffer.o
@@ -2338,6 +2388,7 @@ rt_ringbuffer_put                                 build/kernel/components/driver
 rt_ringbuffer_put_force                           build/kernel/components/drivers/ipc/ringbuffer.o
 rt_ringbuffer_putchar                             build/kernel/components/drivers/ipc/ringbuffer.o
 rt_ringbuffer_putchar_force                       build/kernel/components/drivers/ipc/ringbuffer.o
+                                                  build/drivers/usart.o
 rt_ringbuffer_reset                               build/kernel/components/drivers/ipc/ringbuffer.o
 rt_schedule                                       build/kernel/src/scheduler_up.o
                                                   build/kernel/src/thread.o
@@ -2426,6 +2477,7 @@ rt_thread_idle_sethook                            build/kernel/src/idle.o
 rt_thread_init                                    build/kernel/src/thread.o
                                                   build/kernel/src/idle.o
 rt_thread_mdelay                                  build/kernel/src/thread.o
+                                                  build/drivers/usart.o
 rt_thread_priority_table                          build/kernel/src/scheduler_up.o
 rt_thread_ready_priority_group                    build/kernel/src/scheduler_up.o
 rt_thread_resume                                  build/kernel/src/thread.o
@@ -2556,6 +2608,7 @@ tolower                                           build/kernel/components/libc/c
 tz_get                                            build/kernel/components/libc/compilers/common/ctime.o
 tz_is_dst                                         build/kernel/components/libc/compilers/common/ctime.o
 tz_set                                            build/kernel/components/libc/compilers/common/ctime.o
+uart_irq_handler                                  build/drivers/usart.o
 ultoa                                             build/kernel/components/libc/compilers/common/cstdlib.o
 utoa                                              build/kernel/components/libc/compilers/common/cstdlib.o
 wcswidth                                          build/kernel/components/libc/compilers/common/cwchar.o

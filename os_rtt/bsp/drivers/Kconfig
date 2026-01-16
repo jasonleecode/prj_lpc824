@@ -7,30 +7,6 @@ config SOC_LPC824
     select RT_USING_USER_MAIN
     default y
 
-menu "Onboard Peripheral Drivers"
-
-    config BSP_USING_AT24CX
-        bool "Enable at24c02 device"
-        select BSP_USING_I2C
-        default y
-
-    config BSP_USING_W24Q32
-        bool "Enable w24q32 device"
-        select RT_USING_PIN
-        default y
-
-    config BSP_USING_USER_KEY
-        bool "Enable User Key"
-        select RT_USING_PIN
-        default y
-
-    config BSP_USING_USER_LED
-        bool "Enable User LED"
-        select RT_USING_PIN
-        default y
-
-endmenu
-
 menu "On-chip Peripheral Drivers"
 
     config BSP_USING_GPIO
@@ -38,24 +14,81 @@ menu "On-chip Peripheral Drivers"
         select RT_USING_PIN
         default y
 
-    config BSP_USING_I2C
-        bool "Enable I2C"
-        select RT_USING_PIN
+    menuconfig BSP_USING_I2C
+        bool "Enable I2C BUS"
         default y
+        select RT_USING_PIN
+        select RT_USING_I2C
+        if BSP_USING_I2C
+            config BSP_USING_I2C0
+                bool "Enable I2C0"
+                default y
 
-    config BSP_USING_SPI
-        bool "Enable SPI"
-        select RT_USING_PIN
+            config BSP_I2C0_SCL_PIN
+                int "I2C0 SCL PIN"
+                range 0 31
+                depends on BSP_USING_I2C0
+                default 24
+
+            config BSP_I2C0_SDA_PIN
+                int "I2C0 SDA PIN"
+                range 0 31
+                depends on BSP_USING_I2C0
+                default 23
+        endif
+
+    menuconfig BSP_USING_SPI
+        bool "Enable SPI BUS"
         default y
+        select RT_USING_PIN
+        select RT_USING_SPI
+        if BSP_USING_SPI
+            config BSP_USING_SPI0
+                bool "Enable SPI0"
+                default y
+
+            config BSP_SPI0_MOSI_PIN
+                int "SPI0 MOSI PIN"
+                range 0 31
+                depends on BSP_USING_SPI0
+                default 25
+
+            config BSP_SPI0_MISO_PIN
+                int "SPI0 MISO PIN"
+                range 0 31
+                depends on BSP_USING_SPI0
+                default 24
+
+            config BSP_SPI0_CLK_PIN
+                int "SPI0 CLK PIN"
+                range 0 31
+                depends on BSP_USING_SPI0
+                default 26
+
+            config BSP_SPI0_CS_PIN
+                int "SPI0 CS PIN"
+                range 0 31
+                depends on BSP_USING_SPI0
+                default 15
+        endif
 
     menuconfig BSP_USING_UART
         bool "Enable UART"
         default y
         select RT_USING_SERIAL
         if BSP_USING_UART
+            config BSP_USING_UART0
+                bool "Enable UART0"
+                default y
+
+            config BSP_UART0_RX_USING_DMA
+                bool "Enable UART0 RX DMA"
+                depends on BSP_USING_UART0 && RT_SERIAL_USING_DMA
+                default n
+
             config BSP_USING_UART1
                 bool "Enable UART1"
-                default y
+                default n
 
             config BSP_UART1_RX_USING_DMA
                 bool "Enable UART1 RX DMA"
@@ -72,39 +105,176 @@ menu "On-chip Peripheral Drivers"
                 default n
         endif
 
-    menuconfig BSP_USING_SPI
-        bool "Enable SPI BUS"
-        default n
-        select RT_USING_SPI
-        if BSP_USING_SPI
-            config BSP_USING_SPI1
-                bool "Enable SPI1 BUS"
+    menuconfig BSP_USING_PWM
+        bool "Enable PWM (SCT)"
+        default y
+        select RT_USING_PWM
+        if BSP_USING_PWM
+            config BSP_USING_PWM_CH0
+                bool "Enable PWM Channel 0"
+                default y
+
+            config BSP_USING_PWM_CH1
+                bool "Enable PWM Channel 1"
                 default n
 
-            config BSP_SPI1_TX_USING_DMA
-                bool "Enable SPI1 TX DMA"
-                depends on BSP_USING_SPI1
+            config BSP_USING_PWM_CH2
+                bool "Enable PWM Channel 2"
                 default n
 
-            config BSP_SPI1_RX_USING_DMA
-                bool "Enable SPI1 RX DMA"
-                depends on BSP_USING_SPI1
-                select BSP_SPI1_TX_USING_DMA
+            config BSP_USING_PWM_CH3
+                bool "Enable PWM Channel 3"
+                default n
+
+            config BSP_USING_PWM_CH4
+                bool "Enable PWM Channel 4"
+                default n
+
+            config BSP_USING_PWM_CH5
+                bool "Enable PWM Channel 5"
                 default n
         endif
 
-    # source "../Libraries/peri_driver/Kconfig"
+endmenu
+
+menu "Onboard Device Drivers"
+
+    menuconfig BSP_USING_I2C_EEPROM
+        bool "Enable I2C EEPROM (AT24C02)"
+        default y
+        depends on BSP_USING_I2C
+        select RT_USING_I2C
+        if BSP_USING_I2C_EEPROM
+            config BSP_AT24C02_I2C_BUS
+                string "AT24C02 I2C Bus Name"
+                default "i2c0"
+
+            config BSP_AT24C02_I2C_ADDR
+                hex "AT24C02 I2C Address"
+                range 0x48 0x4F
+                default 0x50
+
+            config BSP_AT24C02_CAPACITY
+                int "AT24C02 Capacity (Bytes)"
+                default 256
+        endif
+
+    menuconfig BSP_USING_SPI_FLASH
+        bool "Enable SPI Flash (W25Q32)"
+        default y
+        depends on BSP_USING_SPI
+        select RT_USING_SPI
+        if BSP_USING_SPI_FLASH
+            config BSP_W25Q32_SPI_BUS
+                string "W25Q32 SPI Bus Name"
+                default "spi0"
+
+            config BSP_W25Q32_SPI_CS_PIN
+                int "W25Q32 CS PIN"
+                range 0 31
+                default 15
+
+            config BSP_W25Q32_CAPACITY
+                int "W25Q32 Capacity (MB)"
+                default 4
+
+            config BSP_W25Q32_PAGE_SIZE
+                int "W25Q32 Page Size (Bytes)"
+                default 256
+
+            config BSP_W25Q32_SECTOR_SIZE
+                int "W25Q32 Sector Size (Bytes)"
+                default 4096
+        endif
+
+    menuconfig BSP_USING_I2C_OLED
+        bool "Enable I2C OLED (SSD1306)"
+        default y
+        depends on BSP_USING_I2C
+        select RT_USING_I2C
+        if BSP_USING_I2C_OLED
+            config BSP_OLED_I2C_BUS
+                string "OLED I2C Bus Name"
+                default "i2c0"
+
+            config BSP_OLED_I2C_ADDR
+                hex "OLED I2C Address"
+                default 0x3C
+
+            config BSP_OLED_WIDTH
+                int "OLED Width (Pixels)"
+                default 128
+
+            config BSP_OLED_HEIGHT
+                int "OLED Height (Pixels)"
+                default 64
+        endif
+
+    menuconfig BSP_USING_GPIO_KEYS
+        bool "Enable GPIO Keys (Direction Input)"
+        default y
+        depends on BSP_USING_GPIO
+        select RT_USING_PIN
+        if BSP_USING_GPIO_KEYS
+            config BSP_KEY_UP_PIN
+                int "Key UP PIN"
+                range 0 31
+                default 12
+
+            config BSP_KEY_DOWN_PIN
+                int "Key DOWN PIN"
+                range 0 31
+                default 13
+
+            config BSP_KEY_LEFT_PIN
+                int "Key LEFT PIN"
+                range 0 31
+                default 20
+
+            config BSP_KEY_RIGHT_PIN
+                int "Key RIGHT PIN"
+                range 0 31
+                default 19
+
+            config BSP_KEY_DEBOUNCE_TIME
+                int "Key Debounce Time (ms)"
+                default 20
+        endif
 
 endmenu
 
-menu "Board extended module Drivers"
-    config BSP_USING_GPS
-        bool "Enable GPS"
-        default n
+menu "Power Management"
 
-    config BSP_USING_OLED
-        bool "Enable OLED"
-        default n
+    menuconfig BSP_USING_POWER_MANAGEMENT
+        bool "Enable Power Management"
+        default y
+        if BSP_USING_POWER_MANAGEMENT
+            config BSP_PM_SUPPORT_SLEEP
+                bool "Support Sleep Mode"
+                default y
+
+            config BSP_PM_SUPPORT_DEEP_SLEEP
+                bool "Support Deep Sleep Mode"
+                default y
+
+            config BSP_PM_SUPPORT_POWER_DOWN
+                bool "Support Power Down Mode"
+                default y
+
+            config BSP_PM_SUPPORT_DEEP_POWERDOWN
+                bool "Support Deep Power Down Mode"
+                default y
+
+            config BSP_PM_SERIAL_COMMAND
+                bool "Enable Serial Command for Power Mode"
+                default y
+                depends on BSP_USING_UART
+        endif
+
+endmenu
+
+menu "Board Extended Features"
+
 endmenu
 
 endmenu

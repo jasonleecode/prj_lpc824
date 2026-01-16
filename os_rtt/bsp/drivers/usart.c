@@ -12,7 +12,85 @@
 
 #include "peri_driver.h"
 
-#ifdef RT_USING_UART
+/* Forward declarations for power management */
+extern void board_enter_sleep(void);
+extern void board_enter_deep_sleep(void);
+extern void board_enter_power_down(void);
+extern void board_enter_deep_powerdown(void);
+
+/* UART command buffer and processing */
+#define UART_CMD_BUFFER_SIZE 64
+static char uart_cmd_buffer[UART_CMD_BUFFER_SIZE];
+static rt_size_t uart_cmd_pos = 0;
+
+/**
+ * @brief Process UART commands
+ * @param cmd: Command string
+ */
+static void uart_process_command(char* cmd)
+{
+    /* Debug output */
+    rt_kprintf("\r\n[CMD] %s\r\n", cmd);
+    
+    if (rt_strncmp(cmd, "sleep", 5) == 0) {
+        rt_kprintf("Entering sleep mode...\r\n");
+        rt_thread_mdelay(100);  /* Ensure message is sent before sleeping */
+        board_enter_sleep();
+    }
+    else if (rt_strncmp(cmd, "deep_sleep", 10) == 0) {
+        rt_kprintf("Entering deep sleep mode...\r\n");
+        rt_thread_mdelay(100);
+        board_enter_deep_sleep();
+    }
+    else if (rt_strncmp(cmd, "power_down", 10) == 0) {
+        rt_kprintf("Entering power down mode...\r\n");
+        rt_thread_mdelay(100);
+        board_enter_power_down();
+    }
+    else if (rt_strncmp(cmd, "deep_powerdown", 14) == 0) {
+        rt_kprintf("Entering deep power down mode...\r\n");
+        rt_thread_mdelay(100);
+        board_enter_deep_powerdown();
+    }
+    else if (rt_strncmp(cmd, "help", 4) == 0) {
+        rt_kprintf("Available commands:\r\n");
+        rt_kprintf("  sleep          - Enter sleep mode\r\n");
+        rt_kprintf("  deep_sleep     - Enter deep sleep mode\r\n");
+        rt_kprintf("  power_down     - Enter power down mode\r\n");
+        rt_kprintf("  deep_powerdown - Enter deep power down mode\r\n");
+        rt_kprintf("  help           - Show this help message\r\n");
+    }
+    else if (rt_strlen(cmd) > 0) {
+        rt_kprintf("Unknown command: %s\r\n", cmd);
+    }
+}
+
+/**
+ * @brief Handle received character
+ * @param ch: Received character
+ */
+static void uart_handle_char(char ch)
+{
+    if (ch == '\r' || ch == '\n') {
+        if (uart_cmd_pos > 0) {
+            uart_cmd_buffer[uart_cmd_pos] = '\0';
+            uart_process_command(uart_cmd_buffer);
+            uart_cmd_pos = 0;
+        }
+    }
+    else if (ch == '\b' || ch == 0x7F) {  /* Backspace */
+        if (uart_cmd_pos > 0) {
+            uart_cmd_pos--;
+            rt_kprintf("\b \b");
+        }
+    }
+    else if (uart_cmd_pos < UART_CMD_BUFFER_SIZE - 1) {
+        uart_cmd_buffer[uart_cmd_pos++] = ch;
+        rt_kprintf("%c", ch);  /* Echo character */
+    }
+}
+
+#ifdef RT_USING_SERIAL
 
 #ifdef RT_USING_DEVICE
 #include <rtdevice.h>
@@ -30,21 +108,22 @@ struct lpc8xx_uart
     rt_uint8_t rx_buffer[UART_RX_BUFSZ];
 
 };
-#ifdef RT_USING_UART0
+#ifdef RT_USING_SERIAL0
 struct lpc8xx_uart uart0_device;
 #endif
 
-#ifdef RT_USING_UART1
+#ifdef RT_USING_SERIAL1
 struct lpc8xx_uart uart1_device;
 #endif
 
-#ifdef RT_USING_UART2
+#ifdef RT_USING_SERIAL2
 struct lpc8xx_uart uart2_device;
 #endif
 
 void uart_irq_handler(struct lpc8xx_uart* uart)
 {
     uint32_t status;
+    uint8_t ch;
 
     /* enter interrupt */
     rt_interrupt_enter();
@@ -52,7 +131,14 @@ void uart_irq_handler(struct lpc8xx_uart* uart)
     status = Chip_UART_GetStatus(uart->uart_base);
     if(status & UART_STAT_RXRDY)    // RXIRQ
     {
-        rt_ringbuffer_putchar_force(&(uart->rx_rb), (rt_uint8_t)Chip_UART_ReadByte(uart->uart_base));
+        ch = (rt_uint8_t)Chip_UART_ReadByte(uart->uart_base);
+        
+        /* Store character in ring buffer */
+        rt_ringbuffer_putchar_force(&(uart->rx_rb), ch);
+        
+        /* Process command character in real-time */
+        uart_handle_char(ch);
+        
         /* invoke callback */
         if(uart->parent.rx_indicate != RT_NULL)
         {
@@ -92,7 +178,7 @@ static void uart1_io_init(LPC_USART_T * uart_base)
 
     Chip_Clock_SetUARTClockDiv(1);
 
-#ifdef RT_USING_UART0
+#ifdef RT_USING_SERIAL0
     if (uart_base == LPC_USART0)
     {
         Chip_SWM_MovablePinAssign(SWM_U0_TXD_O, 4);
@@ -101,7 +187,7 @@ static void uart1_io_init(LPC_USART_T * uart_base)
     else
 #endif
 
-#ifdef RT_USING_UART1
+#ifdef RT_USING_SERIAL1
     if (uart_base == LPC_USART1)
     {
         Chip_SWM_MovablePinAssign(SWM_U1_TXD_O, 4);
@@ -110,7 +196,7 @@ static void uart1_io_init(LPC_USART_T * uart_base)
     else
 #endif
 
-#ifdef RT_USING_UART2
+#ifdef RT_USING_SERIAL2
     if (uart_base == LPC_USART2)
     {
         Chip_SWM_MovablePinAssign(SWM_U2_TXD_O, 4);
@@ -130,8 +216,8 @@ static void uart_ll_init(LPC_USART_T * uart)
 {
     Chip_UART_Init(uart);
     Chip_UART_ConfigData(uart, UART_CFG_DATALEN_8 | UART_CFG_PARITY_NONE | UART_CFG_STOPLEN_1);
-    Chip_Clock_SetUSARTNBaseClockRate((115200 * 6 * 16), true);
-    Chip_UART_SetBaud(uart, 115200);
+    Chip_Clock_SetUSARTNBaseClockRate((RT_SERIAL_BAUDRATE * 6 * 16), true);
+    Chip_UART_SetBaud(uart, RT_SERIAL_BAUDRATE);
     Chip_UART_Enable(uart);
     Chip_UART_TXEnable(uart);
 
@@ -190,7 +276,7 @@ static rt_ssize_t rt_uart_read(rt_device_t dev, rt_off_t pos, void* buffer, rt_s
 
     rt_size_t length;
     struct lpc8xx_uart* uart;
-    RT_ASSERT(serial != RT_NULL);
+    RT_ASSERT(dev != RT_NULL);
     uart = (struct lpc8xx_uart *)dev;
 
 
@@ -209,7 +295,7 @@ static rt_ssize_t rt_uart_write(rt_device_t dev, rt_off_t pos, const void* buffe
 {
     char *ptr = (char*) buffer;
     struct lpc8xx_uart* uart;
-    RT_ASSERT(serial != RT_NULL);
+    RT_ASSERT(dev != RT_NULL);
     uart = (struct lpc8xx_uart *)dev;
 
     if (dev->open_flag & RT_DEVICE_FLAG_STREAM)
@@ -247,12 +333,12 @@ static rt_ssize_t rt_uart_write(rt_device_t dev, rt_off_t pos, const void* buffe
 
 int rt_hw_usart_init(void)
 {
-#ifdef RT_USING_UART0
+#ifdef RT_USING_SERIAL0
     {
         struct lpc8xx_uart* uart;
 
         /* get uart device */
-        uart = &uart1_device;
+        uart = &uart0_device;
 
         /* device initialization */
         uart->parent.type = RT_Device_Class_Char;
@@ -274,7 +360,7 @@ int rt_hw_usart_init(void)
     }
 #endif
 
-#ifdef RT_USING_UART1
+#ifdef RT_USING_SERIAL1
     {
         struct lpc8xx_uart* uart;
 
@@ -301,7 +387,7 @@ int rt_hw_usart_init(void)
     }
 #endif
 
-#ifdef RT_USING_UART2
+#ifdef RT_USING_SERIAL2
     {
         struct lpc8xx_uart* uart;
 
@@ -310,7 +396,7 @@ int rt_hw_usart_init(void)
 
         /* device initialization */
         uart->parent.type = RT_Device_Class_Char;
-        uart->uart_base = LPC_USART1;
+        uart->uart_base = LPC_USART2;
         uart->uart_irq = UART2_IRQn;
         rt_ringbuffer_init(&(uart->rx_rb), uart->rx_buffer, sizeof(uart->rx_buffer));
 
@@ -325,9 +411,9 @@ int rt_hw_usart_init(void)
 
         rt_device_register(&uart->parent, "uart2", RT_DEVICE_FLAG_RDWR | RT_DEVICE_FLAG_INT_RX);
     }
-#endif /* RT_USING_UART2 */
+#endif /* RT_USING_SERIAL2 */
     return 0;
 }
 INIT_BOARD_EXPORT(rt_hw_usart_init);
 
-#endif /*RT_USING_UART*/
+#endif /*RT_USING_SERIAL*/
