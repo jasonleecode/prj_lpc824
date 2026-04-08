@@ -1,80 +1,104 @@
 #include "lpc_chip/board.h"
+#include "ir_recv.h"
 
 /*****************************************************************************
  * Private types/enumerations/variables
  ****************************************************************************/
 #define TICKRATE_HZ 100
-#define EV_TICK_CT_DISPLAY 0x01
 
-#define LED_RED 0
+#define LED_RED   0
 #define LED_GREEN 1
-#define LED_BLUE 2
+#define LED_BLUE  2
 
-/*****************************************************************************
- * Public types/enumerations/variables
- ****************************************************************************/
+static volatile uint32_t tick_ct = 0;
 
 /*****************************************************************************
  * Private functions
  ****************************************************************************/
 static void ansi_clr_screen(void) {
-  Board_UARTPutSTR("\x1B[2J");    // clear screen
-  Board_UARTPutSTR("\x1B[0m");    // color mode reset
-  Board_UARTPutSTR("\x1B[1;1H");  // set position to 1,1
+    Board_UARTPutSTR("\x1B[2J");    /* clear screen */
+    Board_UARTPutSTR("\x1B[0m");    /* color mode reset */
+    Board_UARTPutSTR("\x1B[1;1H"); /* set position to 1,1 */
 }
 
 static void Board_LED_clear(void) {
-  Board_LED_Set(LED_RED, false);
-  Board_LED_Set(LED_GREEN, false);
-  Board_LED_Set(LED_BLUE, false);
+    Board_LED_Set(LED_RED,   false);
+    Board_LED_Set(LED_GREEN, false);
+    Board_LED_Set(LED_BLUE,  false);
+}
+
+/* Print an unsigned 32-bit value in hex, zero-padded to 8 digits */
+static void print_hex32(uint32_t val)
+{
+    static const char hex[] = "0123456789ABCDEF";
+    char buf[9];
+    int i;
+    buf[8] = '\0';
+    for (i = 7; i >= 0; i--) {
+        buf[i] = hex[val & 0xF];
+        val >>= 4;
+    }
+    Board_UARTPutSTR(buf);
 }
 
 /*****************************************************************************
- * Public functions
+ * Interrupt handlers
  ****************************************************************************/
-
-/**
- * @brief	Handle interrupt from SysTick timer
- * @return	Nothing
- */
-static uint32_t sys_event = 0;
-static uint32_t tick_ct = 0;
-static char out_str[16];
-
 void SysTick_Handler(void) {
-  tick_ct += 1;
-  if ((tick_ct % 50) == 0) Board_LED_Toggle(LED_RED);
-  if ((tick_ct % 100) == 0) Board_LED_Toggle(LED_GREEN);
-  if ((tick_ct % 200) == 0) Board_LED_Toggle(LED_BLUE);
-
-  if ((tick_ct % 100) == 0) sys_event |= EV_TICK_CT_DISPLAY;
+    tick_ct++;
+    if ((tick_ct % 50)  == 0) Board_LED_Toggle(LED_RED);
+    if ((tick_ct % 100) == 0) Board_LED_Toggle(LED_GREEN);
+    if ((tick_ct % 200) == 0) Board_LED_Toggle(LED_BLUE);
 }
 
-/**
- * @brief	main routine for blinky example
- * @return	Function should not exit.
- */
-int main(void) {
-  SystemCoreClockUpdate();
-  Board_Init();
+/*****************************************************************************
+ * main
+ ****************************************************************************/
+int main(void)
+{
+    SystemCoreClockUpdate();
+    Board_Init();
+    Board_LED_clear();
 
-  Board_LED_clear();
-  ansi_clr_screen();
-  Board_UARTPutSTR("Hello,UART demo:\n");
-  Board_UARTPutSTR("build datetime: " __DATE__ " " __TIME__ "\n");
+    ansi_clr_screen();
+    Board_UARTPutSTR("LPC824 IR Receiver Demo\r\n");
+    Board_UARTPutSTR("build: " __DATE__ " " __TIME__ "\r\n");
+    Board_UARTPutSTR("Connect 38kHz IR receiver OUT to P0.1\r\n\r\n");
 
-  /* Enable SysTick Timer */
-  SysTick_Config(SystemCoreClock / TICKRATE_HZ);
+    /* Enable SysTick at 100 Hz */
+    SysTick_Config(SystemCoreClock / TICKRATE_HZ);
 
-  /* Loop forever */
-  while (1) {
-    __WFI();
-    if (sys_event & EV_TICK_CT_DISPLAY) {
-      sys_event &= ~EV_TICK_CT_DISPLAY;
-      Board_UARTPutSTR("system tick: ");
-      Board_itoa(tick_ct, out_str, 10);
-      Board_UARTPutSTR(out_str);
-      Board_UARTPutChar(0x0d);
+    /* Initialize IR receiver (P0.1, PININT0, MRT0) */
+    IR_Init();
+
+    while (1) {
+        __WFI();   /* sleep until any interrupt */
+
+        if (IR_CodeReady()) {
+            uint32_t raw = IR_GetCode();
+            ir_nec_frame_t frame;
+            IR_Decode(raw, &frame);
+
+            Board_UARTPutSTR("IR code: 0x");
+            print_hex32(raw);
+
+            Board_UARTPutSTR("  addr=0x");
+            Board_UARTPutChar("0123456789ABCDEF"[frame.addr >> 4]);
+            Board_UARTPutChar("0123456789ABCDEF"[frame.addr & 0xF]);
+
+            Board_UARTPutSTR("  cmd=0x");
+            Board_UARTPutChar("0123456789ABCDEF"[frame.cmd >> 4]);
+            Board_UARTPutChar("0123456789ABCDEF"[frame.cmd & 0xF]);
+
+            /* Simple NEC integrity check: addr ^ addr_inv should be 0xFF */
+            if ((uint8_t)(frame.addr ^ frame.addr_inv) == 0xFF &&
+                (uint8_t)(frame.cmd  ^ frame.cmd_inv)  == 0xFF) {
+                Board_UARTPutSTR("  [OK]");
+            } else {
+                Board_UARTPutSTR("  [EXT/ERR]");
+            }
+
+            Board_UARTPutSTR("\r\n");
+        }
     }
-  }
 }
