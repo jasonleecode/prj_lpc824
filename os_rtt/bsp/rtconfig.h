@@ -13,7 +13,7 @@
 #define RT_TICK_PER_SECOND 100
 #define RT_USING_IDLE_HOOK
 #define RT_IDLE_HOOK_LIST_SIZE 4
-#define IDLE_THREAD_STACK_SIZE 128
+#define IDLE_THREAD_STACK_SIZE 256
 
 /* kservice optimization */
 
@@ -44,7 +44,7 @@
 
 #define RT_USING_COMPONENTS_INIT
 #define RT_USING_USER_MAIN
-#define RT_MAIN_THREAD_STACK_SIZE 128
+#define RT_MAIN_THREAD_STACK_SIZE 512
 #define RT_MAIN_THREAD_PRIORITY 6
 
 /* DFS: device virtual file system */
@@ -55,10 +55,11 @@
 #define RT_USING_DEVICE_IPC
 #define RT_UNAMED_PIPE_NUMBER 64
 #define RT_USING_SERIAL
-#define RT_USING_SERIAL_V1
-#define RT_SERIAL_USING_DMA
-#define RT_SERIAL_RB_BUFSZ 64
 #define RT_SERIAL_BAUDRATE 115200
+
+/* UART enable: usart.c uses RT_USING_SERIAL1 / RT_USING_UART1 as guards */
+#define RT_USING_SERIAL1
+#define RT_USING_UART1
 
 /* Using USB */
 

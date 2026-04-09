@@ -62,12 +62,19 @@ void rt_hw_board_init(void)
 {
     /* Update system core clock */
     SystemCoreClockUpdate();
-    
+
     /* Configure and start SysTick timer */
     SysTick_Config(SystemCoreClock / RT_TICK_PER_SECOND);
-    
+
     /* Initialize GPIO port */
     Chip_GPIO_Init(LPC_GPIO_PORT);
+
+    /* Initialize heap BEFORE any component that may call rt_malloc().
+     * Without this call rt_thread_create() returns RT_NULL and the
+     * system hangs at the RT_ASSERT() in rt_application_init(). */
+#ifdef RT_USING_HEAP
+    rt_system_heap_init((void *)HEAP_BEGIN, (void *)HEAP_END);
+#endif
 
 #ifdef RT_USING_COMPONENTS_INIT
     rt_components_board_init();

@@ -200,7 +200,7 @@ void IR_Init(void)
 
     /* 2. Configure IR pin as input with internal pull-up */
     Chip_GPIO_SetPinDIRInput(LPC_GPIO_PORT, 0, IR_RECV_PIN);
-    Chip_IOCON_PinSetMode(LPC_IOCON, IOCON_PIO1, PIN_MODE_PULLUP);
+    Chip_IOCON_PinSetMode(LPC_IOCON, IOCON_PIO20, PIN_MODE_PULLUP);
 
     /* 3. Map GPIO pin to PININT channel */
     Chip_SYSCTL_SetPinInterrupt(IR_PININT_CH, IR_RECV_PIN);

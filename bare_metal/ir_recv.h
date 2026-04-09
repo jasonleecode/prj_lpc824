@@ -1,7 +1,7 @@
 /*
  * IR receiver driver for LPC824 bare-metal
  * Protocol: NEC (9ms leader + 32-bit data)
- * Input pin: P0.1 (demodulated 38kHz IR receiver, e.g. VS1838B)
+ * Input pin: P0.20 (demodulated 38kHz IR receiver, e.g. VS1838B)
  */
 
 #ifndef IR_RECV_H
@@ -11,7 +11,7 @@
 #include <stdbool.h>
 
 /* IR receiver GPIO pin configuration - change here if needed */
-#define IR_RECV_PIN     1       /* P0.1 */
+#define IR_RECV_PIN     20      /* P0.20 */
 #define IR_PININT_CH    0       /* PININT channel 0 */
 
 /* NEC frame fields extracted from a decoded 32-bit code */
@@ -24,7 +24,7 @@ typedef struct {
 
 /*
  * Initialize IR receiver:
- *   - Configure P0.1 as input with pull-up
+ *   - Configure P0.20 as input with pull-up
  *   - Enable PININT0 on both edges
  *   - Initialize MRT channel 0 as microsecond timer
  */

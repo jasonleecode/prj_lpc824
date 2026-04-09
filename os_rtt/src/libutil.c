@@ -3,32 +3,6 @@
 #include <stdint.h>
 #include <stddef.h>
 
-/* ARM EABI unsigned integer divide and modulo function */
-typedef struct {
-    uint32_t quotient;
-    uint32_t remainder;
-} arm_div_result;
-
-arm_div_result __aeabi_uidivmod(uint32_t dividend, uint32_t divisor) {
-    arm_div_result result;
-    result.quotient = dividend / divisor;
-    result.remainder = dividend % divisor;
-    return result;
-}
-
-/* ARM EABI signed integer divide and modulo function */
-typedef struct {
-    int32_t quotient;
-    int32_t remainder;
-} arm_sdiv_result;
-
-arm_sdiv_result __aeabi_idivmod(int32_t dividend, int32_t divisor) {
-    arm_sdiv_result result;
-    result.quotient = dividend / divisor;
-    result.remainder = dividend % divisor;
-    return result;
-}
-
 /* memcpy implementation */
 void *memcpy(void *dest, const void *src, unsigned long n) {
     unsigned char *d = (unsigned char *)dest;

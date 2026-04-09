@@ -1,14 +1,18 @@
 #include "lpc_chip/board.h"
 #include "ir_recv.h"
 
+/****************/
+/* IR Receiver Demo */
+/* 波特率：115200， LPC_USART0 */
+/****************/
+
+
 /*****************************************************************************
  * Private types/enumerations/variables
  ****************************************************************************/
 #define TICKRATE_HZ 100
 
-#define LED_RED   0
-#define LED_GREEN 1
-#define LED_BLUE  2
+#define LED 0
 
 static volatile uint32_t tick_ct = 0;
 
@@ -22,9 +26,7 @@ static void ansi_clr_screen(void) {
 }
 
 static void Board_LED_clear(void) {
-    Board_LED_Set(LED_RED,   false);
-    Board_LED_Set(LED_GREEN, false);
-    Board_LED_Set(LED_BLUE,  false);
+    Board_LED_Set(LED, false);
 }
 
 /* Print an unsigned 32-bit value in hex, zero-padded to 8 digits */
@@ -46,9 +48,7 @@ static void print_hex32(uint32_t val)
  ****************************************************************************/
 void SysTick_Handler(void) {
     tick_ct++;
-    if ((tick_ct % 50)  == 0) Board_LED_Toggle(LED_RED);
-    if ((tick_ct % 100) == 0) Board_LED_Toggle(LED_GREEN);
-    if ((tick_ct % 200) == 0) Board_LED_Toggle(LED_BLUE);
+    if ((tick_ct % 100) == 0) Board_LED_Toggle(LED);
 }
 
 /*****************************************************************************
@@ -63,12 +63,12 @@ int main(void)
     ansi_clr_screen();
     Board_UARTPutSTR("LPC824 IR Receiver Demo\r\n");
     Board_UARTPutSTR("build: " __DATE__ " " __TIME__ "\r\n");
-    Board_UARTPutSTR("Connect 38kHz IR receiver OUT to P0.1\r\n\r\n");
+    Board_UARTPutSTR("Connect 38kHz IR receiver OUT to P0.20\r\n\r\n");
 
     /* Enable SysTick at 100 Hz */
     SysTick_Config(SystemCoreClock / TICKRATE_HZ);
 
-    /* Initialize IR receiver (P0.1, PININT0, MRT0) */
+    /* Initialize IR receiver (P0.20, PININT0, MRT0) */
     IR_Init();
 
     while (1) {

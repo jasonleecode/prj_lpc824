@@ -36,4 +36,7 @@
 #define EDOM            33      /* Math argument out of domain of func */
 #define ERANGE          34      /* Math result not representable */
 
+/* Extended error codes needed by newlib syscalls (syscalls.c) */
+#define ENOTSUP         134     /* Not supported */
+
 #endif /* __ERRNO_H */

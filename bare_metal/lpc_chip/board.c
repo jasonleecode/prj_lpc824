@@ -37,8 +37,8 @@
  * Private types/enumerations/variables
  ****************************************************************************/
 
-#define LEDSAVAIL 3
-static const uint8_t ledBits[LEDSAVAIL] = {15, 16, 17};
+#define LEDSAVAIL 1
+static const uint8_t ledBits[LEDSAVAIL] = {7};
 
 /*****************************************************************************
  * Public types/enumerations/variables
@@ -78,9 +78,8 @@ STATIC void Board_UART_Init(void)
 
 	/* Divided by 1 */
 	if (DEBUG_UART == LPC_USART0) {
-
-		Chip_SWM_MovablePinAssign(SWM_U0_TXD_O, 4);
-		Chip_SWM_MovablePinAssign(SWM_U0_RXD_I, 0);
+		Chip_SWM_MovablePinAssign(SWM_U0_TXD_O, 17);
+		Chip_SWM_MovablePinAssign(SWM_U0_RXD_I, 18);
 	} else if (DEBUG_UART == LPC_USART1) {
 		Chip_SWM_MovablePinAssign(SWM_U1_TXD_O, 4);
 		Chip_SWM_MovablePinAssign(SWM_U1_RXD_I, 0);

@@ -20,5 +20,9 @@ typedef unsigned long blkcnt_t;
 typedef long suseconds_t;
 typedef unsigned int useconds_t;
 typedef int32_t time_t;
+/* Prevent newlib <sys/_timespec.h> / <sys/_timeval.h> from redefining time_t
+ * when using gcc-arm-none-eabi 9.x with system newlib headers. */
+#define __time_t_defined
+#define _TIME_T_DECLARED
 
 #endif /* __SYS_TYPES_H */
