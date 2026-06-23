@@ -56,6 +56,7 @@ LPC824Lite 支持 IAP (In-Application Programming) 烧写方式，可直接将 b
 - ✅ 基础系统初始化和 SysTick
 - ✅ UART 通信驱动
 - ✅ LED 演示程序
+- ✅ **红外接收驱动** - NEC 协议解码，输入引脚 **P0.1** (接 38kHz 解调接收头，如 VS1838B)
 
 ### RT-Thread 版本 | RT-Thread Nano
 - ✅ 完整的实时内核 (5.0.1)
@@ -142,6 +143,10 @@ prj_lpc824/
 
 ## 版本历史 | Version History
 
+### 2026-06-23
+- ✨ 裸机版本新增 NEC 红外接收驱动 (PININT0 + MRT 微秒计时)
+- 🔧 红外输入引脚由 P0.20 改为 **P0.1** (P0.20 复用 ADC_6 且小封装可能未引出，P0.1 为各封装通用 GPIO)
+
 ### 2025-01-16
 - 🐛 修复 UART 驱动中的未定义变量 bug
 - ✨ 添加波特率配置宏到 rtconfig.h
@@ -182,4 +187,4 @@ A: 使用 menuconfig 或直接编辑 rtconfig.h 中的配置宏。
 
 ---
 
-**最后更新**: 2025-01-16 | **Latest Update**: 2025-01-16
+**最后更新**: 2026-06-23 | **Latest Update**: 2026-06-23
