@@ -63,12 +63,12 @@ int main(void)
     ansi_clr_screen();
     Board_UARTPutSTR("LPC824 IR Receiver Demo\r\n");
     Board_UARTPutSTR("build: " __DATE__ " " __TIME__ "\r\n");
-    Board_UARTPutSTR("Connect 38kHz IR receiver OUT to P0.20\r\n\r\n");
+    Board_UARTPutSTR("Connect 38kHz IR receiver OUT to P0.1\r\n\r\n");
 
     /* Enable SysTick at 100 Hz */
     SysTick_Config(SystemCoreClock / TICKRATE_HZ);
 
-    /* Initialize IR receiver (P0.20, PININT0, MRT0) */
+    /* Initialize IR receiver (P0.1, PININT0, MRT0) */
     IR_Init();
 
     while (1) {

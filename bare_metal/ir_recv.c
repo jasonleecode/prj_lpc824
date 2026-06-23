@@ -131,8 +131,7 @@ void PININT0_IRQHandler(void)
                 s_bit_cnt  = 0;
                 s_state    = IR_DATA_LOW;
             } else if (elapsed >= NEC_REPEAT_SPC_MIN && elapsed <= NEC_REPEAT_SPC_MAX) {
-                /* Repeat code: re-use last code */
-                s_last_code = s_last_code;   /* already stored */
+                /* Repeat code: re-use last code (already stored in s_last_code) */
                 s_code_rdy  = true;
                 s_state     = IR_IDLE;
             } else {
@@ -200,7 +199,7 @@ void IR_Init(void)
 
     /* 2. Configure IR pin as input with internal pull-up */
     Chip_GPIO_SetPinDIRInput(LPC_GPIO_PORT, 0, IR_RECV_PIN);
-    Chip_IOCON_PinSetMode(LPC_IOCON, IOCON_PIO20, PIN_MODE_PULLUP);
+    Chip_IOCON_PinSetMode(LPC_IOCON, IOCON_PIO1, PIN_MODE_PULLUP);
 
     /* 3. Map GPIO pin to PININT channel */
     Chip_SYSCTL_SetPinInterrupt(IR_PININT_CH, IR_RECV_PIN);
